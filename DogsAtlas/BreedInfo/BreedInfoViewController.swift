@@ -8,7 +8,7 @@
 import UIKit
 
 protocol BreedInfoDisplayLogic: AnyObject {
-
+    func displayFetchedBreedInfo(_ viewModel: BreedInfoModels.FetchBreedInfo.ViewModel)
 }
 
 final class BreedInfoViewController: UIViewController {
@@ -18,12 +18,13 @@ final class BreedInfoViewController: UIViewController {
   //
   
   // MARK: - Public Properties
-
-  var interactor: BreedInfoBusinessLogic?
-  var router: (BreedInfoRoutingLogic & BreedInfoDataPassing)?
+    var interactor: BreedInfoBusinessLogic?
+    var router: (BreedInfoRoutingLogic & BreedInfoDataPassing)?
 
   // MARK: - Private Properties
-
+    private var breed: Breed?
+    private var image: String?
+    
     // MARK: - Init
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -50,7 +51,6 @@ final class BreedInfoViewController: UIViewController {
     }
 
   // MARK: - Lifecycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -61,7 +61,10 @@ final class BreedInfoViewController: UIViewController {
   //
 
   // MARK: - Requests
-  
+    private func requestToFetchBreeds() {
+        let request = BreedInfoModels.FetchBreedInfo.Request()
+        interactor?.fetchBreedInfo(request)
+    }
   //
 
   // MARK: - Private Methods
@@ -76,5 +79,8 @@ final class BreedInfoViewController: UIViewController {
 // MARK: - Display Logic
 
 extension BreedInfoViewController: BreedInfoDisplayLogic {
-
+    func displayFetchedBreedInfo(_ viewModel: BreedInfoModels.FetchBreedInfo.ViewModel) {
+        breed = viewModel.breed
+        image = viewModel.image.url
+    }
 }

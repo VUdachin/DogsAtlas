@@ -8,7 +8,7 @@
 import UIKit
 
 protocol BreedInfoPresentationLogic {
-
+    func presentFetchedBreedImage(_ response: BreedInfoModels.FetchBreedInfo.Response)
 }
 
 final class BreedInfoPresenter: BreedInfoPresentationLogic {
@@ -22,6 +22,10 @@ final class BreedInfoPresenter: BreedInfoPresentationLogic {
   //
 
   // MARK: - Presentation Logic
-  
+    func presentFetchedBreedImage(_ response: BreedInfoModels.FetchBreedInfo.Response) {
+        let viewModel = BreedInfoModels.FetchBreedInfo.ViewModel(breed: response.breed, image: response.image)
+        
+        viewController?.displayFetchedBreedInfo(viewModel)
+    }
   //
 }

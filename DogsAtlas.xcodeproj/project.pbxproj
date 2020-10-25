@@ -27,6 +27,8 @@
 		B13869F3252DBCD90027E885 /* AllBreedsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13869EB252DBCD90027E885 /* AllBreedsListViewController.swift */; };
 		B13869F5252DBCD90027E885 /* AllBreedsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13869ED252DBCD90027E885 /* AllBreedsListInteractor.swift */; };
 		B13869F9252EEF160027E885 /* Breeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13869F8252EEF160027E885 /* Breeds.swift */; };
+		B1A18EB02530D88F004A4B78 /* BreedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A18EAF2530D88F004A4B78 /* BreedImage.swift */; };
+		B1F4A33E2545AE9300D897F3 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F4A33D2545AE9300D897F3 /* UIImageViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		B13869EB252DBCD90027E885 /* AllBreedsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBreedsListViewController.swift; sourceTree = "<group>"; };
 		B13869ED252DBCD90027E885 /* AllBreedsListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBreedsListInteractor.swift; sourceTree = "<group>"; };
 		B13869F8252EEF160027E885 /* Breeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breeds.swift; sourceTree = "<group>"; };
+		B1A18EAF2530D88F004A4B78 /* BreedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImage.swift; sourceTree = "<group>"; };
+		B1F4A33D2545AE9300D897F3 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,12 +72,12 @@
 		B107ED8625304FA1001AECE0 /* BreedInfo */ = {
 			isa = PBXGroup;
 			children = (
-				B107ED8725304FCF001AECE0 /* BreedInfoPresenter.swift */,
-				B107ED8825304FCF001AECE0 /* BreedInfoWorker.swift */,
-				B107ED8925304FCF001AECE0 /* BreedInfoRouter.swift */,
 				B107ED8A25304FCF001AECE0 /* BreedInfoModels.swift */,
-				B107ED8B25304FCF001AECE0 /* BreedInfoViewController.swift */,
+				B107ED8825304FCF001AECE0 /* BreedInfoWorker.swift */,
 				B107ED8D25304FCF001AECE0 /* BreedInfoInteractor.swift */,
+				B107ED8725304FCF001AECE0 /* BreedInfoPresenter.swift */,
+				B107ED8B25304FCF001AECE0 /* BreedInfoViewController.swift */,
+				B107ED8925304FCF001AECE0 /* BreedInfoRouter.swift */,
 			);
 			path = BreedInfo;
 			sourceTree = "<group>";
@@ -100,6 +104,7 @@
 				B1291B72252232590007FEE3 /* AppDelegate.swift */,
 				B1291B74252232590007FEE3 /* SceneDelegate.swift */,
 				B13869E2252C5FE90027E885 /* NetworkWorker.swift */,
+				B1F4A33D2545AE9300D897F3 /* UIImageViewExtension.swift */,
 				B13869BA2529AE9C0027E885 /* AllBreeds */,
 				B107ED8625304FA1001AECE0 /* BreedInfo */,
 				B1291B8B252238160007FEE3 /* Models */,
@@ -115,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				B13869F8252EEF160027E885 /* Breeds.swift */,
+				B1A18EAF2530D88F004A4B78 /* BreedImage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -214,9 +220,11 @@
 				B13869E3252C5FE90027E885 /* NetworkWorker.swift in Sources */,
 				B13869F5252DBCD90027E885 /* AllBreedsListInteractor.swift in Sources */,
 				B107ED9225304FCF001AECE0 /* BreedInfoModels.swift in Sources */,
+				B1F4A33E2545AE9300D897F3 /* UIImageViewExtension.swift in Sources */,
 				B107ED9025304FCF001AECE0 /* BreedInfoWorker.swift in Sources */,
 				B107ED9325304FCF001AECE0 /* BreedInfoViewController.swift in Sources */,
 				B13869F1252DBCD90027E885 /* AllBreedsListRouter.swift in Sources */,
+				B1A18EB02530D88F004A4B78 /* BreedImage.swift in Sources */,
 				B13869F2252DBCD90027E885 /* AllBreedsListModels.swift in Sources */,
 				B13869F3252DBCD90027E885 /* AllBreedsListViewController.swift in Sources */,
 				B13869EF252DBCD90027E885 /* AllBreedsListPresenter.swift in Sources */,

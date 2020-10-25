@@ -28,7 +28,6 @@ final class AllBreedsListWorker: AllBreedsListWorkingLogic {
         }
         
         networkWorker.sendRequest(of: Breeds.self, from: allBreedsURL, params: key) { (result) in
-            
             switch result {
             case .failure(let error):
             if error is DataError {

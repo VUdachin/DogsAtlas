@@ -9,13 +9,19 @@ import UIKit
 
 enum BreedInfoModels {
   
-  // MARK: - Something
+  // MARK: -  FetchBreedInfo
   
-  enum Something {
+  enum FetchBreedInfo {
     struct Request {}
     
-    struct Response {}
+    struct Response {
+        var breed: Breed
+        var image: BreedImage
+    }
     
-    struct ViewModel {}
+    struct ViewModel {
+        var breed: Breed
+        var image: BreedImage
+    }
   }
 }
