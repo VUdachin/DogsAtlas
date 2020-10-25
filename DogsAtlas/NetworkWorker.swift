@@ -19,10 +19,6 @@ protocol NetworkWorkingLogic {
     func sendRequest<T: Decodable>(of type: T.Type, from url: URL, params: [String: String], completion: @escaping (Result<T, Error>) -> Void)
 }
 
-protocol NetworkWorkingLogic1 {
-    func sendRequest(from url: URL, params: [String: String], completion: @escaping (Result<Data, Error>) -> Void)
-}
-
 class NetworkWorker: NetworkWorkingLogic {
 
     typealias result<T> = (Result<T, Error>) -> Void
