@@ -16,12 +16,12 @@ enum BreedInfoModels {
     
     struct Response {
         var breed: Breed
-        var image: BreedImage
+        var image: BreedImages
     }
     
     struct ViewModel {
         var breed: Breed
-        var image: BreedImage
+        var image: BreedImages
     }
   }
 }

@@ -14,7 +14,14 @@ protocol BreedInfoDisplayLogic: AnyObject {
 final class BreedInfoViewController: UIViewController {
 
   // MARK: - UI Outlets
-  
+    @IBOutlet private weak var backgroundImageView: UIImageView!
+    
+    @IBOutlet private weak var breedNameLabel: UILabel!
+    @IBOutlet private weak var lifeSpanLabel: UILabel!
+    @IBOutlet private weak var temperamentLabel: UILabel!
+    @IBOutlet private weak var heightLabel: UILabel!
+    @IBOutlet private weak var weightLabel: UILabel!
+    
   //
   
   // MARK: - Public Properties
@@ -22,9 +29,6 @@ final class BreedInfoViewController: UIViewController {
     var router: (BreedInfoRoutingLogic & BreedInfoDataPassing)?
 
   // MARK: - Private Properties
-    private var breed: Breed?
-    private var image: String?
-    
     // MARK: - Init
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -53,7 +57,7 @@ final class BreedInfoViewController: UIViewController {
   // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        requestToFetchBreeds()
     }
 
   // MARK: - Public Methods
@@ -80,7 +84,14 @@ final class BreedInfoViewController: UIViewController {
 
 extension BreedInfoViewController: BreedInfoDisplayLogic {
     func displayFetchedBreedInfo(_ viewModel: BreedInfoModels.FetchBreedInfo.ViewModel) {
-        breed = viewModel.breed
-        image = viewModel.image.url
+        let breed = viewModel.breed
+        
+        breedNameLabel.text = breed.name
+        lifeSpanLabel.text = "Life span: " + breed.lifeSpan
+        temperamentLabel.text = breed.temperament
+        heightLabel.text = "Height: " + breed.height.metric
+        weightLabel.text = "Weight: " + breed.weight.metric
+        
+        backgroundImageView.downloadFrom(imageUrl: viewModel.image[0].url)
     }
 }

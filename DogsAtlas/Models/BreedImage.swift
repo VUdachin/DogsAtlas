@@ -14,3 +14,4 @@ struct BreedImage: Codable {
     let width, height: Int
 }
 
+typealias BreedImages = [BreedImage]

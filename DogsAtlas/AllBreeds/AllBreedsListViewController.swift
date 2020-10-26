@@ -49,11 +49,6 @@ final class AllBreedsListViewController: UIViewController {
         self.router = router
     }
     
-    private func setupCollectionView() {
-        collectionView.dataSource = self
-        collectionView.delegate = self
-    }
-    
     
   // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -81,7 +76,10 @@ final class AllBreedsListViewController: UIViewController {
     
 
   // MARK: - Private Methods
-    
+    private func setupCollectionView() {
+        collectionView.dataSource = self
+        collectionView.delegate = self
+    }
   
   // MARK: - UI Actions
   
