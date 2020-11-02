@@ -55,8 +55,6 @@ final class AllBreedsListViewController: UIViewController {
     super.viewDidLoad()
         setupCollectionView()
         requestToFetchBreeds()
-        collectionView.reloadData()
-    
     }
 
   // MARK: - Public Methods
@@ -104,6 +102,8 @@ extension AllBreedsListViewController: UICollectionViewDelegate, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "IdentifierBreedsCell", for: indexPath) as! BreedsCell
+        cell.layer.cornerRadius = 12
+        
         let dogs = allDogs[indexPath.row]
         cell.setup(cell: dogs)
         return cell

@@ -31,8 +31,7 @@ final class AllBreedsListRouter: AllBreedsListRoutingLogic, AllBreedsListDataPas
             let BreedInfoVC = storyboard.instantiateViewController(withIdentifier: "BreedInfoViewController") as? BreedInfoViewController,
             var BreedInfoDS = BreedInfoVC.router?.dataStore else {
             fatalError("Fail route to BreedInfo")
-            
-            }
+        }
             passDataToBreedInfo(destination: &BreedInfoDS)
             navigateToBreedInfo(destination: BreedInfoVC)
       }

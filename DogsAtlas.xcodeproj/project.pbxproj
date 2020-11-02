@@ -27,13 +27,13 @@
 		B13869F3252DBCD90027E885 /* AllBreedsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13869EB252DBCD90027E885 /* AllBreedsListViewController.swift */; };
 		B13869F5252DBCD90027E885 /* AllBreedsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13869ED252DBCD90027E885 /* AllBreedsListInteractor.swift */; };
 		B13869F9252EEF160027E885 /* Breeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13869F8252EEF160027E885 /* Breeds.swift */; };
+		B147E5DF25508EA900E101DB /* PetActionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B147E5DE25508EA900E101DB /* PetActionsCell.swift */; };
 		B178EFD52547278300408B94 /* PetProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B178EFCD2547278200408B94 /* PetProfilePresenter.swift */; };
 		B178EFD62547278300408B94 /* PetProfileWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B178EFCE2547278200408B94 /* PetProfileWorker.swift */; };
 		B178EFD72547278300408B94 /* PetProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B178EFCF2547278200408B94 /* PetProfileRouter.swift */; };
 		B178EFD82547278300408B94 /* PetProfileModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B178EFD02547278200408B94 /* PetProfileModels.swift */; };
 		B178EFD92547278300408B94 /* PetProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B178EFD12547278200408B94 /* PetProfileViewController.swift */; };
 		B178EFDB2547278300408B94 /* PetProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B178EFD32547278200408B94 /* PetProfileInteractor.swift */; };
-		B178EFE32547333700408B94 /* PetProfileCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B178EFE22547333700408B94 /* PetProfileCollectionReusableView.swift */; };
 		B1A18EB02530D88F004A4B78 /* BreedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A18EAF2530D88F004A4B78 /* BreedImage.swift */; };
 		B1F4A33E2545AE9300D897F3 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F4A33D2545AE9300D897F3 /* UIImageViewExtension.swift */; };
 /* End PBXBuildFile section */
@@ -61,13 +61,13 @@
 		B13869EB252DBCD90027E885 /* AllBreedsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBreedsListViewController.swift; sourceTree = "<group>"; };
 		B13869ED252DBCD90027E885 /* AllBreedsListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBreedsListInteractor.swift; sourceTree = "<group>"; };
 		B13869F8252EEF160027E885 /* Breeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breeds.swift; sourceTree = "<group>"; };
+		B147E5DE25508EA900E101DB /* PetActionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetActionsCell.swift; sourceTree = "<group>"; };
 		B178EFCD2547278200408B94 /* PetProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfilePresenter.swift; sourceTree = "<group>"; };
 		B178EFCE2547278200408B94 /* PetProfileWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileWorker.swift; sourceTree = "<group>"; };
 		B178EFCF2547278200408B94 /* PetProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileRouter.swift; sourceTree = "<group>"; };
 		B178EFD02547278200408B94 /* PetProfileModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileModels.swift; sourceTree = "<group>"; };
 		B178EFD12547278200408B94 /* PetProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileViewController.swift; sourceTree = "<group>"; };
 		B178EFD32547278200408B94 /* PetProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileInteractor.swift; sourceTree = "<group>"; };
-		B178EFE22547333700408B94 /* PetProfileCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileCollectionReusableView.swift; sourceTree = "<group>"; };
 		B1A18EAF2530D88F004A4B78 /* BreedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImage.swift; sourceTree = "<group>"; };
 		B1F4A33D2545AE9300D897F3 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,10 +162,18 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		B147E5DD25508E4D00E101DB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B147E5DE25508EA900E101DB /* PetActionsCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		B178EFCC2547275100408B94 /* PetProfile */ = {
 			isa = PBXGroup;
 			children = (
-				B178EFE1254732CB00408B94 /* Cell */,
+				B147E5DD25508E4D00E101DB /* Cell */,
 				B178EFD02547278200408B94 /* PetProfileModels.swift */,
 				B178EFCE2547278200408B94 /* PetProfileWorker.swift */,
 				B178EFD32547278200408B94 /* PetProfileInteractor.swift */,
@@ -174,14 +182,6 @@
 				B178EFCF2547278200408B94 /* PetProfileRouter.swift */,
 			);
 			path = PetProfile;
-			sourceTree = "<group>";
-		};
-		B178EFE1254732CB00408B94 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				B178EFE22547333700408B94 /* PetProfileCollectionReusableView.swift */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,9 +265,9 @@
 				B178EFD72547278300408B94 /* PetProfileRouter.swift in Sources */,
 				B1A18EB02530D88F004A4B78 /* BreedImage.swift in Sources */,
 				B178EFD92547278300408B94 /* PetProfileViewController.swift in Sources */,
+				B147E5DF25508EA900E101DB /* PetActionsCell.swift in Sources */,
 				B13869F2252DBCD90027E885 /* AllBreedsListModels.swift in Sources */,
 				B13869F3252DBCD90027E885 /* AllBreedsListViewController.swift in Sources */,
-				B178EFE32547333700408B94 /* PetProfileCollectionReusableView.swift in Sources */,
 				B13869EF252DBCD90027E885 /* AllBreedsListPresenter.swift in Sources */,
 				B13869F0252DBCD90027E885 /* AllBreedsListWorker.swift in Sources */,
 				B107ED9525304FCF001AECE0 /* BreedInfoInteractor.swift in Sources */,
