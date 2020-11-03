@@ -14,19 +14,18 @@ protocol PetProfileDisplayLogic: AnyObject {
 final class PetProfileViewController: UIViewController {
 
     // MARK: - UI Outlets
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     
-    @IBOutlet weak var petImageView: UIImageView!
-    @IBOutlet weak var petNameLabel: UILabel!
-    @IBOutlet weak var breedLabel: UILabel!
+    @IBOutlet private weak var petImageView: UIImageView!
+    @IBOutlet private weak var petNameLabel: UILabel!
+    @IBOutlet private weak var breedLabel: UILabel!
     
     // MARK: - Public Properties
     var interactor: PetProfileBusinessLogic?
     var router: (PetProfileRoutingLogic & PetProfileDataPassing)?
 
-  // MARK: - Private Properties
+    // MARK: - Private Properties
 
-  //
     // MARK: - Init
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
