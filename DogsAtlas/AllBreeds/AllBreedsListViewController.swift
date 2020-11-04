@@ -88,7 +88,10 @@ final class AllBreedsListViewController: UIViewController {
 extension AllBreedsListViewController: AllBreedsListDisplayLogic {
     func displayFetchedBreeds(_ viewModel: AllBreedsListModels.FetchBreeds.ViewModel) {
         allDogs = viewModel.breeds
-        collectionView.reloadData()
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+        
     }
     
     

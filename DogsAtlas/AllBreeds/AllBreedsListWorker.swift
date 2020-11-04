@@ -37,10 +37,7 @@ final class AllBreedsListWorker: AllBreedsListWorkingLogic {
             }
             
             case .success(let result):
-                DispatchQueue.main.async {
-                    completion(result)
-                }
-                
+                completion(result)
             }
         }
         
