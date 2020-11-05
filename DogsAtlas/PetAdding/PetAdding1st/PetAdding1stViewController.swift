@@ -8,7 +8,7 @@
 import UIKit
 
 protocol PetAdding1stDisplayLogic: AnyObject {
-
+    func displayFetchedCategories(_ viewModel: PetAdding1stModels.FetchPetCategory.ViewModel)
 }
 
 final class PetAdding1stViewController: UIViewController {
@@ -24,7 +24,9 @@ final class PetAdding1stViewController: UIViewController {
     var router: (PetAdding1stRoutingLogic & PetAdding1stDataPassing)?
 
     // MARK: - Private Properties
-
+    private var categories: [PetCategory]?
+    
+    
     // MARK: - Init
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -75,5 +77,26 @@ final class PetAdding1stViewController: UIViewController {
 // MARK: - Display Logic
 
 extension PetAdding1stViewController: PetAdding1stDisplayLogic {
+    func displayFetchedCategories(_ viewModel: PetAdding1stModels.FetchPetCategory.ViewModel) {
+        categories = viewModel.category
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+    }
+}
 
+extension PetAdding1stViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        categories?.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PetCategoryCell", for: indexPath) as! PetCategoryCell
+        let category = categories?[indexPath.row]
+        
+        
+        return cell
+    }
+    
+    
 }

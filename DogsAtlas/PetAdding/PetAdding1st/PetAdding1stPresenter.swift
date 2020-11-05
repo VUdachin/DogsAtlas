@@ -8,7 +8,7 @@
 import UIKit
 
 protocol PetAdding1stPresentationLogic {
-
+    func presentFetchedCategories(_ response: PetAdding1stModels.FetchPetCategory.Response)
 }
 
 final class PetAdding1stPresenter: PetAdding1stPresentationLogic {
@@ -21,5 +21,9 @@ final class PetAdding1stPresenter: PetAdding1stPresentationLogic {
 
     
     // MARK: - Presentation Logic
-
+    func presentFetchedCategories(_ response: PetAdding1stModels.FetchPetCategory.Response) {
+        let viewModel = PetAdding1stModels.FetchPetCategory.ViewModel(category: response.category)
+        
+        viewController?.displayFetchedCategories(viewModel)
+    }
 }

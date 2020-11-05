@@ -11,7 +11,7 @@ import CoreData
 class CoreDataWoker {
     static let shared = CoreDataWoker()
     
-    var managedObjectContext: NSManagedObjectContext {
+    var context: NSManagedObjectContext {
         return persistentContainer.viewContext
     }
     
