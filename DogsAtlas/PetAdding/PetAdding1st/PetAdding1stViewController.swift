@@ -42,14 +42,23 @@ final class PetAdding1stViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupCollectionView()
+        requestToFetchCategories()
     }
 
     // MARK: - Public Methods
 
 
     // MARK: - Requests
-
+    private func requestToFetchCategories() {
+        let request = PetAdding1stModels.FetchPetCategory.Request()
+        interactor?.fetchPetCategories(request)
+    }
+    
+    private func requestToSelectCategory(by indexPath: IndexPath) {
+        let request = PetAdding1stModels.SelectCategory.Request(index: indexPath.row)
+        interactor?.selectCategory(request)
+    }
 
     // MARK: - Private Methods
     private func setup() {
@@ -64,6 +73,11 @@ final class PetAdding1stViewController: UIViewController {
         
         self.interactor = interactor
         self.router = router
+    }
+    
+    private func setupCollectionView() {
+        collectionView.dataSource = self
+        collectionView.delegate = self
     }
   
     // MARK: - UI Actions
@@ -93,7 +107,7 @@ extension PetAdding1stViewController: UICollectionViewDataSource, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PetCategoryCell", for: indexPath) as! PetCategoryCell
         let category = categories?[indexPath.row]
-        
+        cell.setup(cell: category!)
         
         return cell
     }

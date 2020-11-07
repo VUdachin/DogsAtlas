@@ -240,12 +240,12 @@
 		B1447B6025517BBB005C1D77 /* PetAdding2nd */ = {
 			isa = PBXGroup;
 			children = (
-				B1447B6125517C0F005C1D77 /* PetAdding2ndPresenter.swift */,
-				B1447B6225517C0F005C1D77 /* PetAdding2ndWorker.swift */,
-				B1447B6325517C0F005C1D77 /* PetAdding2ndRouter.swift */,
 				B1447B6425517C0F005C1D77 /* PetAdding2ndModels.swift */,
-				B1447B6525517C0F005C1D77 /* PetAdding2ndViewController.swift */,
+				B1447B6225517C0F005C1D77 /* PetAdding2ndWorker.swift */,
 				B1447B6625517C0F005C1D77 /* PetAdding2ndInteractor.swift */,
+				B1447B6125517C0F005C1D77 /* PetAdding2ndPresenter.swift */,
+				B1447B6525517C0F005C1D77 /* PetAdding2ndViewController.swift */,
+				B1447B6325517C0F005C1D77 /* PetAdding2ndRouter.swift */,
 			);
 			path = PetAdding2nd;
 			sourceTree = "<group>";

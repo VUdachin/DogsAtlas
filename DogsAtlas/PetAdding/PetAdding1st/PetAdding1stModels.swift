@@ -9,7 +9,7 @@ import UIKit
 
 enum PetAdding1stModels {
   
-    // MARK: - Something
+    // MARK: - Fetch categories
     enum FetchPetCategory {
         struct Request {}
     
@@ -21,4 +21,12 @@ enum PetAdding1stModels {
             let category: [PetCategory]
         }
     }
+
+    // MARK: - Select category by index
+    enum SelectCategory {
+        struct Request {
+            let index: Int
+        }
+    }
 }
+    

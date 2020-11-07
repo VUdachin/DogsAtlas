@@ -10,8 +10,9 @@ import UIKit
 class PetCategoryCell: UICollectionViewCell {
     
     @IBOutlet private weak var petCategoryImage: UIImageView!
+    @IBOutlet private weak var name: UILabel!
     
-    private func setup(cell: PetAdding1stModels) {
-        
+    func setup(cell: PetCategory) {
+        name.text = cell.categoryName ?? ""
     }
 }

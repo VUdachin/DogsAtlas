@@ -12,7 +12,7 @@ protocol PetAdding2ndBusinessLogic {
 }
 
 protocol PetAdding2ndDataStore {
-
+    var category: PetCategory? { get set }
 }
 
 final class PetAdding2ndInteractor: PetAdding2ndBusinessLogic, PetAdding2ndDataStore {
@@ -22,6 +22,7 @@ final class PetAdding2ndInteractor: PetAdding2ndBusinessLogic, PetAdding2ndDataS
     var presenter: PetAdding2ndPresentationLogic?
     lazy var worker: PetAdding2ndWorkingLogic = PetAdding2ndWorker()
 
+    var category: PetCategory?
     // MARK: - Private Properties
 
     // MARK: - Business Logic

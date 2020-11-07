@@ -9,10 +9,12 @@ import Foundation
 
 protocol PetAdding1stBusinessLogic {
     func fetchPetCategories(_ request: PetAdding1stModels.FetchPetCategory.Request)
+    func selectCategory(_ request: PetAdding1stModels.SelectCategory.Request)
 }
 
 protocol PetAdding1stDataStore {
-    var categories: [PetCategory]? { get }
+    var categories: [PetCategory] { get }
+    var selectedCategory: PetCategory? { get }
 }
 
 final class PetAdding1stInteractor: PetAdding1stBusinessLogic, PetAdding1stDataStore {
@@ -22,7 +24,8 @@ final class PetAdding1stInteractor: PetAdding1stBusinessLogic, PetAdding1stDataS
     var presenter: PetAdding1stPresentationLogic?
     lazy var worker: PetAdding1stWorkingLogic = PetAdding1stWorker()
 
-    var categories: [PetCategory]?
+    var categories: [PetCategory] = []
+    var selectedCategory: PetCategory?
     // MARK: - Private Properties
     
     
@@ -33,5 +36,12 @@ final class PetAdding1stInteractor: PetAdding1stBusinessLogic, PetAdding1stDataS
             
             self.presenter?.presentFetchedCategories(response)
         }
+    }
+    
+    func selectCategory(_ request: PetAdding1stModels.SelectCategory.Request) {
+        guard !categories.isEmpty, request.index < categories.count else {
+            return
+        }
+        selectedCategory = categories[request.index]
     }
 }
