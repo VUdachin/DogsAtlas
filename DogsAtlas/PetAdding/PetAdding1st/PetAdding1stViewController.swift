@@ -82,7 +82,7 @@ final class PetAdding1stViewController: UIViewController {
   
     // MARK: - UI Actions
     @IBAction func didTapOnNext(_ sender: Any) {
-        
+        router?.routeToPetAdding2nd()
     }
     
     
@@ -112,5 +112,7 @@ extension PetAdding1stViewController: UICollectionViewDataSource, UICollectionVi
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        requestToSelectCategory(by: indexPath)
+    }
 }

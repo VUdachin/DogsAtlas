@@ -6,16 +6,23 @@
 //
 
 import UIKit
+import CoreData
 
 enum PetProfileModels {
   
-  // MARK: - Something
+  // MARK: - FetchPets
   
-  enum Something {
+  enum FetchPets {
     struct Request {}
     
-    struct Response {}
+    struct Response {
+        //var pets: Pet
+        var pets: [NSManagedObject]
+    }
     
-    struct ViewModel {}
+    struct ViewModel {
+        //var pets: Pet
+        var pets: [NSManagedObject]
+    }
   }
 }

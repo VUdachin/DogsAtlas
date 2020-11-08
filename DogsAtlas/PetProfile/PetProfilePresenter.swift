@@ -8,20 +8,19 @@
 import UIKit
 
 protocol PetProfilePresentationLogic {
-
+    func presentFetchedPets(_ response: PetProfileModels.FetchPets.Response)
 }
 
 final class PetProfilePresenter: PetProfilePresentationLogic {
 
-  // MARK: - Public Properties
+    // MARK: - Public Properties
+    weak var viewController: PetProfileDisplayLogic?
 
-  weak var viewController: PetProfileDisplayLogic?
-
-  // MARK: - Private Properties
+    // MARK: - Private Properties
   
-  //
-
-  // MARK: - Presentation Logic
-  
-  //
+    // MARK: - Presentation Logic
+    func presentFetchedPets(_ response: PetProfileModels.FetchPets.Response) {
+        let viewModel = PetProfileModels.FetchPets.ViewModel(pets: response.pets)
+        viewController?.displayFetchedPets(viewModel)
+    }
 }

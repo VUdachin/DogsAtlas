@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import CoreData
 
 protocol PetProfileDisplayLogic: AnyObject {
-
+    func displayFetchedPets(_ viewModel: PetProfileModels.FetchPets.ViewModel)
 }
 
 final class PetProfileViewController: UIViewController {
@@ -25,7 +26,8 @@ final class PetProfileViewController: UIViewController {
     var router: (PetProfileRoutingLogic & PetProfileDataPassing)?
 
     // MARK: - Private Properties
-
+    private var fetchedPets: [NSManagedObject] = []
+    
     // MARK: - Init
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -52,35 +54,34 @@ final class PetProfileViewController: UIViewController {
     }
     
     
-  // MARK: - Lifecycle
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
 
-  // MARK: - Public Methods
-  
-  //
+    // MARK: - Public Methods
 
-  // MARK: - Requests
-  
-  //
 
-  // MARK: - Private Methods
+    // MARK: - Requests
+  
+
+    // MARK: - Private Methods
     private func setupCollectionView() {
         tableView.dataSource = self
         tableView.delegate = self
     }
-  // MARK: - UI Actions
+    // MARK: - UI Actions
   
-  //
 }
 
 // MARK: - Display Logic
 
 extension PetProfileViewController: PetProfileDisplayLogic {
-
+    func displayFetchedPets(_ viewModel: PetProfileModels.FetchPets.ViewModel) {
+        fetchedPets = viewModel.pets
+    }
 }
 
 extension PetProfileViewController: UITableViewDataSource, UITableViewDelegate {

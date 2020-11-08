@@ -42,10 +42,11 @@ final class PetAdding1stRouter: PetAdding1stRoutingLogic, PetAdding1stDataPassin
     // MARK: - Navigation
     private func navigateToPetAdding2nd(destination: PetAdding2ndViewController) {
         viewController?.navigationController?.pushViewController(destination, animated: true)
-      }
+    }
 
     // MARK: - Passing data
     private func passDataToPetAdding2nd(destination: inout PetAdding2ndDataStore) {
         destination.category = dataStore?.selectedCategory
     }
+    
 }

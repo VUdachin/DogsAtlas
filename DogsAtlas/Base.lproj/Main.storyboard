@@ -227,7 +227,7 @@
         <!--Item-->
         <scene sceneID="YAt-Ls-tjJ">
             <objects>
-                <viewController id="32i-UO-8Ym" customClass="PetProfileViewController" customModule="DogsAtlas" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PetProfileViewController" id="32i-UO-8Ym" customClass="PetProfileViewController" customModule="DogsAtlas" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t0j-3K-pLx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -418,7 +418,7 @@
                     <connections>
                         <outlet property="collectionView" destination="Tci-vq-STR" id="yre-Vb-92w"/>
                         <outlet property="nextButton" destination="mNQ-h0-GJE" id="TbX-7T-Rnx"/>
-                        <segue destination="Sas-Zl-T4L" kind="show" id="EcF-7J-mmY"/>
+                        <segue destination="Sas-Zl-T4L" kind="show" identifier="ToSecondScreen" id="EcF-7J-mmY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jPp-FD-ovt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -428,7 +428,7 @@
         <!--Pet Adding 2nd View Controller-->
         <scene sceneID="ykW-w3-dyR">
             <objects>
-                <viewController storyboardIdentifier="PetAdding2ndVC" id="Sas-Zl-T4L" customClass="PetAdding2ndViewController" customModule="DogsAtlas" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PetAdding2ndViewController" id="Sas-Zl-T4L" customClass="PetAdding2ndViewController" customModule="DogsAtlas" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G8g-tE-qHm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

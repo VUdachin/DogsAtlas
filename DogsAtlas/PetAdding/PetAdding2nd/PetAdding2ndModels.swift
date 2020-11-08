@@ -10,11 +10,26 @@ import UIKit
 enum PetAdding2ndModels {
   
     // MARK: - Something
-    enum Something {
+    enum FetchPet {
         struct Request {}
     
-        struct Response {}
+        struct Response {
+            let category: PetCategory
+        }
     
-        struct ViewModel {}
+        struct ViewModel {
+            let category: PetCategory
+        }
     }
+    
+    enum CreatePet {
+        struct Request {
+            let pet: NewPet
+        }
+    
+        struct Response {
+            let pet: NewPet
+        }
+    }
+    
 }
