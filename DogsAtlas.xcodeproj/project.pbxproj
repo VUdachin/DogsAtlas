@@ -159,11 +159,11 @@
 		B1291B71252232590007FEE3 /* DogsAtlas */ = {
 			isa = PBXGroup;
 			children = (
+				B1447B4B255173AE005C1D77 /* Helpers */,
 				B1447BA62551A94D005C1D77 /* CoreData */,
 				B1291B72252232590007FEE3 /* AppDelegate.swift */,
 				B1291B74252232590007FEE3 /* SceneDelegate.swift */,
 				B1447B6F25517C1B005C1D77 /* PetAdding */,
-				B1447B4B255173AE005C1D77 /* Helpers */,
 				B178EFCC2547275100408B94 /* PetProfile */,
 				B13869BA2529AE9C0027E885 /* AllBreeds */,
 				B107ED8625304FA1001AECE0 /* BreedInfo */,

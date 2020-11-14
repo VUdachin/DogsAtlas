@@ -20,6 +20,8 @@ final class PetAdding2ndViewController: UIViewController {
     @IBOutlet private weak var ageTextField: UITextField!
     @IBOutlet private weak var weightTextField: UITextField!
     
+    @IBOutlet weak var pickerView: UIPickerView!
+    
     @IBOutlet private weak var breedButton: UIButton!
     @IBOutlet private weak var genderButton: UIButton!
     @IBOutlet private weak var doneButton: UIButton!
@@ -31,6 +33,10 @@ final class PetAdding2ndViewController: UIViewController {
 
     // MARK: - Private Properties
     private var category: PetCategory?
+    
+    private var breedList: [String] = ["a", "b", "c","d"] // need remove
+    private let genderList: [String] = ["male", "female"] // need remove
+    
     
     // MARK: - Init
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -81,9 +87,11 @@ final class PetAdding2ndViewController: UIViewController {
   
     // MARK: - UI Actions
     @IBAction func didTapOnBreedButton(_ sender: Any) {
+        
     }
     
     @IBAction func didTapOnGenderButton(_ sender: Any) {
+        
     }
     
     @IBAction func didTapOnDoneButton(_ sender: Any) {

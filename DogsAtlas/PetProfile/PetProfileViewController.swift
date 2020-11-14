@@ -58,14 +58,18 @@ final class PetProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupCollectionView()
+        requestToFetchPets()
     }
 
     // MARK: - Public Methods
 
 
     // MARK: - Requests
-  
+    private func requestToFetchPets() {
+        let request = PetProfileModels.FetchPets.Request()
+        interactor?.fetchPets(request)
+    }
 
     // MARK: - Private Methods
     private func setupCollectionView() {
