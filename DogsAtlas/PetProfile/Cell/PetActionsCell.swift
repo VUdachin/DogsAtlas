@@ -1,23 +1,17 @@
 //
-//  PetActionsCell.swift
+//  PetActionCell.swift
 //  DogsAtlas
 //
-//  Created by Vladimir Udachin on 02.11.2020.
+//  Created by Vladimir Udachin on 14.11.2020.
 //
 
 import UIKit
 
-class PetActionsCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+class PetActionsCell: UICollectionViewCell {
+    
+    @IBOutlet private weak var actionLabel: UILabel!
+    
+    func configure(cell with: Apointments) {
+        
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

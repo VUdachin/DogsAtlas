@@ -32,6 +32,7 @@ final class PetAdding1stInteractor: PetAdding1stBusinessLogic, PetAdding1stDataS
     // MARK: - Business Logic
     func fetchPetCategories(_ request: PetAdding1stModels.FetchPetCategory.Request) {
         worker.fetchPetCategories { (categories) in
+            self.categories = categories
             let response = PetAdding1stModels.FetchPetCategory.Response(category: categories)
             
             self.presenter?.presentFetchedCategories(response)
@@ -43,5 +44,7 @@ final class PetAdding1stInteractor: PetAdding1stBusinessLogic, PetAdding1stDataS
             return
         }
         selectedCategory = categories[request.index]
+        print(selectedCategory)
     }
+    
 }

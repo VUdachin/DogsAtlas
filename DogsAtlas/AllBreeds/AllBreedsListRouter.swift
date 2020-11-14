@@ -17,13 +17,13 @@ protocol AllBreedsListDataPassing {
 
 final class AllBreedsListRouter: AllBreedsListRoutingLogic, AllBreedsListDataPassing {
 
-  // MARK: - Public Properties
+    // MARK: - Public Properties
     weak var viewController: AllBreedsListViewController?
     var dataStore: AllBreedsListDataStore?
   
-  // MARK: - Private Properties
+    // MARK: - Private Properties
   
-  // MARK: - Routing Logic
+    // MARK: - Routing Logic
     func routeToBreedInfo() {
         guard
             let viewController = viewController,
@@ -36,13 +36,12 @@ final class AllBreedsListRouter: AllBreedsListRoutingLogic, AllBreedsListDataPas
             navigateToBreedInfo(destination: BreedInfoVC)
       }
 
-  // MARK: - Navigation
+    // MARK: - Navigation
     private func navigateToBreedInfo(destination: BreedInfoViewController) {
         viewController?.navigationController?.pushViewController(destination, animated: true)
       }
-  //
 
-  // MARK: - Passing data
+    // MARK: - Passing data
     private func passDataToBreedInfo(destination: inout BreedInfoDataStore) {
         destination.breed = dataStore?.selectedBreed
     }

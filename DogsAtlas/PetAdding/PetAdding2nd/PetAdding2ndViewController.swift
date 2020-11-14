@@ -12,7 +12,7 @@ protocol PetAdding2ndDisplayLogic: AnyObject {
 }
 
 final class PetAdding2ndViewController: UIViewController {
-
+    
     // MARK: - UI Outlets
     @IBOutlet private weak var questionLabel: UILabel!
     
@@ -34,6 +34,7 @@ final class PetAdding2ndViewController: UIViewController {
     // MARK: - Private Properties
     private var category: PetCategory?
     
+    private var inputData: [String] = []
     private var breedList: [String] = ["a", "b", "c","d"] // need remove
     private let genderList: [String] = ["male", "female"] // need remove
     
@@ -53,6 +54,7 @@ final class PetAdding2ndViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupPickerView()
         requestToAddingData()
     }
 
@@ -84,14 +86,25 @@ final class PetAdding2ndViewController: UIViewController {
         self.interactor = interactor
         self.router = router
     }
+    
+    private func setupPickerView() {
+        pickerView.isHidden = true
+        pickerView.dataSource = self
+        pickerView.delegate = self
+        
+    }
   
     // MARK: - UI Actions
     @IBAction func didTapOnBreedButton(_ sender: Any) {
-        
+        inputData = breedList
+        pickerView.reloadAllComponents()
+        pickerView.isHidden = false
     }
     
     @IBAction func didTapOnGenderButton(_ sender: Any) {
-        
+        inputData = genderList
+        pickerView.reloadAllComponents()
+        pickerView.isHidden = false
     }
     
     @IBAction func didTapOnDoneButton(_ sender: Any) {
@@ -102,7 +115,7 @@ final class PetAdding2ndViewController: UIViewController {
                            weight: Double(weightTextField.text!) ?? 0.0,
                            category: category)
         requestToCreatePet(pet: pet)
-        
+        print("Created")
         router?.routeToPetProfile()
     }
     
@@ -112,6 +125,30 @@ final class PetAdding2ndViewController: UIViewController {
 
 extension PetAdding2ndViewController: PetAdding2ndDisplayLogic {
     func displayFetchedPet(_ viewModel: PetAdding2ndModels.FetchPet.ViewModel) {
-        
+        self.category = viewModel.category
     }
+}
+
+extension PetAdding2ndViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return inputData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return inputData[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if inputData.count > 2 {
+            breedButton.setTitle("\(inputData[row])", for: .selected)
+        } else {
+            genderButton.setTitle("\(inputData[row])", for: .selected)
+        }
+        self.pickerView.isHidden = true
+    }
+    
 }

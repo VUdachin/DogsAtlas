@@ -15,11 +15,7 @@ protocol PetProfileDisplayLogic: AnyObject {
 final class PetProfileViewController: UIViewController {
 
     // MARK: - UI Outlets
-    @IBOutlet private weak var tableView: UITableView!
-    
-    @IBOutlet private weak var petImageView: UIImageView!
-    @IBOutlet private weak var petNameLabel: UILabel!
-    @IBOutlet private weak var breedLabel: UILabel!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: - Public Properties
     var interactor: PetProfileBusinessLogic?
@@ -73,8 +69,8 @@ final class PetProfileViewController: UIViewController {
 
     // MARK: - Private Methods
     private func setupCollectionView() {
-        tableView.dataSource = self
-        tableView.delegate = self
+        collectionView.dataSource = self
+        collectionView.delegate = self
     }
     // MARK: - UI Actions
   
@@ -88,16 +84,18 @@ extension PetProfileViewController: PetProfileDisplayLogic {
     }
 }
 
-extension PetProfileViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+extension PetProfileViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return fetchedPets.count + 1
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PetActionsCell", for: indexPath) as! PetActionsCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PetActionsCell", for: indexPath) as! PetActionsCell
         
         return cell
     }
+    
+
     
     
     

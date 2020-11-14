@@ -13,17 +13,16 @@ protocol AllBreedsListDisplayLogic: AnyObject {
 
 final class AllBreedsListViewController: UIViewController {
 
-  // MARK: - UI Outlets
+    // MARK: - UI Outlets
     @IBOutlet weak var collectionView: UICollectionView!
     
-  // MARK: - Public Properties
+    // MARK: - Public Properties
     var interactor: AllBreedsListBusinessLogic?
     var router: (AllBreedsListRoutingLogic & AllBreedsListDataPassing)?
 
-  // MARK: - Private Properties
+    // MARK: - Private Properties
     private var allDogs: Breeds = []
 
-    
     // MARK: - Init
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -33,6 +32,33 @@ final class AllBreedsListViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
+    }
+    
+    // MARK: - Lifecycle
+    override func viewDidLoad() {
+    super.viewDidLoad()
+        setupCollectionView()
+        requestToFetchBreeds()
+    }
+
+    // MARK: - Public Methods
+
+    // MARK: - Requests
+    private func requestToFetchBreeds() {
+        let request = AllBreedsListModels.FetchBreeds.Request()
+        interactor?.fetchBreeds(request)
+    }
+    
+    private func requestToSelectedBreed(by indexPath: IndexPath) {
+        let request = AllBreedsListModels.SelectBreed.Request(index: indexPath.row)
+        interactor?.selectBreed(request)
+    }
+    
+
+    // MARK: - Private Methods
+    private func setupCollectionView() {
+        collectionView.dataSource = self
+        collectionView.delegate = self
     }
     
     private func setup() {
@@ -48,40 +74,9 @@ final class AllBreedsListViewController: UIViewController {
         self.interactor = interactor
         self.router = router
     }
-    
-    
-  // MARK: - Lifecycle
-    override func viewDidLoad() {
-    super.viewDidLoad()
-        setupCollectionView()
-        requestToFetchBreeds()
-    }
-
-  // MARK: - Public Methods
   
-  //
-
-  // MARK: - Requests
-    private func requestToFetchBreeds() {
-        let request = AllBreedsListModels.FetchBreeds.Request()
-        interactor?.fetchBreeds(request)
-    }
-    
-    private func requestToSelectedBreed(by indexPath: IndexPath) {
-        let request = AllBreedsListModels.SelectBreed.Request(index: indexPath.row)
-        interactor?.selectBreed(request)
-    }
-    
-
-  // MARK: - Private Methods
-    private func setupCollectionView() {
-        collectionView.dataSource = self
-        collectionView.delegate = self
-    }
+    // MARK: - UI Actions
   
-  // MARK: - UI Actions
-  
-  //
 }
 
 // MARK: - Display Logic

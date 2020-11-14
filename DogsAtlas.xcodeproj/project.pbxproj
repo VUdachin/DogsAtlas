@@ -49,7 +49,6 @@
 		B1447B6C25517C0F005C1D77 /* PetAdding2ndInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1447B6625517C0F005C1D77 /* PetAdding2ndInteractor.swift */; };
 		B1447B7325518E27005C1D77 /* DogAtlas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1447B7125518E27005C1D77 /* DogAtlas.xcdatamodeld */; };
 		B1447BAD2551C417005C1D77 /* CoreDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1447BAC2551C417005C1D77 /* CoreDataWorker.swift */; };
-		B147E5DF25508EA900E101DB /* PetActionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B147E5DE25508EA900E101DB /* PetActionsCell.swift */; };
 		B178EFD52547278300408B94 /* PetProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B178EFCD2547278200408B94 /* PetProfilePresenter.swift */; };
 		B178EFD62547278300408B94 /* PetProfileWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B178EFCE2547278200408B94 /* PetProfileWorker.swift */; };
 		B178EFD72547278300408B94 /* PetProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B178EFCF2547278200408B94 /* PetProfileRouter.swift */; };
@@ -57,6 +56,8 @@
 		B178EFD92547278300408B94 /* PetProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B178EFD12547278200408B94 /* PetProfileViewController.swift */; };
 		B178EFDB2547278300408B94 /* PetProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B178EFD32547278200408B94 /* PetProfileInteractor.swift */; };
 		B1A18EB02530D88F004A4B78 /* BreedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A18EAF2530D88F004A4B78 /* BreedImage.swift */; };
+		B1EFA69825601A6200786171 /* PetActionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFA69725601A6200786171 /* PetActionsCell.swift */; };
+		B1EFA69B25601A8900786171 /* PetProfileReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFA69A25601A8900786171 /* PetProfileReusableView.swift */; };
 		B1F4A33E2545AE9300D897F3 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F4A33D2545AE9300D897F3 /* UIImageViewExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -105,7 +106,6 @@
 		B1447B6625517C0F005C1D77 /* PetAdding2ndInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetAdding2ndInteractor.swift; sourceTree = "<group>"; };
 		B1447B7225518E27005C1D77 /* PetModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PetModel.xcdatamodel; sourceTree = "<group>"; };
 		B1447BAC2551C417005C1D77 /* CoreDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataWorker.swift; sourceTree = "<group>"; };
-		B147E5DE25508EA900E101DB /* PetActionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetActionsCell.swift; sourceTree = "<group>"; };
 		B178EFCD2547278200408B94 /* PetProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfilePresenter.swift; sourceTree = "<group>"; };
 		B178EFCE2547278200408B94 /* PetProfileWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileWorker.swift; sourceTree = "<group>"; };
 		B178EFCF2547278200408B94 /* PetProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileRouter.swift; sourceTree = "<group>"; };
@@ -113,6 +113,8 @@
 		B178EFD12547278200408B94 /* PetProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileViewController.swift; sourceTree = "<group>"; };
 		B178EFD32547278200408B94 /* PetProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileInteractor.swift; sourceTree = "<group>"; };
 		B1A18EAF2530D88F004A4B78 /* BreedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImage.swift; sourceTree = "<group>"; };
+		B1EFA69725601A6200786171 /* PetActionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetActionsCell.swift; sourceTree = "<group>"; };
+		B1EFA69A25601A8900786171 /* PetProfileReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileReusableView.swift; sourceTree = "<group>"; };
 		B1F4A33D2545AE9300D897F3 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -279,7 +281,8 @@
 		B147E5DD25508E4D00E101DB /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				B147E5DE25508EA900E101DB /* PetActionsCell.swift */,
+				B1EFA69A25601A8900786171 /* PetProfileReusableView.swift */,
+				B1EFA69725601A6200786171 /* PetActionsCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -382,7 +385,6 @@
 				B178EFD72547278300408B94 /* PetProfileRouter.swift in Sources */,
 				B1A18EB02530D88F004A4B78 /* BreedImage.swift in Sources */,
 				B178EFD92547278300408B94 /* PetProfileViewController.swift in Sources */,
-				B147E5DF25508EA900E101DB /* PetActionsCell.swift in Sources */,
 				B1447B572551774C005C1D77 /* PetAdding1stViewController.swift in Sources */,
 				B1447B6C25517C0F005C1D77 /* PetAdding2ndInteractor.swift in Sources */,
 				B1305FF9255410B7003BA96B /* Pet+CoreDataProperties.swift in Sources */,
@@ -390,6 +392,7 @@
 				B13869F2252DBCD90027E885 /* AllBreedsListModels.swift in Sources */,
 				B1305FFA255410B7003BA96B /* Apointments+CoreDataClass.swift in Sources */,
 				B1305FF6255410B7003BA96B /* PetCategory+CoreDataClass.swift in Sources */,
+				B1EFA69825601A6200786171 /* PetActionsCell.swift in Sources */,
 				B13869F3252DBCD90027E885 /* AllBreedsListViewController.swift in Sources */,
 				B13869EF252DBCD90027E885 /* AllBreedsListPresenter.swift in Sources */,
 				B13869F0252DBCD90027E885 /* AllBreedsListWorker.swift in Sources */,
@@ -409,6 +412,7 @@
 				B13869F9252EEF160027E885 /* Breeds.swift in Sources */,
 				B1447B6825517C0F005C1D77 /* PetAdding2ndWorker.swift in Sources */,
 				B13869D02529B0A30027E885 /* BreedsCell.swift in Sources */,
+				B1EFA69B25601A8900786171 /* PetProfileReusableView.swift in Sources */,
 				B178EFD52547278300408B94 /* PetProfilePresenter.swift in Sources */,
 				B1305FF7255410B7003BA96B /* PetCategory+CoreDataProperties.swift in Sources */,
 				B178EFD82547278300408B94 /* PetProfileModels.swift in Sources */,
