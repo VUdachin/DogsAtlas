@@ -145,10 +145,11 @@ extension PetAdding2ndViewController: UIPickerViewDataSource, UIPickerViewDelega
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if inputData.count > 2 {
             breedButton.setTitle("\(inputData[row])", for: .selected)
+            
         } else {
             genderButton.setTitle("\(inputData[row])", for: .selected)
         }
-        self.pickerView.isHidden = true
+        //self.pickerView.isHidden = true
     }
     
 }

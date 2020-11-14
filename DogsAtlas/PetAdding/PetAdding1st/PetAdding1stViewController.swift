@@ -83,7 +83,6 @@ final class PetAdding1stViewController: UIViewController {
     // MARK: - UI Actions
     @IBAction func didTapOnNext(_ sender: Any) {
         print("najal")
-        router?.routeToPetAdding2nd()
     }
     
     
@@ -115,6 +114,7 @@ extension PetAdding1stViewController: UICollectionViewDataSource, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         requestToSelectCategory(by: indexPath)
+        router?.routeToPetAdding2nd()
         print(indexPath)
     }
 }

@@ -18,8 +18,6 @@ protocol PetAdding2ndDataPassing {
 final class PetAdding2ndRouter: PetAdding2ndRoutingLogic, PetAdding2ndDataPassing {
 
     // MARK: - Public Properties
-
-    weak var parentController: UIViewController?
     weak var viewController: PetAdding2ndViewController?
     var dataStore: PetAdding2ndDataStore?
   

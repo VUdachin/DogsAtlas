@@ -31,8 +31,8 @@ final class PetAdding1stRouter: PetAdding1stRoutingLogic, PetAdding1stDataPassin
             let storyboard = viewController.storyboard,
             let petAdding2ndVC = storyboard.instantiateViewController(withIdentifier: "PetAdding2ndViewController") as? PetAdding2ndViewController,
             var petAdding2ndDS = petAdding2ndVC.router?.dataStore else {
-            fatalError("Fail route to BreedInfo")
-        }
+            fatalError("Fail route to PetAdding2nd")
+            }
         passDataToPetAdding2nd(destination: &petAdding2ndDS)
         navigateToPetAdding2nd(destination: petAdding2ndVC)
     }

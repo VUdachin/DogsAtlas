@@ -38,8 +38,9 @@ final class PetAdding1stWorker: PetAdding1stWorkingLogic {
                 } catch {
                     print(error.localizedDescription)
                 }
+            } else {
+                completion(loadedCategories)
             }
-            completion(loadedCategories)
         } catch {
             
         }
