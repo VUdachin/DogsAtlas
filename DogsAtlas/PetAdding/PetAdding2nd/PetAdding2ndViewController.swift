@@ -15,12 +15,13 @@ final class PetAdding2ndViewController: UIViewController {
     
     // MARK: - UI Outlets
     @IBOutlet private weak var questionLabel: UILabel!
+    @IBOutlet private weak var tellAboutPetLabel: UILabel!
     
     @IBOutlet private weak var petNameTextField: UITextField!
     @IBOutlet private weak var ageTextField: UITextField!
     @IBOutlet private weak var weightTextField: UITextField!
     
-    @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet private weak var pickerView: UIPickerView!
     
     @IBOutlet private weak var breedButton: UIButton!
     @IBOutlet private weak var genderButton: UIButton!
@@ -144,12 +145,17 @@ extension PetAdding2ndViewController: UIPickerViewDataSource, UIPickerViewDelega
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if inputData.count > 2 {
-            breedButton.setTitle("\(inputData[row])", for: .selected)
-            
+            breedButton.setTitle("\(inputData[row])", for: .normal)
         } else {
-            genderButton.setTitle("\(inputData[row])", for: .selected)
+            genderButton.setTitle("\(inputData[row])", for: .normal)
         }
-        //self.pickerView.isHidden = true
+        self.pickerView.isHidden = true
     }
-    
+}
+
+extension PetAdding2ndViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

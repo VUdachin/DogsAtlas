@@ -1,13 +1,13 @@
 //
-//  PetProfileReusableView.swift
+//  PetProfileCell.swift
 //  DogsAtlas
 //
-//  Created by Vladimir Udachin on 14.11.2020.
+//  Created by Vladimir Udachin on 15.11.2020.
 //
 
 import UIKit
 
-class PetProfileReusableView: UICollectionReusableView {
+class PetProfileCell: UITableViewCell {
         
     @IBOutlet private weak var PetImageView: UIImageView!
     
@@ -17,7 +17,10 @@ class PetProfileReusableView: UICollectionReusableView {
     @IBOutlet private weak var weightLabel: UILabel!
     
     func configure(cell with: Pet) {
-        
+        nameLabel.text = with.name
+        breedAndGenderLabel.text = "\(with.breed) - \(with.gender)"
+        ageLabel.text = "\(with.age)"
+        weightLabel.text = "\(with.weight)"
     }
     
 }

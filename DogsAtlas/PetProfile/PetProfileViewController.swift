@@ -15,7 +15,7 @@ protocol PetProfileDisplayLogic: AnyObject {
 final class PetProfileViewController: UIViewController {
 
     // MARK: - UI Outlets
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private weak var tableView: UITableView!
     
     // MARK: - Public Properties
     var interactor: PetProfileBusinessLogic?
@@ -54,7 +54,7 @@ final class PetProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCollectionView()
+        setupTableView()
         requestToFetchPets()
     }
 
@@ -68,9 +68,9 @@ final class PetProfileViewController: UIViewController {
     }
 
     // MARK: - Private Methods
-    private func setupCollectionView() {
-        collectionView.dataSource = self
-        collectionView.delegate = self
+    private func setupTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
     }
     // MARK: - UI Actions
   
@@ -81,22 +81,24 @@ final class PetProfileViewController: UIViewController {
 extension PetProfileViewController: PetProfileDisplayLogic {
     func displayFetchedPets(_ viewModel: PetProfileModels.FetchPets.ViewModel) {
         fetchedPets = viewModel.pets
+        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 }
 
-extension PetProfileViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return fetchedPets.count + 1
+extension PetProfileViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return fetchedPets.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PetActionsCell", for: indexPath) as! PetActionsCell
-        
-        return cell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let pet = fetchedPets[0] as! Pet
+        let profileCell = tableView.dequeueReusableCell(withIdentifier: "PetProfileCell", for: indexPath) as! PetProfileCell
+        profileCell.configure(cell: pet)
+        return profileCell
     }
-    
-
-    
     
     
     

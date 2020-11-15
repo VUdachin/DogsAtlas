@@ -15,8 +15,6 @@ final class PetAdding1stViewController: UIViewController {
 
     // MARK: - UI Outlets
     @IBOutlet private weak var collectionView: UICollectionView!
-    @IBOutlet private weak var nextButton: UIButton!
-    
   
     // MARK: - Public Properties
 
@@ -81,9 +79,6 @@ final class PetAdding1stViewController: UIViewController {
     }
   
     // MARK: - UI Actions
-    @IBAction func didTapOnNext(_ sender: Any) {
-        print("najal")
-    }
     
     
 }
@@ -115,6 +110,5 @@ extension PetAdding1stViewController: UICollectionViewDataSource, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         requestToSelectCategory(by: indexPath)
         router?.routeToPetAdding2nd()
-        print(indexPath)
     }
 }

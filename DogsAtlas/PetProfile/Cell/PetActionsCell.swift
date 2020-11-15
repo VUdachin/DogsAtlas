@@ -7,11 +7,11 @@
 
 import UIKit
 
-class PetActionsCell: UICollectionViewCell {
+class PetActionsCell: UITableViewCell {
     
     @IBOutlet private weak var actionLabel: UILabel!
     
     func configure(cell with: Apointments) {
-        
+        actionLabel.text = "Test"
     }
 }
