@@ -43,8 +43,5 @@ final class PetAdding2ndRouter: PetAdding2ndRoutingLogic, PetAdding2ndDataPassin
     }
 
     // MARK: - Passing data
-//    private func passDataToPetAdding2nd(destination: inout PetAdding2ndDataStore) {
-//        destination.category = dataStore?.selectedCategory
-//    }
     
 }

@@ -2,7 +2,7 @@
 //  PetCategory+CoreDataProperties.swift
 //  DogsAtlas
 //
-//  Created by Vladimir Udachin on 05.11.2020.
+//  Created by Vladimir Udachin on 18.11.2020.
 //
 //
 
@@ -17,6 +17,7 @@ extension PetCategory {
     }
 
     @NSManaged public var categoryName: String?
+    @NSManaged public var image: Data?
     @NSManaged public var pet: NSSet?
 
 }

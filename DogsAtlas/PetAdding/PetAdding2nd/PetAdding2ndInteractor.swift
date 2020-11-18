@@ -10,6 +10,7 @@ import Foundation
 protocol PetAdding2ndBusinessLogic {
     func fetchPet(_ request: PetAdding2ndModels.FetchPet.Request)
     func createPet(_ request: PetAdding2ndModels.CreatePet.Request)
+    func loadPhoto(_ request: PetAdding2ndModels.LoadPhoto.Request)
 }
 
 protocol PetAdding2ndDataStore {
@@ -37,5 +38,9 @@ final class PetAdding2ndInteractor: PetAdding2ndBusinessLogic, PetAdding2ndDataS
         worker.createNewPet(newPet: newPet) { (pet) in
             print("success")
         }
+    }
+    
+    func loadPhoto(_ request: PetAdding2ndModels.LoadPhoto.Request) {
+        
     }
 }

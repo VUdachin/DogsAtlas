@@ -9,6 +9,7 @@ import Foundation
 
 protocol PetAdding2ndWorkingLogic {
     func createNewPet(newPet: NewPet, completion: @escaping (NewPet) -> Void)
+    func loadPhoto(completion: @escaping () -> Void)
 }
 
 final class PetAdding2ndWorker: PetAdding2ndWorkingLogic {
@@ -27,7 +28,12 @@ final class PetAdding2ndWorker: PetAdding2ndWorkingLogic {
         pet.gender = newPet.gender
         pet.name = newPet.name
         pet.weight = newPet.weight
+        pet.image = newPet.image
         
         coreDataWorker.saveContext()
+    }
+    
+    func loadPhoto(completion: @escaping () -> Void) {
+        
     }
 }

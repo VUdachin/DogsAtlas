@@ -2,7 +2,7 @@
 //  Pet+CoreDataProperties.swift
 //  DogsAtlas
 //
-//  Created by Vladimir Udachin on 05.11.2020.
+//  Created by Vladimir Udachin on 18.11.2020.
 //
 //
 
@@ -19,6 +19,7 @@ extension Pet {
     @NSManaged public var age: Int64
     @NSManaged public var breed: String?
     @NSManaged public var gender: String?
+    @NSManaged public var image: Data?
     @NSManaged public var name: String?
     @NSManaged public var weight: Double
     @NSManaged public var apointments: NSSet?

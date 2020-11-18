@@ -14,8 +14,11 @@ protocol PetAdding2ndDisplayLogic: AnyObject {
 final class PetAdding2ndViewController: UIViewController {
     
     // MARK: - UI Outlets
-    @IBOutlet private weak var questionLabel: UILabel!
-    @IBOutlet private weak var tellAboutPetLabel: UILabel!
+    @IBOutlet private weak var questionLabel: UILabel! {
+        didSet {
+            questionLabel.text = "What's your \(category) name?"
+        }
+    }
     
     @IBOutlet private weak var petNameTextField: UITextField!
     @IBOutlet private weak var ageTextField: UITextField!
@@ -26,6 +29,8 @@ final class PetAdding2ndViewController: UIViewController {
     @IBOutlet private weak var breedButton: UIButton!
     @IBOutlet private weak var genderButton: UIButton!
     @IBOutlet private weak var doneButton: UIButton!
+    @IBOutlet weak var loadPhotoButton: UIButton!
+    
     
     // MARK: - Public Properties
 
@@ -37,7 +42,7 @@ final class PetAdding2ndViewController: UIViewController {
     
     private var inputData: [String] = []
     private var breedList: [String] = ["a", "b", "c","d"] // need remove
-    private let genderList: [String] = ["male", "female"] // need remove
+    private let genderList: [String] = ["Male", "Female"] // need remove
     
     
     // MARK: - Init
@@ -56,21 +61,33 @@ final class PetAdding2ndViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPickerView()
-        requestToAddingData()
+        requestToFetchPet()
     }
 
     // MARK: - Public Methods
 
 
     // MARK: - Requests
-    func requestToAddingData() {
+    func requestToFetchPet() {
         let request = PetAdding2ndModels.FetchPet.Request()
         interactor?.fetchPet(request)
     }
     
-    func requestToCreatePet(pet: NewPet) {
+    func requestToCreatePet() {
+        let pet = NewPet(age: Int64(ageTextField.text!) ?? 0,
+                           breed: breedButton.currentTitle,
+                           gender: genderButton.currentTitle,
+                           name: petNameTextField.text,
+                           weight: Double(weightTextField.text!) ?? 0.0,
+                           category: category,
+                           image: Data() )
         let request = PetAdding2ndModels.CreatePet.Request(pet: pet)
         interactor?.createPet(request)
+    }
+    
+    func requestToLoadPhoto() {
+        let request = PetAdding2ndModels.LoadPhoto.Request(photo: Data() ) //dodelat'
+        interactor?.loadPhoto(request)
     }
 
     // MARK: - Private Methods
@@ -108,15 +125,11 @@ final class PetAdding2ndViewController: UIViewController {
         pickerView.isHidden = false
     }
     
+    @IBAction func didTapOnLoadButton(_ sender: Any) {
+    }
+    
     @IBAction func didTapOnDoneButton(_ sender: Any) {
-        let pet = NewPet(age: Int64(ageTextField.text!) ?? 0,
-                           breed: breedButton.currentTitle,
-                           gender: genderButton.currentTitle,
-                           name: petNameTextField.text,
-                           weight: Double(weightTextField.text!) ?? 0.0,
-                           category: category)
-        requestToCreatePet(pet: pet)
-        print("Created")
+        requestToCreatePet()
         router?.routeToPetProfile()
     }
     

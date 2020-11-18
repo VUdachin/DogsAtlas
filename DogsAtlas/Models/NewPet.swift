@@ -15,4 +15,5 @@ struct NewPet {
     var weight: Double
     var apointments: NSSet?
     var category: PetCategory?
+    var image: Data
 }

@@ -32,4 +32,14 @@ enum PetAdding2ndModels {
         }
     }
     
+    enum LoadPhoto {
+        struct Request {
+            let photo: Data
+        }
+    
+        struct Response {
+            let photo: Data
+        }
+    }
+    
 }

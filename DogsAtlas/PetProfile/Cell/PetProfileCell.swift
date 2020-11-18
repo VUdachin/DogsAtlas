@@ -19,8 +19,8 @@ class PetProfileCell: UITableViewCell {
     func configure(cell with: Pet) {
         nameLabel.text = with.name
         breedAndGenderLabel.text = "\(with.breed) - \(with.gender)"
-        ageLabel.text = "\(with.age)"
-        weightLabel.text = "\(with.weight)"
+        ageLabel.text = "Age \(with.age)"
+        weightLabel.text = "Weight \(with.weight)kg"
     }
     
 }

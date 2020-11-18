@@ -29,15 +29,19 @@ final class PetAdding1stWorker: PetAdding1stWorkingLogic {
                 bird.categoryName = "Bird"
                 let lizard = PetCategory(context: context)
                 lizard.categoryName = "Lizard"
+                let rabbit = PetCategory(context: context)
+                rabbit.categoryName = "Rabbit"
+                
                 
                 let categories = [dog, cat, bird, lizard]
                 completion(categories)
-                print("we fine")
+                
                 do {
                     try context.save()
                 } catch {
                     print(error.localizedDescription)
                 }
+                
             } else {
                 completion(loadedCategories)
             }

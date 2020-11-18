@@ -94,7 +94,7 @@ extension PetProfileViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let pet = fetchedPets[0] as! Pet
+        let pet = fetchedPets[indexPath.row] as! Pet
         let profileCell = tableView.dequeueReusableCell(withIdentifier: "PetProfileCell", for: indexPath) as! PetProfileCell
         profileCell.configure(cell: pet)
         return profileCell
