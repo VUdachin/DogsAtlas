@@ -22,7 +22,7 @@ enum PetAdding2ndModels {
         }
     }
     
-    enum CreatePet {
+    enum PreparePetData {
         struct Request {
             let pet: NewPet
         }

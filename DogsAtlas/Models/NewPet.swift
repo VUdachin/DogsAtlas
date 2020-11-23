@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct NewPet {
     var age: Int64
@@ -15,5 +16,5 @@ struct NewPet {
     var weight: Double
     var apointments: NSSet?
     var category: PetCategory?
-    var image: Data
+    var image: Data?
 }

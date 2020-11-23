@@ -28,7 +28,6 @@ class CoreDataWoker {
     
     // MARK: - Core Data Saving support
     func saveContext() {
-        let context = persistentContainer.viewContext
         if context.hasChanges {
             do {
                 try context.save()
@@ -41,7 +40,6 @@ class CoreDataWoker {
     }
     
     func deleteContext(object: NSManagedObject) {
-        let context = persistentContainer.viewContext
         context.delete(object)
         if context.hasChanges {
             do {

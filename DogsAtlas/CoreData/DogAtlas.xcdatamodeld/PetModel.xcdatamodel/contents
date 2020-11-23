@@ -16,8 +16,8 @@
         <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PetCategory" inverseName="pet" inverseEntity="PetCategory"/>
     </entity>
     <entity name="PetCategory" representedClassName="PetCategory" syncable="YES">
-        <attribute name="categoryName" attributeType="String"/>
-        <attribute name="image" attributeType="Binary"/>
+        <attribute name="categoryName" optional="YES" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="String"/>
         <relationship name="pet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Pet" inverseName="category" inverseEntity="Pet"/>
     </entity>
     <elements>

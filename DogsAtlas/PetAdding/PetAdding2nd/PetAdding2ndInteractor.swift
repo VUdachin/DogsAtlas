@@ -9,12 +9,12 @@ import Foundation
 
 protocol PetAdding2ndBusinessLogic {
     func fetchPet(_ request: PetAdding2ndModels.FetchPet.Request)
-    func createPet(_ request: PetAdding2ndModels.CreatePet.Request)
-    func loadPhoto(_ request: PetAdding2ndModels.LoadPhoto.Request)
+    func createPet(_ request: PetAdding2ndModels.PreparePetData.Request)
 }
 
 protocol PetAdding2ndDataStore {
     var category: PetCategory? { get set }
+    var prepairedData: NewPet? { get }
 }
 
 final class PetAdding2ndInteractor: PetAdding2ndBusinessLogic, PetAdding2ndDataStore {
@@ -25,6 +25,7 @@ final class PetAdding2ndInteractor: PetAdding2ndBusinessLogic, PetAdding2ndDataS
     lazy var worker: PetAdding2ndWorkingLogic = PetAdding2ndWorker()
 
     var category: PetCategory?
+    var prepairedData: NewPet?
     // MARK: - Private Properties
 
     // MARK: - Business Logic
@@ -33,14 +34,9 @@ final class PetAdding2ndInteractor: PetAdding2ndBusinessLogic, PetAdding2ndDataS
         self.presenter?.presentFetchedPet(response)
     }
     
-    func createPet(_ request: PetAdding2ndModels.CreatePet.Request) {
-        let newPet = request.pet
-        worker.createNewPet(newPet: newPet) { (pet) in
-            print("success")
-        }
-    }
-    
-    func loadPhoto(_ request: PetAdding2ndModels.LoadPhoto.Request) {
-        
+    func createPet(_ request: PetAdding2ndModels.PreparePetData.Request) {
+        prepairedData = request.pet
+        print(prepairedData)
     }
 }
+

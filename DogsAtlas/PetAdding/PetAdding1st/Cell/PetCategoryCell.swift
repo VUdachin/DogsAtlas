@@ -10,9 +10,14 @@ import UIKit
 class PetCategoryCell: UICollectionViewCell {
     
     @IBOutlet private weak var petCategoryImage: UIImageView!
-    @IBOutlet private weak var name: UILabel!
+    @IBOutlet private weak var name: UILabel! {
+        didSet {
+            name.isHidden = true
+        }
+    }
     
-    func setup(cell: PetCategory) {
-        name.text = cell.categoryName ?? ""
+    func configure(cell: PetCategory) {
+        //name.text = cell.categoryName ?? ""
+        petCategoryImage.image = UIImage(named: cell.image!)
     }
 }

@@ -102,7 +102,7 @@ extension PetAdding1stViewController: UICollectionViewDataSource, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PetCategoryCell", for: indexPath) as! PetCategoryCell
         let category = categories?[indexPath.row]
-        cell.setup(cell: category!)
+        cell.configure(cell: category!)
         
         return cell
     }

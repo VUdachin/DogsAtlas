@@ -43,6 +43,12 @@
 		B1447B6C25517C0F005C1D77 /* PetAdding2ndInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1447B6625517C0F005C1D77 /* PetAdding2ndInteractor.swift */; };
 		B1447B7325518E27005C1D77 /* DogAtlas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1447B7125518E27005C1D77 /* DogAtlas.xcdatamodeld */; };
 		B1447BAD2551C417005C1D77 /* CoreDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1447BAC2551C417005C1D77 /* CoreDataWorker.swift */; };
+		B15AD87D256C3F6800BE2916 /* PhotoAddingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15AD877256C3F6800BE2916 /* PhotoAddingPresenter.swift */; };
+		B15AD87E256C3F6800BE2916 /* PhotoAddingWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15AD878256C3F6800BE2916 /* PhotoAddingWorker.swift */; };
+		B15AD87F256C3F6800BE2916 /* PhotoAddingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15AD879256C3F6800BE2916 /* PhotoAddingRouter.swift */; };
+		B15AD880256C3F6800BE2916 /* PhotoAddingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15AD87A256C3F6800BE2916 /* PhotoAddingModels.swift */; };
+		B15AD881256C3F6800BE2916 /* PhotoAddingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15AD87B256C3F6800BE2916 /* PhotoAddingViewController.swift */; };
+		B15AD882256C3F6800BE2916 /* PhotoAddingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15AD87C256C3F6800BE2916 /* PhotoAddingInteractor.swift */; };
 		B178EFD52547278300408B94 /* PetProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B178EFCD2547278200408B94 /* PetProfilePresenter.swift */; };
 		B178EFD62547278300408B94 /* PetProfileWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B178EFCE2547278200408B94 /* PetProfileWorker.swift */; };
 		B178EFD72547278300408B94 /* PetProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B178EFCF2547278200408B94 /* PetProfileRouter.swift */; };
@@ -53,10 +59,10 @@
 		B184B0322561BC080021BE42 /* Apointments+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184B02C2561BC080021BE42 /* Apointments+CoreDataClass.swift */; };
 		B184B0332561BC080021BE42 /* Apointments+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184B02D2561BC080021BE42 /* Apointments+CoreDataProperties.swift */; };
 		B1A18EB02530D88F004A4B78 /* BreedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A18EAF2530D88F004A4B78 /* BreedImage.swift */; };
+		B1C22A7625693AD000F1C15A /* PetCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C22A7425693AD000F1C15A /* PetCategory+CoreDataClass.swift */; };
+		B1C22A7725693AD000F1C15A /* PetCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C22A7525693AD000F1C15A /* PetCategory+CoreDataProperties.swift */; };
 		B1EAA9092565A7DA00F8BB9B /* Pet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EAA9052565A7DA00F8BB9B /* Pet+CoreDataClass.swift */; };
 		B1EAA90A2565A7DA00F8BB9B /* Pet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EAA9062565A7DA00F8BB9B /* Pet+CoreDataProperties.swift */; };
-		B1EAA90B2565A7DA00F8BB9B /* PetCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EAA9072565A7DA00F8BB9B /* PetCategory+CoreDataClass.swift */; };
-		B1EAA90C2565A7DA00F8BB9B /* PetCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EAA9082565A7DA00F8BB9B /* PetCategory+CoreDataProperties.swift */; };
 		B1EFA69825601A6200786171 /* PetActionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFA69725601A6200786171 /* PetActionsCell.swift */; };
 		B1F4A33E2545AE9300D897F3 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F4A33D2545AE9300D897F3 /* UIImageViewExtension.swift */; };
 /* End PBXBuildFile section */
@@ -100,6 +106,12 @@
 		B1447B6625517C0F005C1D77 /* PetAdding2ndInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetAdding2ndInteractor.swift; sourceTree = "<group>"; };
 		B1447B7225518E27005C1D77 /* PetModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PetModel.xcdatamodel; sourceTree = "<group>"; };
 		B1447BAC2551C417005C1D77 /* CoreDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataWorker.swift; sourceTree = "<group>"; };
+		B15AD877256C3F6800BE2916 /* PhotoAddingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAddingPresenter.swift; sourceTree = "<group>"; };
+		B15AD878256C3F6800BE2916 /* PhotoAddingWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAddingWorker.swift; sourceTree = "<group>"; };
+		B15AD879256C3F6800BE2916 /* PhotoAddingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAddingRouter.swift; sourceTree = "<group>"; };
+		B15AD87A256C3F6800BE2916 /* PhotoAddingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAddingModels.swift; sourceTree = "<group>"; };
+		B15AD87B256C3F6800BE2916 /* PhotoAddingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAddingViewController.swift; sourceTree = "<group>"; };
+		B15AD87C256C3F6800BE2916 /* PhotoAddingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAddingInteractor.swift; sourceTree = "<group>"; };
 		B178EFCD2547278200408B94 /* PetProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfilePresenter.swift; sourceTree = "<group>"; };
 		B178EFCE2547278200408B94 /* PetProfileWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileWorker.swift; sourceTree = "<group>"; };
 		B178EFCF2547278200408B94 /* PetProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileRouter.swift; sourceTree = "<group>"; };
@@ -110,10 +122,10 @@
 		B184B02C2561BC080021BE42 /* Apointments+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Apointments+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B184B02D2561BC080021BE42 /* Apointments+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Apointments+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B1A18EAF2530D88F004A4B78 /* BreedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImage.swift; sourceTree = "<group>"; };
+		B1C22A7425693AD000F1C15A /* PetCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PetCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B1C22A7525693AD000F1C15A /* PetCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PetCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B1EAA9052565A7DA00F8BB9B /* Pet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B1EAA9062565A7DA00F8BB9B /* Pet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		B1EAA9072565A7DA00F8BB9B /* PetCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PetCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
-		B1EAA9082565A7DA00F8BB9B /* PetCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PetCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B1EFA69725601A6200786171 /* PetActionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetActionsCell.swift; sourceTree = "<group>"; };
 		B1F4A33D2545AE9300D897F3 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -260,6 +272,7 @@
 			children = (
 				B1447B4C255176B4005C1D77 /* PetAdding1st */,
 				B1447B6025517BBB005C1D77 /* PetAdding2nd */,
+				B15AD876256C3F1500BE2916 /* PhotoAdding */,
 			);
 			path = PetAdding;
 			sourceTree = "<group>";
@@ -271,8 +284,8 @@
 				B184B02D2561BC080021BE42 /* Apointments+CoreDataProperties.swift */,
 				B1EAA9052565A7DA00F8BB9B /* Pet+CoreDataClass.swift */,
 				B1EAA9062565A7DA00F8BB9B /* Pet+CoreDataProperties.swift */,
-				B1EAA9072565A7DA00F8BB9B /* PetCategory+CoreDataClass.swift */,
-				B1EAA9082565A7DA00F8BB9B /* PetCategory+CoreDataProperties.swift */,
+				B1C22A7425693AD000F1C15A /* PetCategory+CoreDataClass.swift */,
+				B1C22A7525693AD000F1C15A /* PetCategory+CoreDataProperties.swift */,
 				B1447B7125518E27005C1D77 /* DogAtlas.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -285,6 +298,19 @@
 				B1EFA69725601A6200786171 /* PetActionsCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		B15AD876256C3F1500BE2916 /* PhotoAdding */ = {
+			isa = PBXGroup;
+			children = (
+				B15AD87A256C3F6800BE2916 /* PhotoAddingModels.swift */,
+				B15AD878256C3F6800BE2916 /* PhotoAddingWorker.swift */,
+				B15AD87C256C3F6800BE2916 /* PhotoAddingInteractor.swift */,
+				B15AD877256C3F6800BE2916 /* PhotoAddingPresenter.swift */,
+				B15AD87B256C3F6800BE2916 /* PhotoAddingViewController.swift */,
+				B15AD879256C3F6800BE2916 /* PhotoAddingRouter.swift */,
+			);
+			path = PhotoAdding;
 			sourceTree = "<group>";
 		};
 		B178EFCC2547275100408B94 /* PetProfile */ = {
@@ -373,7 +399,7 @@
 			files = (
 				B184B0282561AE7B0021BE42 /* PetProfileCell.swift in Sources */,
 				B178EFD62547278300408B94 /* PetProfileWorker.swift in Sources */,
-				B1EAA90C2565A7DA00F8BB9B /* PetCategory+CoreDataProperties.swift in Sources */,
+				B1C22A7725693AD000F1C15A /* PetCategory+CoreDataProperties.swift in Sources */,
 				B1447B562551774C005C1D77 /* PetAdding1stModels.swift in Sources */,
 				B13869E3252C5FE90027E885 /* NetworkWorker.swift in Sources */,
 				B1447B5D255177B5005C1D77 /* PetCategoryCell.swift in Sources */,
@@ -383,6 +409,7 @@
 				B1F4A33E2545AE9300D897F3 /* UIImageViewExtension.swift in Sources */,
 				B1447B532551774C005C1D77 /* PetAdding1stPresenter.swift in Sources */,
 				B107ED9025304FCF001AECE0 /* BreedInfoWorker.swift in Sources */,
+				B15AD87F256C3F6800BE2916 /* PhotoAddingRouter.swift in Sources */,
 				B107ED9325304FCF001AECE0 /* BreedInfoViewController.swift in Sources */,
 				B13869F1252DBCD90027E885 /* AllBreedsListRouter.swift in Sources */,
 				B178EFD72547278300408B94 /* PetProfileRouter.swift in Sources */,
@@ -400,17 +427,22 @@
 				B1447B6925517C0F005C1D77 /* PetAdding2ndRouter.swift in Sources */,
 				B107ED9525304FCF001AECE0 /* BreedInfoInteractor.swift in Sources */,
 				B1447B552551774C005C1D77 /* PetAdding1stRouter.swift in Sources */,
+				B15AD880256C3F6800BE2916 /* PhotoAddingModels.swift in Sources */,
 				B178EFDB2547278300408B94 /* PetProfileInteractor.swift in Sources */,
 				B1291B73252232590007FEE3 /* AppDelegate.swift in Sources */,
 				B1EAA90A2565A7DA00F8BB9B /* Pet+CoreDataProperties.swift in Sources */,
+				B15AD87D256C3F6800BE2916 /* PhotoAddingPresenter.swift in Sources */,
 				B1291B75252232590007FEE3 /* SceneDelegate.swift in Sources */,
 				B1447B542551774C005C1D77 /* PetAdding1stWorker.swift in Sources */,
 				B1447B6725517C0F005C1D77 /* PetAdding2ndPresenter.swift in Sources */,
+				B15AD881256C3F6800BE2916 /* PhotoAddingViewController.swift in Sources */,
 				B1447BAD2551C417005C1D77 /* CoreDataWorker.swift in Sources */,
 				B184B0332561BC080021BE42 /* Apointments+CoreDataProperties.swift in Sources */,
 				B110F9532556F279009B3330 /* NewPet.swift in Sources */,
-				B1EAA90B2565A7DA00F8BB9B /* PetCategory+CoreDataClass.swift in Sources */,
+				B15AD882256C3F6800BE2916 /* PhotoAddingInteractor.swift in Sources */,
+				B1C22A7625693AD000F1C15A /* PetCategory+CoreDataClass.swift in Sources */,
 				B107ED8F25304FCF001AECE0 /* BreedInfoPresenter.swift in Sources */,
+				B15AD87E256C3F6800BE2916 /* PhotoAddingWorker.swift in Sources */,
 				B1447B582551774C005C1D77 /* PetAdding1stInteractor.swift in Sources */,
 				B13869F9252EEF160027E885 /* Breeds.swift in Sources */,
 				B1447B6825517C0F005C1D77 /* PetAdding2ndWorker.swift in Sources */,

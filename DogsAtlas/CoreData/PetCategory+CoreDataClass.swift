@@ -2,7 +2,7 @@
 //  PetCategory+CoreDataClass.swift
 //  DogsAtlas
 //
-//  Created by Vladimir Udachin on 18.11.2020.
+//  Created by Vladimir Udachin on 21.11.2020.
 //
 //
 

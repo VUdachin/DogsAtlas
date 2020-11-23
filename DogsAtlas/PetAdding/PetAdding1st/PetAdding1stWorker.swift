@@ -14,6 +14,7 @@ protocol PetAdding1stWorkingLogic {
 final class PetAdding1stWorker: PetAdding1stWorkingLogic {
   
     // MARK: - Private Properties
+    private let coreDataWorker = CoreDataWoker.shared
     private let context = CoreDataWoker.shared.context
     
     // MARK: - Working Logic
@@ -23,24 +24,33 @@ final class PetAdding1stWorker: PetAdding1stWorkingLogic {
             if loadedCategories.count == 0 {
                 let dog = PetCategory(context: context)
                 dog.categoryName = "Dog"
+                dog.image = "dog.png"
                 let cat = PetCategory(context: context)
                 cat.categoryName = "Cat"
+                cat.image = "cat.png"
                 let bird = PetCategory(context: context)
                 bird.categoryName = "Bird"
+                bird.image = "bird.png"
                 let lizard = PetCategory(context: context)
                 lizard.categoryName = "Lizard"
-                let rabbit = PetCategory(context: context)
-                rabbit.categoryName = "Rabbit"
+                lizard.image = "lizard.png"
+                let hamster = PetCategory(context: context)
+                hamster.categoryName = "Hamster"
+                hamster.image = "hamster.png"
+                let turtle = PetCategory(context: context)
+                turtle.categoryName = "turtle"
+                turtle.image = "turtle.png"
+                let mouse = PetCategory(context: context)
+                mouse.categoryName = "Mouse"
+                mouse.image = "mouse.png"
+                let fish = PetCategory(context: context)
+                fish.categoryName = "Fish"
+                fish.image = "fish.png"
                 
-                
-                let categories = [dog, cat, bird, lizard]
+                let categories = [dog, cat, bird, lizard, hamster, turtle, mouse, fish]
                 completion(categories)
                 
-                do {
-                    try context.save()
-                } catch {
-                    print(error.localizedDescription)
-                }
+                coreDataWorker.saveContext()
                 
             } else {
                 completion(loadedCategories)

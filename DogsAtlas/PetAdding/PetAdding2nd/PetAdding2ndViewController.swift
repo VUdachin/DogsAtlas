@@ -79,15 +79,9 @@ final class PetAdding2ndViewController: UIViewController {
                            gender: genderButton.currentTitle,
                            name: petNameTextField.text,
                            weight: Double(weightTextField.text!) ?? 0.0,
-                           category: category,
-                           image: Data() )
-        let request = PetAdding2ndModels.CreatePet.Request(pet: pet)
+                           category: category)
+        let request = PetAdding2ndModels.PreparePetData.Request(pet: pet)
         interactor?.createPet(request)
-    }
-    
-    func requestToLoadPhoto() {
-        let request = PetAdding2ndModels.LoadPhoto.Request(photo: Data() ) //dodelat'
-        interactor?.loadPhoto(request)
     }
 
     // MARK: - Private Methods
@@ -125,24 +119,21 @@ final class PetAdding2ndViewController: UIViewController {
         pickerView.isHidden = false
     }
     
-    @IBAction func didTapOnLoadButton(_ sender: Any) {
-    }
-    
     @IBAction func didTapOnDoneButton(_ sender: Any) {
         requestToCreatePet()
-        router?.routeToPetProfile()
+        router?.routeToPhotoAdding()
     }
     
 }
 
 // MARK: - Display Logic
-
 extension PetAdding2ndViewController: PetAdding2ndDisplayLogic {
     func displayFetchedPet(_ viewModel: PetAdding2ndModels.FetchPet.ViewModel) {
         self.category = viewModel.category
     }
 }
 
+// MARK: - Picker View
 extension PetAdding2ndViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -166,6 +157,7 @@ extension PetAdding2ndViewController: UIPickerViewDataSource, UIPickerViewDelega
     }
 }
 
+// MARK: - Text Field
 extension PetAdding2ndViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

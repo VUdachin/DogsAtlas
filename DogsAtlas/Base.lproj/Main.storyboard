@@ -376,18 +376,18 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PetCategoryCell" id="hn5-ZD-KDC" customClass="PetCategoryCell" customModule="DogsAtlas" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="155"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ODU-ry-8Dp">
-                                            <rect key="frame" x="0.0" y="0.0" width="150" height="155"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil" catalog="system" id="2dN-zp-69x">
-                                                    <rect key="frame" x="0.0" y="2.5" width="150" height="150.5"/>
+                                                    <rect key="frame" x="0.0" y="2.5" width="150" height="145.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IrX-sl-GHY">
-                                                    <rect key="frame" x="8" y="67" width="134" height="21"/>
+                                                    <rect key="frame" x="8" y="67" width="134" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -544,7 +544,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9Z-tz-lL7">
                                 <rect key="frame" x="20" y="832" width="374" height="30"/>
-                                <state key="normal" title="I'm Ready"/>
+                                <state key="normal" title="Next"/>
                                 <connections>
                                     <action selector="didTapOnDoneButton:" destination="Sas-Zl-T4L" eventType="touchUpInside" id="IFF-EB-fQx"/>
                                 </connections>
@@ -552,35 +552,19 @@
                             <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZQo-Lz-2uA">
                                 <rect key="frame" x="0.0" y="680" width="414" height="216"/>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add pet photo (optional)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hS-mA-Tc5">
-                                <rect key="frame" x="20" y="465" width="374" height="22"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ylx-nd-XUL">
-                                <rect key="frame" x="20" y="495" width="374" height="32"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="16"/>
-                                <state key="normal" title="Load photo"/>
-                                <connections>
-                                    <action selector="didTapOnLoadButton:" destination="Sas-Zl-T4L" eventType="touchUpInside" id="woz-Kq-e75"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RHM-IN-aHH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="tZi-2U-FuP" firstAttribute="top" secondItem="RHM-IN-aHH" secondAttribute="top" constant="21" id="1mO-bk-R8t"/>
-                            <constraint firstItem="ylx-nd-XUL" firstAttribute="top" secondItem="2hS-mA-Tc5" secondAttribute="bottom" constant="8" id="22x-b0-lSf"/>
                             <constraint firstItem="RHM-IN-aHH" firstAttribute="trailing" secondItem="Ucp-3P-cZP" secondAttribute="trailing" constant="20" id="3Uo-2K-iA9"/>
                             <constraint firstItem="RHM-IN-aHH" firstAttribute="trailing" secondItem="5TR-Ec-GW9" secondAttribute="trailing" constant="20" id="6o8-he-Ybk"/>
                             <constraint firstItem="tZi-2U-FuP" firstAttribute="leading" secondItem="RHM-IN-aHH" secondAttribute="leading" constant="20" id="9uP-9v-Wmv"/>
                             <constraint firstItem="5TR-Ec-GW9" firstAttribute="leading" secondItem="RHM-IN-aHH" secondAttribute="leading" constant="20" id="AMw-YM-asg"/>
-                            <constraint firstItem="2hS-mA-Tc5" firstAttribute="top" secondItem="1kH-gp-Ser" secondAttribute="bottom" constant="8" id="B6c-nu-QQC"/>
                             <constraint firstItem="c23-OY-Yhi" firstAttribute="top" secondItem="hnf-4R-uRb" secondAttribute="bottom" constant="8" symbolic="YES" id="Ci7-dF-0Dw"/>
+                            <constraint firstItem="ZQo-Lz-2uA" firstAttribute="top" relation="lessThanOrEqual" secondItem="1kH-gp-Ser" secondAttribute="bottom" constant="223" id="CuU-hq-rZz"/>
                             <constraint firstItem="h9o-6Y-RnD" firstAttribute="leading" secondItem="RHM-IN-aHH" secondAttribute="leading" constant="20" id="Hhe-zE-DdM"/>
                             <constraint firstItem="RHM-IN-aHH" firstAttribute="trailing" secondItem="XW3-tB-yL9" secondAttribute="trailing" constant="20" id="I6f-T0-tiG"/>
-                            <constraint firstItem="2hS-mA-Tc5" firstAttribute="leading" secondItem="RHM-IN-aHH" secondAttribute="leading" constant="20" id="IlI-IH-4ez"/>
                             <constraint firstItem="hnf-4R-uRb" firstAttribute="leading" secondItem="RHM-IN-aHH" secondAttribute="leading" constant="20" id="Lak-pz-U2R"/>
                             <constraint firstItem="c23-OY-Yhi" firstAttribute="leading" secondItem="RHM-IN-aHH" secondAttribute="leading" constant="20" id="OAb-p9-9sK"/>
                             <constraint firstItem="XW3-tB-yL9" firstAttribute="top" secondItem="5TR-Ec-GW9" secondAttribute="bottom" constant="14" id="Q62-M0-sv7"/>
@@ -589,13 +573,10 @@
                             <constraint firstItem="RHM-IN-aHH" firstAttribute="trailing" secondItem="NPG-r6-bMC" secondAttribute="trailing" constant="20" id="TtP-hM-Nk1"/>
                             <constraint firstItem="RHM-IN-aHH" firstAttribute="trailing" secondItem="T9Z-tz-lL7" secondAttribute="trailing" constant="20" id="V7T-P7-OZo"/>
                             <constraint firstItem="RHM-IN-aHH" firstAttribute="trailing" secondItem="h9o-6Y-RnD" secondAttribute="trailing" constant="20" id="Xle-D5-qeT"/>
-                            <constraint firstItem="RHM-IN-aHH" firstAttribute="trailing" secondItem="2hS-mA-Tc5" secondAttribute="trailing" constant="20" id="bA7-hG-aTT"/>
                             <constraint firstItem="NPG-r6-bMC" firstAttribute="leading" secondItem="RHM-IN-aHH" secondAttribute="leading" constant="20" id="d9f-Ac-XJA"/>
                             <constraint firstItem="NPG-r6-bMC" firstAttribute="top" secondItem="h9o-6Y-RnD" secondAttribute="bottom" constant="8" symbolic="YES" id="eX3-45-qur"/>
-                            <constraint firstItem="ZQo-Lz-2uA" firstAttribute="top" relation="lessThanOrEqual" secondItem="ylx-nd-XUL" secondAttribute="bottom" constant="153" id="eev-J8-KWo"/>
                             <constraint firstItem="RHM-IN-aHH" firstAttribute="trailing" secondItem="tZi-2U-FuP" secondAttribute="trailing" constant="20" id="ekQ-TQ-0dr"/>
                             <constraint firstItem="RHM-IN-aHH" firstAttribute="trailing" secondItem="1kH-gp-Ser" secondAttribute="trailing" constant="20" id="fFF-vD-kUC"/>
-                            <constraint firstItem="RHM-IN-aHH" firstAttribute="trailing" secondItem="ylx-nd-XUL" secondAttribute="trailing" constant="20" id="hJ9-Bp-HdV"/>
                             <constraint firstItem="RHM-IN-aHH" firstAttribute="trailing" secondItem="hnf-4R-uRb" secondAttribute="trailing" constant="20" id="ig4-gc-Vb5"/>
                             <constraint firstItem="h9o-6Y-RnD" firstAttribute="top" secondItem="Ucp-3P-cZP" secondAttribute="bottom" constant="15" id="lxd-ax-0xx"/>
                             <constraint firstItem="XW3-tB-yL9" firstAttribute="leading" secondItem="RHM-IN-aHH" secondAttribute="leading" constant="20" id="nQz-fS-1zo"/>
@@ -607,7 +588,6 @@
                             <constraint firstItem="1kH-gp-Ser" firstAttribute="leading" secondItem="RHM-IN-aHH" secondAttribute="leading" constant="20" id="xy4-bZ-9YM"/>
                             <constraint firstItem="RHM-IN-aHH" firstAttribute="trailing" secondItem="c23-OY-Yhi" secondAttribute="trailing" constant="20" id="y90-SJ-bcy"/>
                             <constraint firstItem="T9Z-tz-lL7" firstAttribute="leading" secondItem="RHM-IN-aHH" secondAttribute="leading" constant="20" id="yOT-4t-tAK"/>
-                            <constraint firstItem="ylx-nd-XUL" firstAttribute="leading" secondItem="RHM-IN-aHH" secondAttribute="leading" constant="20" id="yjV-Vn-H37"/>
                             <constraint firstItem="Ucp-3P-cZP" firstAttribute="leading" secondItem="RHM-IN-aHH" secondAttribute="leading" constant="20" id="z7b-MM-6aY"/>
                             <constraint firstItem="T9Z-tz-lL7" firstAttribute="bottom" secondItem="RHM-IN-aHH" secondAttribute="bottom" id="zFw-m0-cuA"/>
                         </constraints>
@@ -618,16 +598,69 @@
                         <outlet property="breedButton" destination="Ucp-3P-cZP" id="rah-mb-01G"/>
                         <outlet property="doneButton" destination="T9Z-tz-lL7" id="pAq-L9-XWH"/>
                         <outlet property="genderButton" destination="NPG-r6-bMC" id="nXq-D3-mn8"/>
-                        <outlet property="loadPhotoButton" destination="ylx-nd-XUL" id="Ofg-12-YYE"/>
                         <outlet property="petNameTextField" destination="hnf-4R-uRb" id="Dzk-3P-BKF"/>
                         <outlet property="pickerView" destination="ZQo-Lz-2uA" id="VtH-uD-f9J"/>
                         <outlet property="questionLabel" destination="XW3-tB-yL9" id="tTw-JD-ESK"/>
                         <outlet property="weightTextField" destination="bT5-xw-NjS" id="zWe-RI-9om"/>
+                        <segue destination="KAX-64-8l5" kind="show" id="F91-ii-1jy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UJp-Gs-y1a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2897.1014492753625" y="890.625"/>
+        </scene>
+        <!--Photo Adding View Controller-->
+        <scene sceneID="LP0-C2-MrZ">
+            <objects>
+                <viewController storyboardIdentifier="PhotoAddingViewController" id="KAX-64-8l5" customClass="PhotoAddingViewController" customModule="DogsAtlas" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sy8-70-xfh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bird" id="sHA-HH-ncb">
+                                <rect key="frame" x="20" y="88" width="374" height="375"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3F-wH-b0n">
+                                <rect key="frame" x="20" y="488" width="374" height="30"/>
+                                <state key="normal" title="Add photo"/>
+                                <connections>
+                                    <action selector="didAddPhotoTap:" destination="KAX-64-8l5" eventType="touchUpInside" id="SIj-Bp-ti1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0QS-gi-udw">
+                                <rect key="frame" x="20" y="812" width="374" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="didDoneTap:" destination="KAX-64-8l5" eventType="touchUpInside" id="qks-sw-TjS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="arR-By-9Vx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sHA-HH-ncb" firstAttribute="leading" secondItem="arR-By-9Vx" secondAttribute="leading" constant="20" id="422-Dm-f8u"/>
+                            <constraint firstItem="0QS-gi-udw" firstAttribute="leading" secondItem="arR-By-9Vx" secondAttribute="leading" constant="20" id="4hr-Lq-9wx"/>
+                            <constraint firstItem="arR-By-9Vx" firstAttribute="trailing" secondItem="0QS-gi-udw" secondAttribute="trailing" constant="20" id="6dN-mV-6fK"/>
+                            <constraint firstItem="arR-By-9Vx" firstAttribute="bottom" secondItem="0QS-gi-udw" secondAttribute="bottom" constant="20" id="6gM-W7-5KF"/>
+                            <constraint firstItem="arR-By-9Vx" firstAttribute="trailing" secondItem="sHA-HH-ncb" secondAttribute="trailing" constant="20" id="Txn-4v-FIh"/>
+                            <constraint firstItem="I3F-wH-b0n" firstAttribute="top" secondItem="sHA-HH-ncb" secondAttribute="bottom" constant="25" id="Zfd-GX-Nr0"/>
+                            <constraint firstItem="I3F-wH-b0n" firstAttribute="leading" secondItem="arR-By-9Vx" secondAttribute="leading" constant="20" id="Zif-WR-aAQ"/>
+                            <constraint firstItem="0QS-gi-udw" firstAttribute="top" secondItem="I3F-wH-b0n" secondAttribute="bottom" constant="294" id="eV4-9L-WLU"/>
+                            <constraint firstItem="arR-By-9Vx" firstAttribute="trailing" secondItem="I3F-wH-b0n" secondAttribute="trailing" constant="20" id="kH8-as-YGv"/>
+                            <constraint firstItem="sHA-HH-ncb" firstAttribute="top" secondItem="arR-By-9Vx" secondAttribute="top" id="rzv-mu-EQs"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="wqx-n5-KqE"/>
+                    <connections>
+                        <outlet property="addPhotoButton" destination="I3F-wH-b0n" id="dFb-Oc-sGH"/>
+                        <outlet property="doneButton" destination="0QS-gi-udw" id="bhF-3d-0nH"/>
+                        <outlet property="photoImageView" destination="sHA-HH-ncb" id="DZw-oP-wlh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eXq-Li-4kp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3766.666666666667" y="890.625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EkR-y7-jwp">
@@ -649,6 +682,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bird" width="604" height="604"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
