@@ -14,11 +14,7 @@ protocol PetAdding2ndDisplayLogic: AnyObject {
 final class PetAdding2ndViewController: UIViewController {
     
     // MARK: - UI Outlets
-    @IBOutlet private weak var questionLabel: UILabel! {
-        didSet {
-            questionLabel.text = "What's your \(category) name?"
-        }
-    }
+    @IBOutlet private weak var questionLabel: UILabel!
     
     @IBOutlet private weak var petNameTextField: UITextField!
     @IBOutlet private weak var ageTextField: UITextField!
@@ -60,6 +56,8 @@ final class PetAdding2ndViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        questionLabel.text = "What's your \(String(describing: category)) name?"
+        
         setupPickerView()
         requestToFetchPet()
     }

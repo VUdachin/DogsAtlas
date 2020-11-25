@@ -8,7 +8,6 @@
 import Foundation
 
 protocol PhotoAddingBusinessLogic {
-    func fetchPrepairedData(_ request: PhotoAddingModels.FetchPetData.Request)
     func createPet(request: PhotoAddingModels.CreatePet.Request)
 }
 
@@ -27,10 +26,6 @@ final class PhotoAddingInteractor: PhotoAddingBusinessLogic, PhotoAddingDataStor
     // MARK: - Private Properties
 
     // MARK: - Business Logic
-    func fetchPrepairedData(_ request: PhotoAddingModels.FetchPetData.Request) {
-        let response = PhotoAddingModels.FetchPetData.Response()
-        presenter?.presentFetchedPrepairedData(response)
-    }
     
     func createPet(request: PhotoAddingModels.CreatePet.Request) {
         prepairedPetData?.image = request.image

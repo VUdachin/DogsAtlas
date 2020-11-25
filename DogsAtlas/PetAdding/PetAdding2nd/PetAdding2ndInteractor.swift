@@ -36,7 +36,6 @@ final class PetAdding2ndInteractor: PetAdding2ndBusinessLogic, PetAdding2ndDataS
     
     func createPet(_ request: PetAdding2ndModels.PreparePetData.Request) {
         prepairedData = request.pet
-        print(prepairedData)
     }
 }
 

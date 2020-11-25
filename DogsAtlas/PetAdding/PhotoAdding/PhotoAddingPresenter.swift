@@ -8,7 +8,6 @@
 import UIKit
 
 protocol PhotoAddingPresentationLogic {
-    func presentFetchedPrepairedData(_ response: PhotoAddingModels.FetchPetData.Response)
 }
 
 final class PhotoAddingPresenter: PhotoAddingPresentationLogic {
@@ -21,8 +20,5 @@ final class PhotoAddingPresenter: PhotoAddingPresentationLogic {
 
     
     // MARK: - Presentation Logic
-    func presentFetchedPrepairedData(_ response: PhotoAddingModels.FetchPetData.Response) {
-        let viewModel = PhotoAddingModels.FetchPetData.ViewModel()
-        viewController?.displayFetchedPrepairedData(viewModel)
-    }
+    
 }

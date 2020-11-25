@@ -11,11 +11,17 @@ enum PhotoAddingModels {
   
     // MARK: - Something
     enum FetchPetData {
-        struct Request {}
+        struct Request {
+            var data: NewPet?
+        }
     
-        struct Response {}
+        struct Response {
+            var data: NewPet?
+        }
     
-        struct ViewModel {}
+        struct ViewModel {
+            var data: NewPet?
+        }
     }
     
     enum CreatePet {

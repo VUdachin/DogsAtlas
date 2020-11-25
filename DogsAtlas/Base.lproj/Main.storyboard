@@ -237,8 +237,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="172"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kvg-h7-X9k">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Kvg-h7-X9k">
                                                     <rect key="frame" x="244" y="11" width="150" height="150"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Kvg-h7-X9k" secondAttribute="height" multiplier="1:1" id="VZj-8M-Xee"/>
                                                     </constraints>
@@ -602,7 +603,7 @@
                         <outlet property="pickerView" destination="ZQo-Lz-2uA" id="VtH-uD-f9J"/>
                         <outlet property="questionLabel" destination="XW3-tB-yL9" id="tTw-JD-ESK"/>
                         <outlet property="weightTextField" destination="bT5-xw-NjS" id="zWe-RI-9om"/>
-                        <segue destination="KAX-64-8l5" kind="show" id="F91-ii-1jy"/>
+                        <segue destination="zwe-ID-vP8" kind="show" id="0eX-0T-4Hc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UJp-Gs-y1a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -610,57 +611,57 @@
             <point key="canvasLocation" x="2897.1014492753625" y="890.625"/>
         </scene>
         <!--Photo Adding View Controller-->
-        <scene sceneID="LP0-C2-MrZ">
+        <scene sceneID="zKO-Oj-Xpa">
             <objects>
-                <viewController storyboardIdentifier="PhotoAddingViewController" id="KAX-64-8l5" customClass="PhotoAddingViewController" customModule="DogsAtlas" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="sy8-70-xfh">
+                <viewController storyboardIdentifier="PhotoAddingViewController" id="zwe-ID-vP8" customClass="PhotoAddingViewController" customModule="DogsAtlas" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yl7-zE-M2g">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bird" id="sHA-HH-ncb">
-                                <rect key="frame" x="20" y="88" width="374" height="375"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="7Dy-3R-tLq">
+                                <rect key="frame" x="0.0" y="88" width="414" height="371"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3F-wH-b0n">
-                                <rect key="frame" x="20" y="488" width="374" height="30"/>
-                                <state key="normal" title="Add photo"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTh-me-jKv">
+                                <rect key="frame" x="20" y="489" width="374" height="30"/>
+                                <state key="normal" title="Add Photo"/>
                                 <connections>
-                                    <action selector="didAddPhotoTap:" destination="KAX-64-8l5" eventType="touchUpInside" id="SIj-Bp-ti1"/>
+                                    <action selector="didAddPhotoTap:" destination="zwe-ID-vP8" eventType="touchUpInside" id="WjO-fA-pgr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0QS-gi-udw">
-                                <rect key="frame" x="20" y="812" width="374" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CzB-5a-j1b">
+                                <rect key="frame" x="20" y="809" width="374" height="30"/>
+                                <state key="normal" title="Done"/>
                                 <connections>
-                                    <action selector="didDoneTap:" destination="KAX-64-8l5" eventType="touchUpInside" id="qks-sw-TjS"/>
+                                    <action selector="didDoneTap:" destination="zwe-ID-vP8" eventType="touchUpInside" id="eYa-km-hZA"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="arR-By-9Vx"/>
+                        <viewLayoutGuide key="safeArea" id="3ui-1c-qOD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="sHA-HH-ncb" firstAttribute="leading" secondItem="arR-By-9Vx" secondAttribute="leading" constant="20" id="422-Dm-f8u"/>
-                            <constraint firstItem="0QS-gi-udw" firstAttribute="leading" secondItem="arR-By-9Vx" secondAttribute="leading" constant="20" id="4hr-Lq-9wx"/>
-                            <constraint firstItem="arR-By-9Vx" firstAttribute="trailing" secondItem="0QS-gi-udw" secondAttribute="trailing" constant="20" id="6dN-mV-6fK"/>
-                            <constraint firstItem="arR-By-9Vx" firstAttribute="bottom" secondItem="0QS-gi-udw" secondAttribute="bottom" constant="20" id="6gM-W7-5KF"/>
-                            <constraint firstItem="arR-By-9Vx" firstAttribute="trailing" secondItem="sHA-HH-ncb" secondAttribute="trailing" constant="20" id="Txn-4v-FIh"/>
-                            <constraint firstItem="I3F-wH-b0n" firstAttribute="top" secondItem="sHA-HH-ncb" secondAttribute="bottom" constant="25" id="Zfd-GX-Nr0"/>
-                            <constraint firstItem="I3F-wH-b0n" firstAttribute="leading" secondItem="arR-By-9Vx" secondAttribute="leading" constant="20" id="Zif-WR-aAQ"/>
-                            <constraint firstItem="0QS-gi-udw" firstAttribute="top" secondItem="I3F-wH-b0n" secondAttribute="bottom" constant="294" id="eV4-9L-WLU"/>
-                            <constraint firstItem="arR-By-9Vx" firstAttribute="trailing" secondItem="I3F-wH-b0n" secondAttribute="trailing" constant="20" id="kH8-as-YGv"/>
-                            <constraint firstItem="sHA-HH-ncb" firstAttribute="top" secondItem="arR-By-9Vx" secondAttribute="top" id="rzv-mu-EQs"/>
+                            <constraint firstItem="3ui-1c-qOD" firstAttribute="bottom" secondItem="CzB-5a-j1b" secondAttribute="bottom" constant="23" id="2Pj-7D-vGi"/>
+                            <constraint firstItem="3ui-1c-qOD" firstAttribute="trailing" secondItem="CzB-5a-j1b" secondAttribute="trailing" constant="20" id="6hd-Cn-U2Y"/>
+                            <constraint firstItem="XTh-me-jKv" firstAttribute="top" secondItem="7Dy-3R-tLq" secondAttribute="bottom" constant="30" id="TBw-jZ-e0n"/>
+                            <constraint firstItem="XTh-me-jKv" firstAttribute="leading" secondItem="3ui-1c-qOD" secondAttribute="leading" constant="20" id="UXT-dv-Twf"/>
+                            <constraint firstItem="3ui-1c-qOD" firstAttribute="trailing" secondItem="XTh-me-jKv" secondAttribute="trailing" constant="20" id="WVB-gW-hqh"/>
+                            <constraint firstItem="CzB-5a-j1b" firstAttribute="top" secondItem="XTh-me-jKv" secondAttribute="bottom" constant="290" id="mul-rw-2Lr"/>
+                            <constraint firstItem="CzB-5a-j1b" firstAttribute="leading" secondItem="3ui-1c-qOD" secondAttribute="leading" constant="20" id="nMM-n2-q4U"/>
+                            <constraint firstItem="7Dy-3R-tLq" firstAttribute="leading" secondItem="3ui-1c-qOD" secondAttribute="leading" id="rH3-A8-G5a"/>
+                            <constraint firstItem="7Dy-3R-tLq" firstAttribute="top" secondItem="3ui-1c-qOD" secondAttribute="top" id="vz0-Xo-Q2V"/>
+                            <constraint firstItem="7Dy-3R-tLq" firstAttribute="trailing" secondItem="3ui-1c-qOD" secondAttribute="trailing" id="yEy-YI-mWE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="wqx-n5-KqE"/>
+                    <navigationItem key="navigationItem" id="ePY-6D-WnQ"/>
                     <connections>
-                        <outlet property="addPhotoButton" destination="I3F-wH-b0n" id="dFb-Oc-sGH"/>
-                        <outlet property="doneButton" destination="0QS-gi-udw" id="bhF-3d-0nH"/>
-                        <outlet property="photoImageView" destination="sHA-HH-ncb" id="DZw-oP-wlh"/>
+                        <outlet property="addPhotoButton" destination="XTh-me-jKv" id="Twq-AP-Bkf"/>
+                        <outlet property="doneButton" destination="CzB-5a-j1b" id="VsB-v4-2xR"/>
+                        <outlet property="photoImageView" destination="7Dy-3R-tLq" id="3oe-UC-8AD"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eXq-Li-4kp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Yq-a2-pcK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3766.666666666667" y="890.625"/>
+            <point key="canvasLocation" x="3882.608695652174" y="878.57142857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EkR-y7-jwp">
@@ -682,7 +683,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bird" width="604" height="604"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

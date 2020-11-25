@@ -17,8 +17,9 @@ class PetProfileCell: UITableViewCell {
     @IBOutlet private weak var weightLabel: UILabel!
     
     func configure(cell with: Pet) {
+        PetImageView.image = UIImage(data: with.image!)
         nameLabel.text = with.name
-        breedAndGenderLabel.text = "\(with.breed) - \(with.gender)"
+        breedAndGenderLabel.text = "\(with.breed!) - \(with.gender!)"
         ageLabel.text = "Age \(with.age)"
         weightLabel.text = "Weight \(with.weight)kg"
     }

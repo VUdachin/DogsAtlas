@@ -8,13 +8,13 @@
 import UIKit
 
 protocol PhotoAddingDisplayLogic: AnyObject {
-    func displayFetchedPrepairedData(_ viewModel: PhotoAddingModels.FetchPetData.ViewModel)
+
 }
 
 final class PhotoAddingViewController: UIViewController {
 
     // MARK: - UI Outlets
-    @IBOutlet private  weak var photoImageView: UIImageView!
+    @IBOutlet private weak var photoImageView: UIImageView!
     
     @IBOutlet private weak var addPhotoButton: UIButton!
     @IBOutlet private weak var doneButton: UIButton!
@@ -25,7 +25,6 @@ final class PhotoAddingViewController: UIViewController {
     var router: (PhotoAddingRoutingLogic & PhotoAddingDataPassing)?
 
     // MARK: - Private Properties
-    private var selectedPhoto: Data?
     
     // MARK: - Init
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -42,26 +41,15 @@ final class PhotoAddingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        requestToFetchPrepairedData()
     }
 
     // MARK: - Public Methods
     
 
     // MARK: - Requests
-    private func requestToFetchPrepairedData() {
-        let request = PhotoAddingModels.FetchPetData.Request()
-        interactor?.fetchPrepairedData(request)
-    }
-    
-    private func requestToLoadPhoto() {
-        
-    }
-    
     private func requestToCreatePet(with img: Data) {
         let request = PhotoAddingModels.CreatePet.Request(image: img)
         interactor?.createPet(request: request)
-        
     }
 
     // MARK: - Private Methods
@@ -81,16 +69,12 @@ final class PhotoAddingViewController: UIViewController {
   
     // MARK: - UI Actions
     @IBAction func didAddPhotoTap(_ sender: UIButton) {
-        let picker = UIImagePickerController()
-        picker.sourceType = .photoLibrary
-        picker.allowsEditing = true
-        picker.delegate = self
+        alertForPickerController()
     }
     
     @IBAction func didDoneTap(_ sender: UIButton) {
-        requestToCreatePet(with: selectedPhoto!)
+        requestToCreatePet(with: (photoImageView.image?.pngData())!)
         router?.routeToPetProfile()
-        print("okkkkkk")
     }
     
 }
@@ -98,23 +82,43 @@ final class PhotoAddingViewController: UIViewController {
 // MARK: - Display Logic
 
 extension PhotoAddingViewController: PhotoAddingDisplayLogic {
-    func displayFetchedPrepairedData(_ viewModel: PhotoAddingModels.FetchPetData.ViewModel) {
-        
-    }
+
 }
 
 // MARK: - Image Picker
 extension PhotoAddingViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
+    
+    private func alertForPickerController() {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Photo Gallery", style: .default, handler: { (action) in
+            self.showImagePickerController(sourceType: .photoLibrary)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action) in
+            self.showImagePickerController(sourceType: .camera)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    private func showImagePickerController(sourceType: UIImagePickerController.SourceType) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = sourceType
+        present(imagePicker, animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? Data else {
-            return
+        if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            photoImageView.image = editedImage
+        } else if let originaImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            photoImageView.image = originaImage
         }
-        selectedPhoto = image
-        photoImageView.image = UIImage(data: image)
+        dismiss(animated: true, completion: nil)
     }
     
     
