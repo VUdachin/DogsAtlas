@@ -18,8 +18,6 @@ protocol PhotoAddingDataPassing {
 final class PhotoAddingRouter: PhotoAddingRoutingLogic, PhotoAddingDataPassing {
 
     // MARK: - Public Properties
-
-    weak var parentController: UIViewController?
     weak var viewController: PhotoAddingViewController?
     var dataStore: PhotoAddingDataStore?
   

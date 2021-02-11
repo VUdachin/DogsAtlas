@@ -73,16 +73,15 @@ final class PetProfileViewController: UIViewController {
         tableView.delegate = self
     }
     // MARK: - UI Actions
-  
+
 }
 
 // MARK: - Display Logic
 
 extension PetProfileViewController: PetProfileDisplayLogic {
     func displayFetchedPets(_ viewModel: PetProfileModels.FetchPets.ViewModel) {
-        fetchedPets = viewModel.pets
-        
         DispatchQueue.main.async {
+            self.fetchedPets = viewModel.pets
             self.tableView.reloadData()
         }
     }

@@ -177,10 +177,7 @@
 				B1447BA62551A94D005C1D77 /* CoreData */,
 				B1291B72252232590007FEE3 /* AppDelegate.swift */,
 				B1291B74252232590007FEE3 /* SceneDelegate.swift */,
-				B1447B6F25517C1B005C1D77 /* PetAdding */,
-				B178EFCC2547275100408B94 /* PetProfile */,
-				B13869BA2529AE9C0027E885 /* AllBreeds */,
-				B107ED8625304FA1001AECE0 /* BreedInfo */,
+				B15C255825D3D73A009B5F05 /* Modules */,
 				B1291B8B252238160007FEE3 /* Models */,
 				B1291B78252232590007FEE3 /* Main.storyboard */,
 				B1291B7B2522325D0007FEE3 /* Assets.xcassets */,
@@ -226,8 +223,8 @@
 			isa = PBXGroup;
 			children = (
 				B13869E2252C5FE90027E885 /* NetworkWorker.swift */,
-				B1447BAC2551C417005C1D77 /* CoreDataWorker.swift */,
 				B1F4A33D2545AE9300D897F3 /* UIImageViewExtension.swift */,
+				B1447BAC2551C417005C1D77 /* CoreDataWorker.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -311,6 +308,17 @@
 				B15AD879256C3F6800BE2916 /* PhotoAddingRouter.swift */,
 			);
 			path = PhotoAdding;
+			sourceTree = "<group>";
+		};
+		B15C255825D3D73A009B5F05 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				B107ED8625304FA1001AECE0 /* BreedInfo */,
+				B13869BA2529AE9C0027E885 /* AllBreeds */,
+				B178EFCC2547275100408B94 /* PetProfile */,
+				B1447B6F25517C1B005C1D77 /* PetAdding */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		B178EFCC2547275100408B94 /* PetProfile */ = {

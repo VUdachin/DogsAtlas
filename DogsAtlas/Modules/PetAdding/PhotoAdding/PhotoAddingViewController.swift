@@ -24,8 +24,6 @@ final class PhotoAddingViewController: UIViewController {
     var interactor: PhotoAddingBusinessLogic?
     var router: (PhotoAddingRoutingLogic & PhotoAddingDataPassing)?
 
-    // MARK: - Private Properties
-    
     // MARK: - Init
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -42,10 +40,7 @@ final class PhotoAddingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-    // MARK: - Public Methods
     
-
     // MARK: - Requests
     private func requestToCreatePet(with img: Data) {
         let request = PhotoAddingModels.CreatePet.Request(image: img)

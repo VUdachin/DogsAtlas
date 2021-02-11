@@ -18,8 +18,6 @@ protocol PetProfileDataPassing {
 final class PetProfileRouter: PetProfileRoutingLogic, PetProfileDataPassing {
 
   // MARK: - Public Properties
-
-  weak var parentController: UIViewController?
   weak var viewController: PetProfileViewController?
   var dataStore: PetProfileDataStore?
   

@@ -37,14 +37,11 @@ final class PetAdding1stViewController: UIViewController {
     }
 
     // MARK: - Lifecycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
         requestToFetchCategories()
     }
-
-    // MARK: - Public Methods
 
 
     // MARK: - Requests
@@ -78,13 +75,9 @@ final class PetAdding1stViewController: UIViewController {
         collectionView.delegate = self
     }
   
-    // MARK: - UI Actions
-    
-    
 }
 
 // MARK: - Display Logic
-
 extension PetAdding1stViewController: PetAdding1stDisplayLogic {
     func displayFetchedCategories(_ viewModel: PetAdding1stModels.FetchPetCategory.ViewModel) {
         categories = viewModel.category
@@ -94,6 +87,7 @@ extension PetAdding1stViewController: PetAdding1stDisplayLogic {
     }
 }
 
+// MARK: - UICollectionViewDataSource, UICollectionViewDelegate
 extension PetAdding1stViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         categories?.count ?? 0

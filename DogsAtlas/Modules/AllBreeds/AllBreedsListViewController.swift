@@ -86,9 +86,7 @@ extension AllBreedsListViewController: AllBreedsListDisplayLogic {
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }
-        
     }
-    
     
 }
 
