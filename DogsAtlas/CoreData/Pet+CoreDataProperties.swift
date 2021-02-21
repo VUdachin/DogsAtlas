@@ -17,8 +17,7 @@ extension Pet {
     }
 
     @NSManaged public var age: Int64
-    @NSManaged public var breed: String?
-    @NSManaged public var gender: String?
+    @NSManaged public var sex: String?
     @NSManaged public var image: Data?
     @NSManaged public var name: String?
     @NSManaged public var weight: Double

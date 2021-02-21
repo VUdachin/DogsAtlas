@@ -22,9 +22,8 @@ final class PhotoAddingWorker: PhotoAddingWorkingLogic {
         let pet = Pet(context: context)
         pet.age = newPet.age
         pet.apointments = newPet.apointments
-        pet.breed = newPet.breed
         pet.category = newPet.category
-        pet.gender = newPet.gender
+        pet.sex = newPet.sex
         pet.name = newPet.name
         pet.weight = newPet.weight
         pet.image = newPet.image

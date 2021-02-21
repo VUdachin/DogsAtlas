@@ -8,7 +8,7 @@
 import UIKit
 
 protocol PetDataPresentationLogic {
-
+    func presentFetchedPet(_ response: PetDataModels.FetchPet.Response)
 }
 
 final class PetDataPresenter: PetDataPresentationLogic {
@@ -21,5 +21,8 @@ final class PetDataPresenter: PetDataPresentationLogic {
 
     
     // MARK: - Presentation Logic
-
+    func presentFetchedPet(_ response: PetDataModels.FetchPet.Response) {
+        let viewModel = PetDataModels.FetchPet.ViewModel(category: response.category)
+        viewController?.displayFetchedPet(viewModel)
+    }
 }

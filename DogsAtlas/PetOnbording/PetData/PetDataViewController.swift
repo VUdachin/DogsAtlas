@@ -8,7 +8,7 @@
 import UIKit
 
 protocol PetDataDisplayLogic: AnyObject {
-
+    func displayFetchedPet(_ viewModel: PetDataModels.FetchPet.ViewModel)
 }
 
 final class PetDataViewController: UIViewController {
@@ -64,6 +64,22 @@ final class PetDataViewController: UIViewController {
         return textField
     }()
     
+    private lazy var weightLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 12, weight: .heavy)
+        label.numberOfLines = 0
+        label.text = "Weight"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private lazy var weightTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Type here"
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
     private lazy var sexLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 12, weight: .heavy)
@@ -77,7 +93,7 @@ final class PetDataViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Male", for: .normal)
         button.backgroundColor = .white
-        //button.addTarget(self, action: #selector(<#T##@objc method#>), for: .touchUpInside)
+        button.addTarget(self, action: #selector(didTapSexButton), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -87,10 +103,12 @@ final class PetDataViewController: UIViewController {
         button.setTitle("Next", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .purple
+        button.addTarget(self, action: #selector(didTapNextButton), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
+    // Добавить Picker View или сделать кнопку с вариантами выбора без него
     
   
     // MARK: - Public Properties
@@ -99,6 +117,9 @@ final class PetDataViewController: UIViewController {
     var router: (PetDataRoutingLogic & PetDataDataPassing)?
 
     // MARK: - Private Properties
+    private var category: PetCategory?
+    
+    private let genderList: [String] = ["Male", "Female"] // need remove
 
     // MARK: - Init
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -115,14 +136,30 @@ final class PetDataViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupView()
+        requestToFetchPet()
     }
 
     // MARK: - Public Methods
 
 
     // MARK: - Requests
-
+    func requestToFetchPet() {
+        let request = PetDataModels.FetchPet.Request()
+        interactor?.fetchPet(request)
+    }
+    
+    func requestToCreatePet() {
+        let pet = NewPet(age: Int64(ageTextField.text!) ?? 0,
+                           sex: sexButton.currentTitle,
+                           name: nameTextField.text,
+                           weight: Double(weightTextField.text!) ?? 0.0,
+                           category: category)
+        let request = PetDataModels.PreparePetData.Request(pet: pet)
+        interactor?.createPet(request)
+    }
+    
+    
 
     // MARK: - Private Methods
     private func setup() {
@@ -149,6 +186,8 @@ final class PetDataViewController: UIViewController {
         view.addSubview(sexLabel)
         view.addSubview(sexButton)
         view.addSubview(nextButton)
+        view.addSubview(weightLabel)
+        view.addSubview(weightTextField)
     }
     
     private func setupView() {
@@ -182,7 +221,15 @@ final class PetDataViewController: UIViewController {
             ageTextField.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: inset),
             ageTextField.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: -inset),
             
-            sexLabel.topAnchor.constraint(equalTo: ageTextField.bottomAnchor, constant: 8),
+            weightLabel.topAnchor.constraint(equalTo: ageTextField.bottomAnchor, constant: 8),
+            weightLabel.trailingAnchor.constraint(equalTo: ageTextField.trailingAnchor, constant: inset),
+            weightLabel.leadingAnchor.constraint(equalTo: ageTextField.leadingAnchor, constant: -inset),
+            
+            weightTextField.topAnchor.constraint(equalTo: weightLabel.bottomAnchor, constant: 8),
+            weightTextField.trailingAnchor.constraint(equalTo: weightLabel.trailingAnchor, constant: inset),
+            weightTextField.leadingAnchor.constraint(equalTo: weightLabel.leadingAnchor, constant: -inset),
+            
+            sexLabel.topAnchor.constraint(equalTo: weightTextField.bottomAnchor, constant: 8),
             sexLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: inset),
             sexLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: -inset),
             
@@ -195,17 +242,35 @@ final class PetDataViewController: UIViewController {
             nextButton.heightAnchor.constraint(equalToConstant: 60),
             nextButton.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: inset),
             nextButton.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: -inset),
-            nextButton.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: inset),
+            //nextButton.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: inset),
+            
+            view.bottomAnchor.constraint(equalTo: nextButton.bottomAnchor, constant: inset)
         ])
     }
   
     // MARK: - UI Actions
+    @objc private func didTapSexButton() {
 
+    }
+    
+    @objc private func didTapNextButton() {
+        requestToCreatePet()
+        router?.routeToPhotoAdding()
+    }
     
 }
 
 // MARK: - Display Logic
-
 extension PetDataViewController: PetDataDisplayLogic {
+    func displayFetchedPet(_ viewModel: PetDataModels.FetchPet.ViewModel) {
+        self.category = viewModel.category
+    }
+}
 
+// MARK: - Text Field
+extension PetDataViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
