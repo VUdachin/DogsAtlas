@@ -1,17 +1,17 @@
 //
-//  PhotoAddingWorker.swift
+//  PetPhotoWorker.swift
 //  DogsAtlas
 //
-//  Created by Vladimir Udachin on 23.11.2020.
+//  Created by Vladimir Udachin on 22.02.2021.
 //
 
 import Foundation
 
-protocol PhotoAddingWorkingLogic {
+protocol PetPhotoWorkingLogic {
     func createNewPet(newPet: NewPet)
 }
 
-final class PhotoAddingWorker: PhotoAddingWorkingLogic {
+final class PetPhotoWorker: PetPhotoWorkingLogic {
   
     // MARK: - Private Properties
     private let coreDataWorker = CoreDataWoker.shared

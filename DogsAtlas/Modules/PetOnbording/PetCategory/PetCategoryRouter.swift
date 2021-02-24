@@ -18,7 +18,9 @@ protocol PetCategoryDataPassing {
 final class PetCategoryRouter: PetCategoryRoutingLogic, PetCategoryDataPassing {
 
     // MARK: - Public Properties
-
+    
+    private weak var navigationController: UINavigationController?
+    
     weak var viewController: PetCategoryViewController?
     var dataStore: PetCategoryDataStore?
   
@@ -27,10 +29,8 @@ final class PetCategoryRouter: PetCategoryRoutingLogic, PetCategoryDataPassing {
 
     func routeToPetAdding2nd() {
         guard
-            let viewController = viewController,
-            let storyboard = viewController.storyboard,
-            let petAdding2ndVC = storyboard.instantiateViewController(withIdentifier: "PetAdding2ndViewController") as? PetAdding2ndViewController,
-            var petAdding2ndDS = petAdding2ndVC.router?.dataStore else {
+            let vc = PetDataViewController(),
+            var petAdding2ndDS = vc.router?.dataStore else {
             fatalError("Fail route to PetAdding2nd")
             }
         passDataToPetAdding2nd(destination: &petAdding2ndDS)
@@ -38,12 +38,12 @@ final class PetCategoryRouter: PetCategoryRoutingLogic, PetCategoryDataPassing {
     }
     
     // MARK: - Navigation
-    private func navigateToPetAdding2nd(destination: PetAdding2ndViewController) {
+    private func navigateToPetAdding2nd(destination: PetDataViewController) {
         viewController?.navigationController?.pushViewController(destination, animated: true)
     }
 
     // MARK: - Passing data
-    private func passDataToPetAdding2nd(destination: inout PetAdding2ndDataStore) {
+    private func passDataToPetAdding2nd(destination: inout PetDataDataStore) {
         destination.category = dataStore?.selectedCategory
     }
     

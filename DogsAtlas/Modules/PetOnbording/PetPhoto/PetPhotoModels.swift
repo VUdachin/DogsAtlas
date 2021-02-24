@@ -1,15 +1,14 @@
 //
-//  PhotoAddingModels.swift
+//  PetPhotoModels.swift
 //  DogsAtlas
 //
-//  Created by Vladimir Udachin on 23.11.2020.
+//  Created by Vladimir Udachin on 22.02.2021.
 //
 
 import UIKit
 
-enum PhotoAddingModels {
+enum PetPhotoModels {
   
-    // MARK: - Something
     enum FetchPetData {
         struct Request {
             var data: NewPet?

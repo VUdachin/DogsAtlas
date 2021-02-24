@@ -30,7 +30,7 @@ final class PetDataRouter: PetDataRoutingLogic, PetDataDataPassing {
         guard
             let viewController = viewController,
             let storyboard = viewController.storyboard,
-            let photoAddingVC = storyboard.instantiateViewController(withIdentifier: "PhotoAddingViewController") as? PhotoAddingViewController,
+            let photoAddingVC = storyboard.instantiateViewController(withIdentifier: "PhotoAddingViewController") as? PetPhotoViewController,
             var photoAddingDS = photoAddingVC.router?.dataStore else {
             fatalError("Fail route to BreedInfo")
         }
@@ -39,12 +39,12 @@ final class PetDataRouter: PetDataRoutingLogic, PetDataDataPassing {
     }
     
     // MARK: - Navigation
-    private func navigateToPhotoAdding(destination: PhotoAddingViewController) {
+    private func navigateToPhotoAdding(destination: PetPhotoViewController) {
         viewController?.navigationController?.pushViewController(destination, animated: true)
     }
 
     // MARK: - Passing data
-    func passDataToPhotoAdding(destination: inout PhotoAddingDataStore) {
+    func passDataToPhotoAdding(destination: inout PetPhotoDataStore) {
         destination.prepairedPetData = dataStore?.prepairedData
     }
 }

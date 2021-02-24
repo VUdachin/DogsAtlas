@@ -1,25 +1,27 @@
 //
-//  PhotoAddingRouter.swift
+//  PetPhotoRouter.swift
 //  DogsAtlas
 //
-//  Created by Vladimir Udachin on 23.11.2020.
+//  Created by Vladimir Udachin on 22.02.2021.
 //
 
 import UIKit
 
-protocol PhotoAddingRoutingLogic {
+protocol PetPhotoRoutingLogic {
     func routeToPetProfile()
 }
 
-protocol PhotoAddingDataPassing {
-    var dataStore: PhotoAddingDataStore? { get }
+protocol PetPhotoDataPassing {
+    var dataStore: PetPhotoDataStore? { get }
 }
 
-final class PhotoAddingRouter: PhotoAddingRoutingLogic, PhotoAddingDataPassing {
+final class PetPhotoRouter: PetPhotoRoutingLogic, PetPhotoDataPassing {
 
     // MARK: - Public Properties
-    weak var viewController: PhotoAddingViewController?
-    var dataStore: PhotoAddingDataStore?
+
+    weak var parentController: UIViewController?
+    weak var viewController: PetPhotoViewController?
+    var dataStore: PetPhotoDataStore?
   
     // MARK: - Private Properties
 
@@ -42,4 +44,5 @@ final class PhotoAddingRouter: PhotoAddingRoutingLogic, PhotoAddingDataPassing {
     }
 
     // MARK: - Passing data
+
 }
