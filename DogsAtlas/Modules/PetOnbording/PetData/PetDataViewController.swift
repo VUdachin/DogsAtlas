@@ -16,7 +16,8 @@ final class PetDataViewController: UIViewController {
     // MARK: - UI Outlets
     private lazy var stepLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 12, weight: .light)
+        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        label.textColor = .purple
         label.numberOfLines = 0
         label.text = "Step 2 of 3"
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -34,7 +35,7 @@ final class PetDataViewController: UIViewController {
     
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 12, weight: .heavy)
+        label.font = UIFont.systemFont(ofSize: 16, weight: .light)
         label.numberOfLines = 0
         label.text = "What is your pet name?"
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -50,7 +51,7 @@ final class PetDataViewController: UIViewController {
     
     private lazy var ageLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 12, weight: .heavy)
+        label.font = UIFont.systemFont(ofSize: 16, weight: .light)
         label.numberOfLines = 0
         label.text = "Age"
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -66,7 +67,7 @@ final class PetDataViewController: UIViewController {
     
     private lazy var weightLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 12, weight: .heavy)
+        label.font = UIFont.systemFont(ofSize: 16, weight: .light)
         label.numberOfLines = 0
         label.text = "Weight"
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -82,7 +83,7 @@ final class PetDataViewController: UIViewController {
     
     private lazy var sexLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 12, weight: .heavy)
+        label.font = UIFont.systemFont(ofSize: 16, weight: .light)
         label.numberOfLines = 0
         label.text = "Sex"
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -92,7 +93,7 @@ final class PetDataViewController: UIViewController {
     private lazy var sexButton: UIButton = {
         let button = UIButton()
         button.setTitle("Male", for: .normal)
-        button.backgroundColor = .white
+        button.backgroundColor = .lightGray
         button.addTarget(self, action: #selector(didTapSexButton), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -102,11 +103,14 @@ final class PetDataViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Next", for: .normal)
         button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 12
         button.backgroundColor = .purple
         button.addTarget(self, action: #selector(didTapNextButton), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    
+    
     
     // Добавить Picker View или сделать кнопку с вариантами выбора без него
     
@@ -124,12 +128,10 @@ final class PetDataViewController: UIViewController {
     // MARK: - Init
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        setup()
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setup()
     }
 
     // MARK: - Lifecycle
@@ -159,23 +161,7 @@ final class PetDataViewController: UIViewController {
         interactor?.createPet(request)
     }
     
-    
-
     // MARK: - Private Methods
-    private func setup() {
-        let interactor = PetDataInteractor()
-        let presenter = PetDataPresenter()
-        let router = PetDataRouter()
-
-        interactor.presenter = presenter
-        presenter.viewController = self
-        router.viewController = self
-        router.dataStore = interactor
-        
-        self.interactor = interactor
-        self.router = router
-    }
-    
     private func setupSubviews() {
         view.addSubview(questionLabel)
         view.addSubview(stepLabel)
@@ -191,60 +177,61 @@ final class PetDataViewController: UIViewController {
     }
     
     private func setupView() {
+        view.backgroundColor = .white
+        
         setupSubviews()
         let safeArea = view.safeAreaLayoutGuide
         let inset: CGFloat = 12
+        let insetSeparator: CGFloat = 16
         
         NSLayoutConstraint.activate([
             
-            stepLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: inset),
-            stepLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: inset),
-            stepLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -inset),
+            stepLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: inset),
+            stepLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: inset),
+            stepLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -inset),
             
             questionLabel.topAnchor.constraint(equalTo: stepLabel.bottomAnchor, constant: inset),
-            questionLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: inset),
-            questionLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: -inset),
+            questionLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -inset),
+            questionLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: inset),
             
             nameLabel.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: inset),
-            nameLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: inset),
-            nameLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: -inset),
+            nameLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -inset),
+            nameLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: inset),
             
-            nameTextField.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
-            nameTextField.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: inset),
-            nameTextField.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: -inset),
+            nameTextField.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: inset),
+            nameTextField.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -inset),
+            nameTextField.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: inset),
             
-            ageLabel.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 8),
-            ageLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: inset),
-            ageLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: -inset),
+            ageLabel.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: insetSeparator),
+            ageLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -inset),
+            ageLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: inset),
             
-            ageTextField.topAnchor.constraint(equalTo: ageLabel.bottomAnchor, constant: 8),
-            ageTextField.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: inset),
-            ageTextField.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: -inset),
+            ageTextField.topAnchor.constraint(equalTo: ageLabel.bottomAnchor, constant: inset),
+            ageTextField.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -inset),
+            ageTextField.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: inset),
             
-            weightLabel.topAnchor.constraint(equalTo: ageTextField.bottomAnchor, constant: 8),
-            weightLabel.trailingAnchor.constraint(equalTo: ageTextField.trailingAnchor, constant: inset),
-            weightLabel.leadingAnchor.constraint(equalTo: ageTextField.leadingAnchor, constant: -inset),
+            weightLabel.topAnchor.constraint(equalTo: ageTextField.bottomAnchor, constant: insetSeparator),
+            weightLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -inset),
+            weightLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: inset),
             
-            weightTextField.topAnchor.constraint(equalTo: weightLabel.bottomAnchor, constant: 8),
-            weightTextField.trailingAnchor.constraint(equalTo: weightLabel.trailingAnchor, constant: inset),
-            weightTextField.leadingAnchor.constraint(equalTo: weightLabel.leadingAnchor, constant: -inset),
+            weightTextField.topAnchor.constraint(equalTo: weightLabel.bottomAnchor, constant: inset),
+            weightTextField.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -inset),
+            weightTextField.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: inset),
             
-            sexLabel.topAnchor.constraint(equalTo: weightTextField.bottomAnchor, constant: 8),
-            sexLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: inset),
-            sexLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: -inset),
+            sexLabel.topAnchor.constraint(equalTo: weightTextField.bottomAnchor, constant: insetSeparator),
+            sexLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -inset),
+            sexLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: inset),
             
-            sexButton.topAnchor.constraint(equalTo: sexLabel.bottomAnchor, constant: 8),
-            sexButton.heightAnchor.constraint(equalToConstant: 60),
-            sexButton.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: inset),
-            sexButton.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: -inset),
+            sexButton.topAnchor.constraint(equalTo: sexLabel.bottomAnchor, constant: inset),
+            sexButton.heightAnchor.constraint(equalToConstant: 40),
+            sexButton.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -inset),
+            sexButton.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: inset),
             
-            nextButton.topAnchor.constraint(equalTo: sexButton.bottomAnchor, constant: 8),
             nextButton.heightAnchor.constraint(equalToConstant: 60),
-            nextButton.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: inset),
-            nextButton.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: -inset),
-            //nextButton.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: inset),
+            nextButton.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -inset),
+            nextButton.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: inset),
             
-            view.bottomAnchor.constraint(equalTo: nextButton.bottomAnchor, constant: inset)
+            safeArea.bottomAnchor.constraint(equalTo: nextButton.bottomAnchor, constant: inset)
         ])
     }
   
@@ -255,7 +242,7 @@ final class PetDataViewController: UIViewController {
     
     @objc private func didTapNextButton() {
         requestToCreatePet()
-        router?.routeToPhotoAdding()
+        router?.routeToPetPhoto()
     }
     
 }

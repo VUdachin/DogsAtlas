@@ -8,7 +8,7 @@
 import UIKit
 
 protocol PetDataRoutingLogic {
-    func routeToPhotoAdding()
+    func routeToPetPhoto()
 }
 
 protocol PetDataDataPassing {
@@ -26,25 +26,21 @@ final class PetDataRouter: PetDataRoutingLogic, PetDataDataPassing {
 
 
     // MARK: - Routing Logic
-    func routeToPhotoAdding() {
-        guard
-            let viewController = viewController,
-            let storyboard = viewController.storyboard,
-            let photoAddingVC = storyboard.instantiateViewController(withIdentifier: "PhotoAddingViewController") as? PetPhotoViewController,
-            var photoAddingDS = photoAddingVC.router?.dataStore else {
-            fatalError("Fail route to BreedInfo")
-        }
-        passDataToPhotoAdding(destination: &photoAddingDS)
-        navigateToPhotoAdding(destination: photoAddingVC)
+    func routeToPetPhoto() {
+        let petPhotoVC = PetPhotoConfigurator.createScene()
+        var petPhotoDS = petPhotoVC.router?.dataStore
+        passDataToPetPhoto(destination: &(petPhotoDS)!)
+        navigateToPetPhoto(destination: petPhotoVC)
     }
     
     // MARK: - Navigation
-    private func navigateToPhotoAdding(destination: PetPhotoViewController) {
-        viewController?.navigationController?.pushViewController(destination, animated: true)
+    private func navigateToPetPhoto(destination: PetPhotoViewController) {
+        destination.modalPresentationStyle = .fullScreen
+        viewController?.present(destination, animated: true)
     }
 
     // MARK: - Passing data
-    func passDataToPhotoAdding(destination: inout PetPhotoDataStore) {
+    func passDataToPetPhoto(destination: inout PetPhotoDataStore) {
         destination.prepairedPetData = dataStore?.prepairedData
     }
 }

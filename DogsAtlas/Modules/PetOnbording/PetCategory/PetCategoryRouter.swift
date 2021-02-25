@@ -8,7 +8,7 @@
 import UIKit
 
 protocol PetCategoryRoutingLogic {
-    func routeToPetAdding2nd()
+    func routeToPetData()
 }
 
 protocol PetCategoryDataPassing {
@@ -18,28 +18,21 @@ protocol PetCategoryDataPassing {
 final class PetCategoryRouter: PetCategoryRoutingLogic, PetCategoryDataPassing {
 
     // MARK: - Public Properties
-    
-    private weak var navigationController: UINavigationController?
-    
     weak var viewController: PetCategoryViewController?
     var dataStore: PetCategoryDataStore?
   
     // MARK: - Private Properties
-
-
-    func routeToPetAdding2nd() {
-        guard
-            let vc = PetDataViewController(),
-            var petAdding2ndDS = vc.router?.dataStore else {
-            fatalError("Fail route to PetAdding2nd")
-            }
-        passDataToPetAdding2nd(destination: &petAdding2ndDS)
-        navigateToPetAdding2nd(destination: petAdding2ndVC)
+    func routeToPetData() {
+            let petDataVC = PetDataConfigurator.createScene()
+            var petDataDS = petDataVC.router?.dataStore
+        passDataToPetAdding2nd(destination: &(petDataDS)!)
+        navigateToPetAdding2nd(destination: petDataVC)
     }
     
     // MARK: - Navigation
     private func navigateToPetAdding2nd(destination: PetDataViewController) {
-        viewController?.navigationController?.pushViewController(destination, animated: true)
+        destination.modalPresentationStyle = .fullScreen
+        viewController?.present(destination, animated: true)
     }
 
     // MARK: - Passing data

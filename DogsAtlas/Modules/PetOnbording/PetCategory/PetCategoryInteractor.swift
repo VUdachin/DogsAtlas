@@ -44,6 +44,5 @@ final class PetCategoryInteractor: PetCategoryBusinessLogic, PetCategoryDataStor
             return
         }
         selectedCategory = categories[request.index]
-        print(selectedCategory)
     }
 }

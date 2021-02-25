@@ -28,7 +28,7 @@ class CategoryCell: UICollectionViewCell {
         setupSubview()
         
         NSLayoutConstraint.activate([
-
+            
             categoryImage.widthAnchor.constraint(equalTo: contentView.widthAnchor),
             categoryImage.heightAnchor.constraint(equalTo: contentView.heightAnchor)
     

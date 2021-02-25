@@ -16,7 +16,8 @@ final class PetPhotoViewController: UIViewController {
     // MARK: - UI Outlets
     private lazy var stepLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 12, weight: .light)
+        label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        label.textColor = .purple
         label.numberOfLines = 0
         label.text = "Step 3 of 3"
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -66,12 +67,10 @@ final class PetPhotoViewController: UIViewController {
     // MARK: - Init
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        setup()
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setup()
     }
 
     // MARK: - Lifecycle
@@ -87,20 +86,6 @@ final class PetPhotoViewController: UIViewController {
     }
 
     // MARK: - Private Methods
-    private func setup() {
-        let interactor = PetPhotoInteractor()
-        let presenter = PetPhotoPresenter()
-        let router = PetPhotoRouter()
-
-        interactor.presenter = presenter
-        presenter.viewController = self
-        router.viewController = self
-        router.dataStore = interactor
-        
-        self.interactor = interactor
-        self.router = router
-    }
-    
     private func setupSubView() {
         view.addSubview(stepLabel)
         view.addSubview(questionLabel)
@@ -110,37 +95,37 @@ final class PetPhotoViewController: UIViewController {
     }
     
     private func setupView() {
+        view.backgroundColor = .white
         setupSubView()
+        
         let safeArea = view.safeAreaLayoutGuide
         let inset: CGFloat = 12
         
         NSLayoutConstraint.activate([
             
-            stepLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: inset),
-            stepLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: inset),
-            stepLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -inset),
+            stepLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: inset),
+            stepLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: inset),
+            stepLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -inset),
             
             questionLabel.topAnchor.constraint(equalTo: stepLabel.bottomAnchor, constant: inset),
-            questionLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: inset),
-            questionLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: -inset),
+            questionLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -inset),
+            questionLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: inset),
             
             //photoImageView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.3),
             photoImageView.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: inset),
-            photoImageView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: inset),
-            photoImageView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: -inset),
+            photoImageView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -inset),
+            photoImageView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: inset),
             
             addPhotoButton.heightAnchor.constraint(equalToConstant: 60),
-            //addPhotoButton.topAnchor.constraint(equalTo: photoImageView.bottomAnchor, constant: inset),
-            addPhotoButton.topAnchor.constraint(equalTo: photoImageView.bottomAnchor),
-            addPhotoButton.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: inset),
-            addPhotoButton.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: -inset),
+            addPhotoButton.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -inset),
+            addPhotoButton.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: inset),
             
             createPetButton.heightAnchor.constraint(equalToConstant: 60),
             createPetButton.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: inset),
-            createPetButton.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: inset),
-            createPetButton.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: -inset),
+            createPetButton.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -inset),
+            createPetButton.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: inset),
             
-            view.bottomAnchor.constraint(equalTo: createPetButton.bottomAnchor, constant: inset)
+            safeArea.bottomAnchor.constraint(equalTo: createPetButton.bottomAnchor, constant: inset)
         ])
         
     }

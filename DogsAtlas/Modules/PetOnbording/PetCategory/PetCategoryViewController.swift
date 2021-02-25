@@ -14,33 +14,12 @@ protocol PetCategoryDisplayLogic: AnyObject {
 final class PetCategoryViewController: UIViewController {
 
     // MARK: - UI Outlets
-    private lazy var stepLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 12, weight: .light)
-        label.numberOfLines = 0
-        label.text = "Step 1 of 3"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private lazy var questionLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 40, weight: .heavy)
-        label.numberOfLines = 0
-        label.text = "Choose your pet"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
     private lazy var collectionView: UICollectionView = {
         let cv = UICollectionView()
         return cv
     }()
     
-
-    
     // MARK: - Public Properties
-
     var interactor: PetCategoryBusinessLogic?
     var router: (PetCategoryRoutingLogic & PetCategoryDataPassing)?
 
@@ -50,19 +29,17 @@ final class PetCategoryViewController: UIViewController {
     // MARK: - Init
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        setup()
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setup()
     }
 
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCollectionView()
+        setupView()
         requestToFetchCategories()
     }
 
@@ -81,41 +58,20 @@ final class PetCategoryViewController: UIViewController {
     }
 
     // MARK: - Private Methods
-    private func setup() {
-        let interactor = PetCategoryInteractor()
-        let presenter = PetCategoryPresenter()
-        let router = PetCategoryRouter()
-
-        interactor.presenter = presenter
-        presenter.viewController = self
-        router.viewController = self
-        router.dataStore = interactor
-        
-        self.interactor = interactor
-        self.router = router
-    }
-    
     private func setupView() {
+        view.backgroundColor = .white
+        
         let safeArea = view.safeAreaLayoutGuide
         let inset: CGFloat = 12
         
         setupCollectionView()
         
         view.addSubview(collectionView)
-        view.addSubview(questionLabel)
-        view.addSubview(stepLabel)
+
         
         NSLayoutConstraint.activate([
-            
-            stepLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: inset),
-            stepLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: inset),
-            stepLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -inset),
-            
-            questionLabel.topAnchor.constraint(equalTo: stepLabel.bottomAnchor, constant: inset),
-            questionLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: inset),
-            questionLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: -inset),
-            
-            collectionView.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: 50),
+
+            collectionView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: inset),
             collectionView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor)
@@ -125,14 +81,18 @@ final class PetCategoryViewController: UIViewController {
     
     private func setupCollectionView() {
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.estimatedItemSize = CGSize(width: UIScreen.main.bounds.size.width / 2, height: UIScreen.main.bounds.size.width / 3)
+        layout.scrollDirection = .vertical
+        layout.sectionInset = UIEdgeInsets(top: 30, left: 15, bottom: 30, right: 15)
+        layout.minimumLineSpacing = 60
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.size.width / 2 - 20, height: UIScreen.main.bounds.size.width / 3 - 20)
+        layout.headerReferenceSize = CGSize(width: (UIScreen.main.bounds.size.width), height: 100)
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .clear
-        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.showsVerticalScrollIndicator = false
         collectionView.register(CategoryCell.self, forCellWithReuseIdentifier: CategoryCell.reuseIdentifier)
+        collectionView.register(OnboardingPetHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: OnboardingPetHeaderView.reuseIdentifier)
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -167,8 +127,17 @@ extension PetCategoryViewController: UICollectionViewDataSource, UICollectionVie
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: OnboardingPetHeaderView.reuseIdentifier, for: indexPath) as? OnboardingPetHeaderView else {
+            fatalError("Could not instantiate Header.")
+        }
+        headerView.backgroundColor = .white
+        headerView.configure(header: Stage.category)
+        return headerView
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         requestToSelectCategory(by: indexPath)
-        router?.routeToPetAdding2nd()
+        router?.routeToPetData()
     }
 }

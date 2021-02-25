@@ -28,19 +28,14 @@ final class PetPhotoRouter: PetPhotoRoutingLogic, PetPhotoDataPassing {
 
     // MARK: - Routing Logic
     func routeToPetProfile() {
-        guard
-            let viewController = viewController,
-            let storyboard = viewController.storyboard,
-            let petProfileVC = storyboard.instantiateViewController(withIdentifier: "PetProfileViewController") as? PetProfileViewController,
-            var petProfileDS = petProfileVC.router?.dataStore else {
-            fatalError("Fail route to BreedInfo")
-        }
+        let petProfileVC = PetProfileConfigurator.createScene()
         navigateToPetProfile(destination: petProfileVC)
     }
     
     // MARK: - Navigation
     private func navigateToPetProfile(destination: PetProfileViewController) {
-        viewController?.navigationController?.pushViewController(destination, animated: true)
+        destination.modalPresentationStyle = .fullScreen
+        viewController?.present(destination, animated: true)
     }
 
     // MARK: - Passing data
