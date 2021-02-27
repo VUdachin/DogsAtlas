@@ -45,8 +45,9 @@ final class PetPhotoViewController: UIViewController {
     private lazy var addPhotoButton: UIButton = {
         let button = UIButton()
         button.setTitle("Add photo", for: .normal)
-        button.setTitleColor(.purple, for: .normal)
-        button.backgroundColor = .purple
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .systemBlue
+        button.layer.cornerRadius = 12
         button.addTarget(self, action: #selector(didAddPhotoTap), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -55,6 +56,9 @@ final class PetPhotoViewController: UIViewController {
     private lazy var createPetButton: UIButton = {
         let button = UIButton()
         button.setTitle("Add your pet's profile!", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .purple
+        button.layer.cornerRadius = 12
         button.addTarget(self, action: #selector(didCreatePetTap), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -111,20 +115,21 @@ final class PetPhotoViewController: UIViewController {
             questionLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -inset),
             questionLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: inset),
             
-            //photoImageView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.3),
             photoImageView.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: inset),
-            photoImageView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -inset),
             photoImageView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: inset),
+            photoImageView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -inset),
+            photoImageView.widthAnchor.constraint(equalTo: safeArea.widthAnchor,constant: -inset * 2),
+            photoImageView.bottomAnchor.constraint(equalTo: addPhotoButton.topAnchor, constant: -inset),
             
             addPhotoButton.heightAnchor.constraint(equalToConstant: 60),
             addPhotoButton.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -inset),
             addPhotoButton.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: inset),
-            
+
             createPetButton.heightAnchor.constraint(equalToConstant: 60),
-            createPetButton.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: inset),
+            createPetButton.topAnchor.constraint(equalTo: addPhotoButton.bottomAnchor, constant: inset),
             createPetButton.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -inset),
             createPetButton.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: inset),
-            
+//
             safeArea.bottomAnchor.constraint(equalTo: createPetButton.bottomAnchor, constant: inset)
         ])
         

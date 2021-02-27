@@ -36,7 +36,6 @@
 		B178EFD82547278300408B94 /* PetProfileModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B178EFD02547278200408B94 /* PetProfileModels.swift */; };
 		B178EFD92547278300408B94 /* PetProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B178EFD12547278200408B94 /* PetProfileViewController.swift */; };
 		B178EFDB2547278300408B94 /* PetProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B178EFD32547278200408B94 /* PetProfileInteractor.swift */; };
-		B184B0282561AE7B0021BE42 /* PetProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184B0272561AE7B0021BE42 /* PetProfileCell.swift */; };
 		B184B0322561BC080021BE42 /* Apointments+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184B02C2561BC080021BE42 /* Apointments+CoreDataClass.swift */; };
 		B184B0332561BC080021BE42 /* Apointments+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184B02D2561BC080021BE42 /* Apointments+CoreDataProperties.swift */; };
 		B199B19325E2C10500A78C86 /* PetCategoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B199B18D25E2C10500A78C86 /* PetCategoryPresenter.swift */; };
@@ -66,11 +65,12 @@
 		B1BB513B25E8148E008A23AE /* PetProfileConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BB513A25E8148E008A23AE /* PetProfileConfigurator.swift */; };
 		B1BB514325E8239A008A23AE /* PopOverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BB514225E8239A008A23AE /* PopOverCell.swift */; };
 		B1BB515425E96526008A23AE /* PopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BB515325E96526008A23AE /* PopOverViewController.swift */; };
+		B1BB515B25EAE62C008A23AE /* PetProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BB515A25EAE62C008A23AE /* PetProfileHeaderView.swift */; };
+		B1BB516025EAF1FB008A23AE /* HeaderAvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BB515F25EAF1FB008A23AE /* HeaderAvatarCell.swift */; };
 		B1C22A7625693AD000F1C15A /* PetCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C22A7425693AD000F1C15A /* PetCategory+CoreDataClass.swift */; };
 		B1C22A7725693AD000F1C15A /* PetCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C22A7525693AD000F1C15A /* PetCategory+CoreDataProperties.swift */; };
 		B1EAA9092565A7DA00F8BB9B /* Pet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EAA9052565A7DA00F8BB9B /* Pet+CoreDataClass.swift */; };
 		B1EAA90A2565A7DA00F8BB9B /* Pet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EAA9062565A7DA00F8BB9B /* Pet+CoreDataProperties.swift */; };
-		B1EFA69825601A6200786171 /* PetActionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFA69725601A6200786171 /* PetActionsCell.swift */; };
 		B1F4A33E2545AE9300D897F3 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F4A33D2545AE9300D897F3 /* UIImageViewExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -106,7 +106,6 @@
 		B178EFD02547278200408B94 /* PetProfileModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileModels.swift; sourceTree = "<group>"; };
 		B178EFD12547278200408B94 /* PetProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileViewController.swift; sourceTree = "<group>"; };
 		B178EFD32547278200408B94 /* PetProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileInteractor.swift; sourceTree = "<group>"; };
-		B184B0272561AE7B0021BE42 /* PetProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileCell.swift; sourceTree = "<group>"; };
 		B184B02C2561BC080021BE42 /* Apointments+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Apointments+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B184B02D2561BC080021BE42 /* Apointments+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Apointments+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B199B18D25E2C10500A78C86 /* PetCategoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCategoryPresenter.swift; sourceTree = "<group>"; };
@@ -136,11 +135,12 @@
 		B1BB513A25E8148E008A23AE /* PetProfileConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileConfigurator.swift; sourceTree = "<group>"; };
 		B1BB514225E8239A008A23AE /* PopOverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverCell.swift; sourceTree = "<group>"; };
 		B1BB515325E96526008A23AE /* PopOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverViewController.swift; sourceTree = "<group>"; };
+		B1BB515A25EAE62C008A23AE /* PetProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileHeaderView.swift; sourceTree = "<group>"; };
+		B1BB515F25EAF1FB008A23AE /* HeaderAvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderAvatarCell.swift; sourceTree = "<group>"; };
 		B1C22A7425693AD000F1C15A /* PetCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PetCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B1C22A7525693AD000F1C15A /* PetCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PetCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B1EAA9052565A7DA00F8BB9B /* Pet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B1EAA9062565A7DA00F8BB9B /* Pet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		B1EFA69725601A6200786171 /* PetActionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetActionsCell.swift; sourceTree = "<group>"; };
 		B1F4A33D2545AE9300D897F3 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -258,15 +258,6 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
-		B147E5DD25508E4D00E101DB /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				B184B0272561AE7B0021BE42 /* PetProfileCell.swift */,
-				B1EFA69725601A6200786171 /* PetActionsCell.swift */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
 		B15C255825D3D73A009B5F05 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,7 +272,7 @@
 		B178EFCC2547275100408B94 /* PetProfile */ = {
 			isa = PBXGroup;
 			children = (
-				B147E5DD25508E4D00E101DB /* Cell */,
+				B1BB515D25EAF1C7008A23AE /* Header */,
 				B1BB513A25E8148E008A23AE /* PetProfileConfigurator.swift */,
 				B178EFD02547278200408B94 /* PetProfileModels.swift */,
 				B178EFCE2547278200408B94 /* PetProfileWorker.swift */,
@@ -364,6 +355,15 @@
 			path = DropDownViews;
 			sourceTree = "<group>";
 		};
+		B1BB515D25EAF1C7008A23AE /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				B1BB515A25EAE62C008A23AE /* PetProfileHeaderView.swift */,
+				B1BB515F25EAF1FB008A23AE /* HeaderAvatarCell.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -434,7 +434,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B184B0282561AE7B0021BE42 /* PetProfileCell.swift in Sources */,
 				B178EFD62547278300408B94 /* PetProfileWorker.swift in Sources */,
 				B1C22A7725693AD000F1C15A /* PetCategory+CoreDataProperties.swift in Sources */,
 				B13869E3252C5FE90027E885 /* NetworkWorker.swift in Sources */,
@@ -443,6 +442,7 @@
 				B107ED9225304FCF001AECE0 /* BreedInfoModels.swift in Sources */,
 				B1BB512E25E7C703008A23AE /* PetCategoryConfigurator.swift in Sources */,
 				B1EAA9092565A7DA00F8BB9B /* Pet+CoreDataClass.swift in Sources */,
+				B1BB515B25EAE62C008A23AE /* PetProfileHeaderView.swift in Sources */,
 				B199B1AD25E2E1DA00A78C86 /* PetDataRouter.swift in Sources */,
 				B199B19625E2C10500A78C86 /* PetCategoryModels.swift in Sources */,
 				B1F4A33E2545AE9300D897F3 /* UIImageViewExtension.swift in Sources */,
@@ -458,7 +458,7 @@
 				B199B19825E2C10500A78C86 /* PetCategoryInteractor.swift in Sources */,
 				B184B0322561BC080021BE42 /* Apointments+CoreDataClass.swift in Sources */,
 				B13869F2252DBCD90027E885 /* AllBreedsListModels.swift in Sources */,
-				B1EFA69825601A6200786171 /* PetActionsCell.swift in Sources */,
+				B1BB516025EAF1FB008A23AE /* HeaderAvatarCell.swift in Sources */,
 				B1BB515425E96526008A23AE /* PopOverViewController.swift in Sources */,
 				B1BB514325E8239A008A23AE /* PopOverCell.swift in Sources */,
 				B199B19525E2C10500A78C86 /* PetCategoryRouter.swift in Sources */,
