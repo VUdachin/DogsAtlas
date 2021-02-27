@@ -141,3 +141,7 @@ extension PetCategoryViewController: UICollectionViewDataSource, UICollectionVie
         router?.routeToPetData()
     }
 }
+
+extension PetCategoryViewController: UIPopoverPresentationControllerDelegate {
+    
+}

@@ -9,6 +9,7 @@ import UIKit
 
 protocol PetCategoryRoutingLogic {
     func routeToPetData()
+    func showPopOver(sender: UIButton, with data: [String])
 }
 
 protocol PetCategoryDataPassing {
@@ -25,18 +26,35 @@ final class PetCategoryRouter: PetCategoryRoutingLogic, PetCategoryDataPassing {
     func routeToPetData() {
             let petDataVC = PetDataConfigurator.createScene()
             var petDataDS = petDataVC.router?.dataStore
-        passDataToPetAdding2nd(destination: &(petDataDS)!)
-        navigateToPetAdding2nd(destination: petDataVC)
+        passDataToPetData(destination: &(petDataDS)!)
+        navigateToPetData(destination: petDataVC)
+    }
+    
+    func showPopOver(sender: UIButton, with data: [String]) {
+        let popOverVC = PopOverViewController()
+        popOverVC.modalPresentationStyle = .popover
+        popOverVC.data = data
+        
+        if let popOver = popOverVC.popoverPresentationController {
+            popOver.delegate = viewController
+            popOver.permittedArrowDirections = .down
+            popOver.sourceView = sender
+            popOver.sourceRect = sender.bounds
+            
+            popOverVC.preferredContentSize = CGSize(width: 200, height: 200)
+            viewController?.present(popOverVC, animated: true)
+        }
+        
     }
     
     // MARK: - Navigation
-    private func navigateToPetAdding2nd(destination: PetDataViewController) {
+    private func navigateToPetData(destination: PetDataViewController) {
         destination.modalPresentationStyle = .fullScreen
         viewController?.present(destination, animated: true)
     }
 
     // MARK: - Passing data
-    private func passDataToPetAdding2nd(destination: inout PetDataDataStore) {
+    private func passDataToPetData(destination: inout PetDataDataStore) {
         destination.category = dataStore?.selectedCategory
     }
     

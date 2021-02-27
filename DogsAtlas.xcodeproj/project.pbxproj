@@ -64,7 +64,8 @@
 		B1BB513325E7C724008A23AE /* PetDataConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BB513225E7C724008A23AE /* PetDataConfigurator.swift */; };
 		B1BB513725E7DE71008A23AE /* OnboardingPetHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BB513625E7DE71008A23AE /* OnboardingPetHeaderView.swift */; };
 		B1BB513B25E8148E008A23AE /* PetProfileConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BB513A25E8148E008A23AE /* PetProfileConfigurator.swift */; };
-		B1BB514325E8239A008A23AE /* DropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BB514225E8239A008A23AE /* DropDownCell.swift */; };
+		B1BB514325E8239A008A23AE /* PopOverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BB514225E8239A008A23AE /* PopOverCell.swift */; };
+		B1BB515425E96526008A23AE /* PopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BB515325E96526008A23AE /* PopOverViewController.swift */; };
 		B1C22A7625693AD000F1C15A /* PetCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C22A7425693AD000F1C15A /* PetCategory+CoreDataClass.swift */; };
 		B1C22A7725693AD000F1C15A /* PetCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C22A7525693AD000F1C15A /* PetCategory+CoreDataProperties.swift */; };
 		B1EAA9092565A7DA00F8BB9B /* Pet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EAA9052565A7DA00F8BB9B /* Pet+CoreDataClass.swift */; };
@@ -133,7 +134,8 @@
 		B1BB513225E7C724008A23AE /* PetDataConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDataConfigurator.swift; sourceTree = "<group>"; };
 		B1BB513625E7DE71008A23AE /* OnboardingPetHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPetHeaderView.swift; sourceTree = "<group>"; };
 		B1BB513A25E8148E008A23AE /* PetProfileConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileConfigurator.swift; sourceTree = "<group>"; };
-		B1BB514225E8239A008A23AE /* DropDownCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownCell.swift; sourceTree = "<group>"; };
+		B1BB514225E8239A008A23AE /* PopOverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverCell.swift; sourceTree = "<group>"; };
+		B1BB515325E96526008A23AE /* PopOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverViewController.swift; sourceTree = "<group>"; };
 		B1C22A7425693AD000F1C15A /* PetCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PetCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B1C22A7525693AD000F1C15A /* PetCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PetCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B1EAA9052565A7DA00F8BB9B /* Pet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -237,7 +239,7 @@
 				B13869E2252C5FE90027E885 /* NetworkWorker.swift */,
 				B1F4A33D2545AE9300D897F3 /* UIImageViewExtension.swift */,
 				B1447BAC2551C417005C1D77 /* CoreDataWorker.swift */,
-				B1BB514225E8239A008A23AE /* DropDownCell.swift */,
+				B1BB514525E94DCE008A23AE /* DropDownViews */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -353,6 +355,15 @@
 			path = PetPhoto;
 			sourceTree = "<group>";
 		};
+		B1BB514525E94DCE008A23AE /* DropDownViews */ = {
+			isa = PBXGroup;
+			children = (
+				B1BB515325E96526008A23AE /* PopOverViewController.swift */,
+				B1BB514225E8239A008A23AE /* PopOverCell.swift */,
+			);
+			path = DropDownViews;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -448,7 +459,8 @@
 				B184B0322561BC080021BE42 /* Apointments+CoreDataClass.swift in Sources */,
 				B13869F2252DBCD90027E885 /* AllBreedsListModels.swift in Sources */,
 				B1EFA69825601A6200786171 /* PetActionsCell.swift in Sources */,
-				B1BB514325E8239A008A23AE /* DropDownCell.swift in Sources */,
+				B1BB515425E96526008A23AE /* PopOverViewController.swift in Sources */,
+				B1BB514325E8239A008A23AE /* PopOverCell.swift in Sources */,
 				B199B19525E2C10500A78C86 /* PetCategoryRouter.swift in Sources */,
 				B13869F3252DBCD90027E885 /* AllBreedsListViewController.swift in Sources */,
 				B13869EF252DBCD90027E885 /* AllBreedsListPresenter.swift in Sources */,
