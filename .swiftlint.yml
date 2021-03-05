@@ -1,0 +1,13 @@
+warning_threshold: 30
+
+variable_name:
+  min_length: 2
+line_length:
+- 300 # warning
+disabled_rules:
+- trailing_whitespace
+- force_cast
+- nesting
+excluded:
+- Pods
+

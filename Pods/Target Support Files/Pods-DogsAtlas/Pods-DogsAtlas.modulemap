@@ -1,0 +1,6 @@
+framework module Pods_DogsAtlas {
+  umbrella header "Pods-DogsAtlas-umbrella.h"
+
+  export *
+  module * { export * }
+}
