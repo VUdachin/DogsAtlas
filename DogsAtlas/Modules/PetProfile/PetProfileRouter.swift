@@ -20,20 +20,20 @@ final class PetProfileRouter: PetProfileRoutingLogic, PetProfileDataPassing {
   // MARK: - Public Properties
   weak var viewController: PetProfileViewController?
   var dataStore: PetProfileDataStore?
-  
+
   // MARK: - Private Properties
-  
+
   //
 
   // MARK: - Routing Logic
-  
+
   //
 
   // MARK: - Navigation
-  
+
   //
 
   // MARK: - Passing data
-  
+
   //
 }

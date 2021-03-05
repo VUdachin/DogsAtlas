@@ -13,7 +13,7 @@ protocol PetProfileWorkingLogic {
 }
 
 final class PetProfileWorker: PetProfileWorkingLogic {
-  
+
     // MARK: - Private Properties
     let context = CoreDataWoker.shared.context
 
@@ -23,10 +23,9 @@ final class PetProfileWorker: PetProfileWorkingLogic {
         do {
             let pets = try context.fetch(request)
             completion(.success(pets))
-        }
-        catch {
+        } catch {
             completion(.failure(error))
         }
     }
-    
+
 }

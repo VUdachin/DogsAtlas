@@ -12,7 +12,7 @@ protocol PetPhotoWorkingLogic {
 }
 
 final class PetPhotoWorker: PetPhotoWorkingLogic {
-  
+
     // MARK: - Private Properties
     private let coreDataWorker = CoreDataWoker.shared
     private let context = CoreDataWoker.shared.context
@@ -27,7 +27,7 @@ final class PetPhotoWorker: PetPhotoWorkingLogic {
         pet.name = newPet.name
         pet.weight = newPet.weight
         pet.image = newPet.image
-        
+
         coreDataWorker.saveContext()
     }
 }

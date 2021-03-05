@@ -22,16 +22,15 @@ final class PetPhotoRouter: PetPhotoRoutingLogic, PetPhotoDataPassing {
     weak var parentController: UIViewController?
     weak var viewController: PetPhotoViewController?
     var dataStore: PetPhotoDataStore?
-  
-    // MARK: - Private Properties
 
+    // MARK: - Private Properties
 
     // MARK: - Routing Logic
     func routeToPetProfile() {
         let petProfileVC = PetProfileConfigurator.createScene()
         navigateToPetProfile(destination: petProfileVC)
     }
-    
+
     // MARK: - Navigation
     private func navigateToPetProfile(destination: PetProfileViewController) {
         destination.modalPresentationStyle = .fullScreen

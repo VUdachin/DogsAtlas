@@ -8,17 +8,17 @@
 import UIKit
 
 enum BreedInfoModels {
-  
-  // MARK: -  FetchBreedInfo
-  
+
+  // MARK: - FetchBreedInfo
+
   enum FetchBreedInfo {
     struct Request {}
-    
+
     struct Response {
         var breed: Breed
         var image: BreedImages
     }
-    
+
     struct ViewModel {
         var breed: Breed
         var image: BreedImages

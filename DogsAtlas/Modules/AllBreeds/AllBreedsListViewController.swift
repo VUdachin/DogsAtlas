@@ -15,7 +15,7 @@ final class AllBreedsListViewController: UIViewController {
 
     // MARK: - UI Outlets
     @IBOutlet weak var collectionView: UICollectionView!
-    
+
     // MARK: - Public Properties
     var interactor: AllBreedsListBusinessLogic?
     var router: (AllBreedsListRoutingLogic & AllBreedsListDataPassing)?
@@ -33,7 +33,7 @@ final class AllBreedsListViewController: UIViewController {
         super.init(coder: aDecoder)
         setup()
     }
-    
+
     // MARK: - Lifecycle
     override func viewDidLoad() {
     super.viewDidLoad()
@@ -48,19 +48,18 @@ final class AllBreedsListViewController: UIViewController {
         let request = AllBreedsListModels.FetchBreeds.Request()
         interactor?.fetchBreeds(request)
     }
-    
+
     private func requestToSelectedBreed(by indexPath: IndexPath) {
         let request = AllBreedsListModels.SelectBreed.Request(index: indexPath.row)
         interactor?.selectBreed(request)
     }
-    
 
     // MARK: - Private Methods
     private func setupCollectionView() {
         collectionView.dataSource = self
         collectionView.delegate = self
     }
-    
+
     private func setup() {
         let interactor = AllBreedsListInteractor()
         let presenter = AllBreedsListPresenter()
@@ -74,9 +73,9 @@ final class AllBreedsListViewController: UIViewController {
         self.interactor = interactor
         self.router = router
     }
-  
+
     // MARK: - UI Actions
-  
+
 }
 
 // MARK: - Display Logic
@@ -87,25 +86,28 @@ extension AllBreedsListViewController: AllBreedsListDisplayLogic {
             self.collectionView.reloadData()
         }
     }
-    
+
 }
 
 extension AllBreedsListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    //MARK: - UICollectionViewDataSource
+    // MARK: - UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         allDogs.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "IdentifierBreedsCell", for: indexPath) as! BreedsCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "IdentifierBreedsCell", for: indexPath) as? BreedsCell else {
+            fatalError("Could not init All Breeds list")
+        }
+
         cell.layer.cornerRadius = 12
-        
+
         let dogs = allDogs[indexPath.row]
         cell.setup(cell: dogs)
         return cell
     }
-    
-    //MARK: - UICollectionViewDelegate
+
+    // MARK: - UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         requestToSelectedBreed(by: indexPath)
         router?.routeToBreedInfo()

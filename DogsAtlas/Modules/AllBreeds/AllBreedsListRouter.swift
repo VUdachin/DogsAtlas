@@ -20,20 +20,20 @@ final class AllBreedsListRouter: AllBreedsListRoutingLogic, AllBreedsListDataPas
     // MARK: - Public Properties
     weak var viewController: AllBreedsListViewController?
     var dataStore: AllBreedsListDataStore?
-  
+
     // MARK: - Private Properties
-  
+
     // MARK: - Routing Logic
     func routeToBreedInfo() {
         guard
             let viewController = viewController,
             let storyboard = viewController.storyboard,
-            let BreedInfoVC = storyboard.instantiateViewController(withIdentifier: "BreedInfoViewController") as? BreedInfoViewController,
-            var BreedInfoDS = BreedInfoVC.router?.dataStore else {
+            let breedInfoVC = storyboard.instantiateViewController(withIdentifier: "BreedInfoViewController") as? BreedInfoViewController,
+            var breedInfoDS = breedInfoVC.router?.dataStore else {
             fatalError("Fail route to BreedInfo")
             }
-            passDataToBreedInfo(destination: &BreedInfoDS)
-            navigateToBreedInfo(destination: BreedInfoVC)
+            passDataToBreedInfo(destination: &breedInfoDS)
+            navigateToBreedInfo(destination: breedInfoVC)
       }
 
     // MARK: - Navigation
@@ -45,5 +45,5 @@ final class AllBreedsListRouter: AllBreedsListRoutingLogic, AllBreedsListDataPas
     private func passDataToBreedInfo(destination: inout BreedInfoDataStore) {
         destination.breed = dataStore?.selectedBreed
     }
-    
+
 }

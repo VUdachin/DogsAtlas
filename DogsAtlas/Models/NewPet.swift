@@ -10,7 +10,7 @@ import UIKit
 
 struct NewPet {
     var age: Int64
-    //var breed: String?
+//    var breed: String?
     var sex: String?
     var name: String?
     var weight: Double

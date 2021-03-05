@@ -12,11 +12,11 @@ protocol PetCategoryWorkingLogic {
 }
 
 final class PetCategoryWorker: PetCategoryWorkingLogic {
-  
+
     // MARK: - Private Properties
     private let coreDataWorker = CoreDataWoker.shared
     private let context = CoreDataWoker.shared.context
-    
+
     // MARK: - Working Logic
     func fetchPetCategories(completion: @escaping ([PetCategory]) -> Void) {
         do {
@@ -46,17 +46,17 @@ final class PetCategoryWorker: PetCategoryWorkingLogic {
                 let fish = PetCategory(context: context)
                 fish.categoryName = "Fish"
                 fish.image = "fish.png"
-                
+
                 let categories = [dog, cat, bird, lizard, hamster, turtle, mouse, fish]
                 completion(categories)
-                
+
                 coreDataWorker.saveContext()
-                
+
             } else {
                 completion(loadedCategories)
             }
         } catch {
-            
+
         }
     }
 }

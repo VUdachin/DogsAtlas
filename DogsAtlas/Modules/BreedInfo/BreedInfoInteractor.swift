@@ -23,20 +23,19 @@ final class BreedInfoInteractor: BreedInfoBusinessLogic, BreedInfoDataStore {
 
     var breed: Breed?
   // MARK: - Private Properties
-  
-    
+
   // MARK: - Business Logic
     func fetchBreedInfo(_ request: BreedInfoModels.FetchBreedInfo.Request) {
         guard let breed = breed else {
             return
         }
-        
+
         worker.fetchBreedImage(imageId: breed.id) { (image) in
             let response = BreedInfoModels.FetchBreedInfo.Response(breed: breed, image: image)
-            
+
             self.presenter?.presentFetchedBreedImage(response)
-            
+
         }
     }
-    
+
 }

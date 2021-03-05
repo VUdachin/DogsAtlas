@@ -8,15 +8,15 @@
 import UIKit
 
 class BreedsCell: UICollectionViewCell {
-    
+
     let identifier = "IdentifierBreedsCell"
-    
-    //MARK: - IBOutlets
+
+    // MARK: - IBOutlets
     @IBOutlet private weak var breedsImageView: UIImageView!
     @IBOutlet private weak var breedsNameLabel: UILabel!
-    
+
     func setup(cell: Breed) {
-        breedsImageView.image = nil //PLUG
+        breedsImageView.image = nil // PLUG
         breedsNameLabel.text = cell.name
     }
 }

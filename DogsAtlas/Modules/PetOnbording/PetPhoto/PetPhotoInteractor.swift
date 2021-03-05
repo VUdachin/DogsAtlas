@@ -26,7 +26,7 @@ final class PetPhotoInteractor: PetPhotoBusinessLogic, PetPhotoDataStore {
     // MARK: - Private Properties
 
     // MARK: - Business Logic
-    
+
     func createPet(request: PetPhotoModels.CreatePet.Request) {
         prepairedPetData?.image = request.image
         worker.createNewPet(newPet: prepairedPetData!)

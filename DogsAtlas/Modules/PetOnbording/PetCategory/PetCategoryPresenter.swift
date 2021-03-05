@@ -19,11 +19,10 @@ final class PetCategoryPresenter: PetCategoryPresentationLogic {
 
     // MARK: - Private Properties
 
-    
     // MARK: - Presentation Logic
     func presentFetchedCategories(_ response: PetCategoryModels.FetchPetCategory.Response) {
         let viewModel = PetCategoryModels.FetchPetCategory.ViewModel(category: response.category)
-        
+
         viewController?.displayFetchedCategories(viewModel)
     }
 }

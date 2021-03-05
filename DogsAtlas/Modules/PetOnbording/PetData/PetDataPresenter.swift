@@ -19,7 +19,6 @@ final class PetDataPresenter: PetDataPresentationLogic {
 
     // MARK: - Private Properties
 
-    
     // MARK: - Presentation Logic
     func presentFetchedPet(_ response: PetDataModels.FetchPet.Response) {
         let viewModel = PetDataModels.FetchPet.ViewModel(category: response.category)

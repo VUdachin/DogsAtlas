@@ -12,9 +12,8 @@ protocol PetDataWorkingLogic {
 }
 
 final class PetDataWorker: PetDataWorkingLogic {
-  
-    // MARK: - Private Properties
 
+    // MARK: - Private Properties
 
     // MARK: - Working Logic
 

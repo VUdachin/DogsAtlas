@@ -8,15 +8,15 @@
 import UIKit
 
 enum PetCategoryModels {
-  
+
     // MARK: - Fetch categories
     enum FetchPetCategory {
         struct Request {}
-    
+
         struct Response {
             let category: [PetCategory]
         }
-    
+
         struct ViewModel {
             let category: [PetCategory]
         }

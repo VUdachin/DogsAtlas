@@ -24,7 +24,6 @@ final class PetProfileInteractor: PetProfileBusinessLogic, PetProfileDataStore {
     lazy var worker: PetProfileWorkingLogic = PetProfileWorker()
 
     // MARK: - Private Properties
-    
 
     // MARK: - Business Logic
     func fetchPets(_ request: PetProfileModels.FetchPets.Request) {

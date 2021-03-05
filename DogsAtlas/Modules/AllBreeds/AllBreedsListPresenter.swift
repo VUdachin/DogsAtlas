@@ -12,18 +12,16 @@ protocol AllBreedsListPresentationLogic {
 }
 
 final class AllBreedsListPresenter: AllBreedsListPresentationLogic {
-    
+
     // MARK: - Public Properties
     weak var viewController: AllBreedsListDisplayLogic?
 
     // MARK: - Private Properties
-  
-
 
     // MARK: - Presentation Logic
     func presentFetchedBreeds(_ response: AllBreedsListModels.FetchBreeds.Response) {
         let viewModel = AllBreedsListModels.FetchBreeds.ViewModel(breeds: response.breeds)
-        
+
         viewController?.displayFetchedBreeds(viewModel)
     }
 

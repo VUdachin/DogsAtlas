@@ -16,12 +16,12 @@ extension UIImageView {
                 self.image = nil
                 print(error)
             }
-                  
+
             guard let response = response as? HTTPURLResponse else {
                 print(DataError.invalidResponse)
                 return
             }
-                
+
             if 200 ... 299 ~= response.statusCode {
                 DispatchQueue.main.async {
                     guard let data = data else { return }

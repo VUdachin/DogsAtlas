@@ -23,7 +23,7 @@ final class PetDataInteractor: PetDataBusinessLogic, PetDataDataStore {
 
     var presenter: PetDataPresentationLogic?
     lazy var worker: PetDataWorkingLogic = PetDataWorker()
-    
+
     var category: PetCategory?
     var prepairedData: NewPet?
     // MARK: - Private Properties
@@ -33,7 +33,7 @@ final class PetDataInteractor: PetDataBusinessLogic, PetDataDataStore {
         let response = PetDataModels.FetchPet.Response(category: category!)
         self.presenter?.presentFetchedPet(response)
     }
-    
+
     func createPet(_ request: PetDataModels.PreparePetData.Request) {
         prepairedData = request.pet
     }

@@ -23,7 +23,7 @@ final class PetPhotoViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
+
     private lazy var questionLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 40, weight: .heavy)
@@ -32,7 +32,7 @@ final class PetPhotoViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
+
     private lazy var photoImageView: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFill
@@ -41,7 +41,7 @@ final class PetPhotoViewController: UIViewController {
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
-    
+
     private lazy var addPhotoButton: UIButton = {
         let button = UIButton()
         button.setTitle("Add photo", for: .normal)
@@ -52,7 +52,7 @@ final class PetPhotoViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    
+
     private lazy var createPetButton: UIButton = {
         let button = UIButton()
         button.setTitle("Add your pet's profile!", for: .normal)
@@ -63,7 +63,7 @@ final class PetPhotoViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-  
+
     // MARK: - Public Properties
     var interactor: PetPhotoBusinessLogic?
     var router: (PetPhotoRoutingLogic & PetPhotoDataPassing)?
@@ -97,30 +97,30 @@ final class PetPhotoViewController: UIViewController {
         view.addSubview(addPhotoButton)
         view.addSubview(createPetButton)
     }
-    
+
     private func setupView() {
         view.backgroundColor = .white
         setupSubView()
-        
+
         let safeArea = view.safeAreaLayoutGuide
         let inset: CGFloat = 12
-        
+
         NSLayoutConstraint.activate([
-            
+
             stepLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: inset),
             stepLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: inset),
             stepLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -inset),
-            
+
             questionLabel.topAnchor.constraint(equalTo: stepLabel.bottomAnchor, constant: inset),
             questionLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -inset),
             questionLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: inset),
-            
+
             photoImageView.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: inset),
             photoImageView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: inset),
             photoImageView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -inset),
-            photoImageView.widthAnchor.constraint(equalTo: safeArea.widthAnchor,constant: -inset * 2),
+            photoImageView.widthAnchor.constraint(equalTo: safeArea.widthAnchor, constant: -inset * 2),
             photoImageView.bottomAnchor.constraint(equalTo: addPhotoButton.topAnchor, constant: -inset),
-            
+
             addPhotoButton.heightAnchor.constraint(equalToConstant: 60),
             addPhotoButton.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -inset),
             addPhotoButton.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: inset),
@@ -132,19 +132,19 @@ final class PetPhotoViewController: UIViewController {
 //
             safeArea.bottomAnchor.constraint(equalTo: createPetButton.bottomAnchor, constant: inset)
         ])
-        
+
     }
-  
+
     // MARK: - UI Actions
     @objc private func didAddPhotoTap() {
         alertForPickerController()
     }
-    
+
     @objc private func didCreatePetTap() {
         requestToCreatePet(with: (photoImageView.image?.pngData())!)
         router?.routeToPetProfile()
     }
-    
+
 }
 
 // MARK: - Display Logic
@@ -154,23 +154,23 @@ extension PetPhotoViewController: PetPhotoDisplayLogic {
 }
 
 extension PetPhotoViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
+
     private func alertForPickerController() {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        
-        alert.addAction(UIAlertAction(title: "Photo Gallery", style: .default, handler: { (action) in
+
+        alert.addAction(UIAlertAction(title: "Photo Gallery", style: .default, handler: { (_) in
             self.showImagePickerController(sourceType: .photoLibrary)
         }))
-        
-        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action) in
+
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (_) in
             self.showImagePickerController(sourceType: .camera)
         }))
-        
+
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
+
         present(alert, animated: true, completion: nil)
     }
-    
+
     private func showImagePickerController(sourceType: UIImagePickerController.SourceType) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
@@ -178,8 +178,8 @@ extension PetPhotoViewController: UIImagePickerControllerDelegate, UINavigationC
         imagePicker.sourceType = sourceType
         present(imagePicker, animated: true, completion: nil)
     }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             photoImageView.image = editedImage
         } else if let originaImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
@@ -187,6 +187,5 @@ extension PetPhotoViewController: UIImagePickerControllerDelegate, UINavigationC
         }
         dismiss(animated: true, completion: nil)
     }
-    
-    
+
 }

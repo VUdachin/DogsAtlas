@@ -18,10 +18,10 @@ class PetPhotoConfigurator {
         presenter.viewController = viewController
         router.viewController = viewController
         router.dataStore = interactor
-            
+
         viewController.interactor = interactor
         viewController.router = router
-        
+
         return viewController
     }
 }

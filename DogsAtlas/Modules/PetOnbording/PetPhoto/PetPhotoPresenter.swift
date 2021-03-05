@@ -19,7 +19,6 @@ final class PetPhotoPresenter: PetPhotoPresentationLogic {
 
     // MARK: - Private Properties
 
-    
     // MARK: - Presentation Logic
 
 }

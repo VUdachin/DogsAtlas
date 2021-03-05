@@ -17,7 +17,7 @@ final class PetProfilePresenter: PetProfilePresentationLogic {
     weak var viewController: PetProfileDisplayLogic?
 
     // MARK: - Private Properties
-  
+
     // MARK: - Presentation Logic
     func presentFetchedPets(_ response: PetProfileModels.FetchPets.Response) {
         let viewModel = PetProfileModels.FetchPets.ViewModel(pets: response.pets)
