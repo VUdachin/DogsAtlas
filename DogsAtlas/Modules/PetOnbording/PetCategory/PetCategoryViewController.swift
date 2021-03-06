@@ -26,15 +26,6 @@ final class PetCategoryViewController: UIViewController {
     // MARK: - Private Properties
     private var categories: [PetCategory]?
 
-    // MARK: - Init
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -135,8 +126,4 @@ extension PetCategoryViewController: UICollectionViewDataSource, UICollectionVie
         requestToSelectCategory(by: indexPath)
         router?.routeToPetData()
     }
-}
-
-extension PetCategoryViewController: UIPopoverPresentationControllerDelegate {
-
 }

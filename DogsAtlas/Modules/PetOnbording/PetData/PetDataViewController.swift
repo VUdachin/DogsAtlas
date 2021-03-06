@@ -124,15 +124,6 @@ final class PetDataViewController: UIViewController {
 
     private let genderList: [String] = ["Male", "Female"] // need remove
 
-    // MARK: - Init
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-
     // MARK: - Lifecycle
 
     override func viewDidLoad() {

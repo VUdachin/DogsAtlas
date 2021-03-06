@@ -68,15 +68,6 @@ final class PetPhotoViewController: UIViewController {
     var interactor: PetPhotoBusinessLogic?
     var router: (PetPhotoRoutingLogic & PetPhotoDataPassing)?
 
-    // MARK: - Init
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()

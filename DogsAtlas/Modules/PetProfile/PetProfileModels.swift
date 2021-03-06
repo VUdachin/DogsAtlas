@@ -16,12 +16,10 @@ enum PetProfileModels {
     struct Request {}
 
     struct Response {
-        // var pets: Pet
         var pets: [NSManagedObject]
     }
 
     struct ViewModel {
-        // var pets: Pet
         var pets: [NSManagedObject]
     }
   }

@@ -7,8 +7,8 @@
 
 import UIKit
 
-class HeaderAvatarCell: UICollectionViewCell {
-    static var reuseIdentifier = "HeaderAvatarCell"
+class AvatarCell: UICollectionViewCell {
+    static var reuseIdentifier = "AvatarCell"
 
     // MARK: - Create UI
     private lazy var avatarImageView: UIImageView = {
@@ -36,14 +36,15 @@ class HeaderAvatarCell: UICollectionViewCell {
 
     // MARK: - Public Methods
     func configure(with pet: Pet) {
-//        avatarImageView.image = UIImage(data: pet.image ) // add default image
+        avatarImageView.image = UIImage(data: pet.image!) // add default image
     }
 
     // MARK: - init
     override init(frame: CGRect) {
-            super.init(frame: frame)
-            setupCell()
-        }
+        super.init(frame: frame)
+        setupCell()
+        backgroundColor = .blue
+    }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

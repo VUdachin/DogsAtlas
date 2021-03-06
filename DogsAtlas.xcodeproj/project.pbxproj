@@ -66,8 +66,8 @@
 		B1BB513B25E8148E008A23AE /* PetProfileConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BB513A25E8148E008A23AE /* PetProfileConfigurator.swift */; };
 		B1BB514325E8239A008A23AE /* PopOverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BB514225E8239A008A23AE /* PopOverCell.swift */; };
 		B1BB515425E96526008A23AE /* PopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BB515325E96526008A23AE /* PopOverViewController.swift */; };
-		B1BB515B25EAE62C008A23AE /* PetProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BB515A25EAE62C008A23AE /* PetProfileHeaderView.swift */; };
-		B1BB516025EAF1FB008A23AE /* HeaderAvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BB515F25EAF1FB008A23AE /* HeaderAvatarCell.swift */; };
+		B1BB515B25EAE62C008A23AE /* PetProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BB515A25EAE62C008A23AE /* PetProfileHeaderCell.swift */; };
+		B1BB516025EAF1FB008A23AE /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BB515F25EAF1FB008A23AE /* AvatarCell.swift */; };
 		B1BB516525EB9AC2008A23AE /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BB516425EB9AC2008A23AE /* ScheduleCell.swift */; };
 		B1C22A7625693AD000F1C15A /* PetCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C22A7425693AD000F1C15A /* PetCategory+CoreDataClass.swift */; };
 		B1C22A7725693AD000F1C15A /* PetCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C22A7525693AD000F1C15A /* PetCategory+CoreDataProperties.swift */; };
@@ -139,8 +139,8 @@
 		B1BB513A25E8148E008A23AE /* PetProfileConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileConfigurator.swift; sourceTree = "<group>"; };
 		B1BB514225E8239A008A23AE /* PopOverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverCell.swift; sourceTree = "<group>"; };
 		B1BB515325E96526008A23AE /* PopOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverViewController.swift; sourceTree = "<group>"; };
-		B1BB515A25EAE62C008A23AE /* PetProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileHeaderView.swift; sourceTree = "<group>"; };
-		B1BB515F25EAF1FB008A23AE /* HeaderAvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderAvatarCell.swift; sourceTree = "<group>"; };
+		B1BB515A25EAE62C008A23AE /* PetProfileHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileHeaderCell.swift; sourceTree = "<group>"; };
+		B1BB515F25EAF1FB008A23AE /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
 		B1BB516425EB9AC2008A23AE /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
 		B1C22A7425693AD000F1C15A /* PetCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PetCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B1C22A7525693AD000F1C15A /* PetCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PetCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -213,10 +213,10 @@
 		B1291B71252232590007FEE3 /* DogsAtlas */ = {
 			isa = PBXGroup;
 			children = (
-				B1447B4B255173AE005C1D77 /* Helpers */,
-				B1447BA62551A94D005C1D77 /* CoreData */,
 				B1291B72252232590007FEE3 /* AppDelegate.swift */,
 				B1291B74252232590007FEE3 /* SceneDelegate.swift */,
+				B1447B4B255173AE005C1D77 /* Helpers */,
+				B1447BA62551A94D005C1D77 /* CoreData */,
 				B15C255825D3D73A009B5F05 /* Modules */,
 				B1291B8B252238160007FEE3 /* Models */,
 				B1291B78252232590007FEE3 /* Main.storyboard */,
@@ -385,8 +385,8 @@
 		B1BB515D25EAF1C7008A23AE /* Header */ = {
 			isa = PBXGroup;
 			children = (
-				B1BB515A25EAE62C008A23AE /* PetProfileHeaderView.swift */,
-				B1BB515F25EAF1FB008A23AE /* HeaderAvatarCell.swift */,
+				B1BB515A25EAE62C008A23AE /* PetProfileHeaderCell.swift */,
+				B1BB515F25EAF1FB008A23AE /* AvatarCell.swift */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -521,7 +521,7 @@
 				B107ED9225304FCF001AECE0 /* BreedInfoModels.swift in Sources */,
 				B1BB512E25E7C703008A23AE /* PetCategoryConfigurator.swift in Sources */,
 				B1EAA9092565A7DA00F8BB9B /* Pet+CoreDataClass.swift in Sources */,
-				B1BB515B25EAE62C008A23AE /* PetProfileHeaderView.swift in Sources */,
+				B1BB515B25EAE62C008A23AE /* PetProfileHeaderCell.swift in Sources */,
 				B199B1AD25E2E1DA00A78C86 /* PetDataRouter.swift in Sources */,
 				B199B19625E2C10500A78C86 /* PetCategoryModels.swift in Sources */,
 				B1F4A33E2545AE9300D897F3 /* UIImageViewExtension.swift in Sources */,
@@ -537,7 +537,7 @@
 				B199B19825E2C10500A78C86 /* PetCategoryInteractor.swift in Sources */,
 				B184B0322561BC080021BE42 /* Apointments+CoreDataClass.swift in Sources */,
 				B13869F2252DBCD90027E885 /* AllBreedsListModels.swift in Sources */,
-				B1BB516025EAF1FB008A23AE /* HeaderAvatarCell.swift in Sources */,
+				B1BB516025EAF1FB008A23AE /* AvatarCell.swift in Sources */,
 				B1BB515425E96526008A23AE /* PopOverViewController.swift in Sources */,
 				B1BB514325E8239A008A23AE /* PopOverCell.swift in Sources */,
 				B199B19525E2C10500A78C86 /* PetCategoryRouter.swift in Sources */,

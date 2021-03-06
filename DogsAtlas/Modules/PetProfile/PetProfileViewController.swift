@@ -25,19 +25,13 @@ final class PetProfileViewController: UIViewController {
     var router: (PetProfileRoutingLogic & PetProfileDataPassing)?
 
     // MARK: - Private Properties
-    private var fetchedPets = [NSManagedObject]()
-
-    // MARK: - Init
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    private var fetchedPets: [NSManagedObject]? {
+        didSet {
+            self.collectionView.reloadData()
+        }
     }
 
     // MARK: - Lifecycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -53,10 +47,11 @@ final class PetProfileViewController: UIViewController {
     }
 
     // MARK: - Private Methods
-
     private func setupView() {
+        view.backgroundColor = .white
+        
         setupCollectionView()
-        setupSubViews()
+        view.addSubview(collectionView)
 
         let safeArea = view.safeAreaLayoutGuide
 
@@ -70,25 +65,18 @@ final class PetProfileViewController: UIViewController {
         ])
     }
 
-    private func setupSubViews() {
-        view.addSubview(collectionView)
-
-    }
-
     private func setupCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.sectionInset = UIEdgeInsets(top: 30, left: 15, bottom: 30, right: 15)
-        layout.minimumLineSpacing = 60
-//        layout.itemSize = CGSize(width: UIScreen.main.bounds.size.width / 2 - 20, height: UIScreen.main.bounds.size.width / 3 - 20)
-        layout.headerReferenceSize = CGSize(width: (UIScreen.main.bounds.size.width), height: 200)
+        layout.minimumLineSpacing = 30
+        
 
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .clear
         collectionView.showsVerticalScrollIndicator = false
         collectionView.register(ScheduleCell.self, forCellWithReuseIdentifier: ScheduleCell.reuseIdentifier)
-        collectionView.register(PetProfileHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: PetProfileHeaderView.reuseIdentifier)
+        collectionView.register(PetProfileHeaderCell.self, forCellWithReuseIdentifier: PetProfileHeaderCell.reuseIdentifier)
 
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -103,37 +91,49 @@ extension PetProfileViewController: PetProfileDisplayLogic {
     func displayFetchedPets(_ viewModel: PetProfileModels.FetchPets.ViewModel) {
         DispatchQueue.main.async {
             self.fetchedPets = viewModel.pets
-            self.collectionView.reloadData()
         }
     }
 }
 
-extension PetProfileViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return fetchedPets.count
+extension PetProfileViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
     }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ScheduleCell.reuseIdentifier, for: indexPath) as? ScheduleCell else {
-            fatalError("Could not instantiate Schedule Cell.")
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if section == 0 {
+            return 1
         }
-//        cell.configure(with: <#T##Pet#>) //shedule configure, need shedule model
+        return 9
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.section == 0 {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PetProfileHeaderCell.reuseIdentifier, for: indexPath) as? PetProfileHeaderCell else {
+                fatalError("Could not init HeaderCell")
+            }
+            let pet = fetchedPets as! [Pet]
+            cell.configure(pet: pet)
+            return cell
+        }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ScheduleCell.reuseIdentifier, for: indexPath) as? ScheduleCell else {
+            fatalError("Could not init HeaderCell")
+        }
         return cell
     }
 
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: PetProfileHeaderView.reuseIdentifier, for: indexPath) as? PetProfileHeaderView else {
-            fatalError("Could not instantiate Header.")
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.section == 0 {
+            return CGSize(width: UIScreen.main.bounds.size.width / 3 - 20, height: 200)
         }
-
-        let pets = fetchedPets as! [Pet]
-        headerView.backgroundColor = .white
-        headerView.configure(pet: pets)
-        return headerView
+        return CGSize(width: view.frame.width - 30, height: UIScreen.main.bounds.size.height * 0.2)
     }
-
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        if section == 0 {
+            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        }
+        return UIEdgeInsets(top: 10, left: 8, bottom: 10, right: 8)
     }
-
+    
 }

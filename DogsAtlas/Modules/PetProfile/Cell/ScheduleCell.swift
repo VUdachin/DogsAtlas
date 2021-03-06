@@ -77,9 +77,10 @@ class ScheduleCell: UICollectionViewCell {
 
     // MARK: - init
     override init(frame: CGRect) {
-            super.init(frame: frame)
-            setupCell()
-        }
+        super.init(frame: frame)
+        setupCell()
+        backgroundColor = .purple
+    }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
