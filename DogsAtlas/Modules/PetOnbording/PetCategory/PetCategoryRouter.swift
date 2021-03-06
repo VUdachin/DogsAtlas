@@ -59,3 +59,7 @@ final class PetCategoryRouter: PetCategoryRoutingLogic, PetCategoryDataPassing {
     }
 
 }
+
+extension PetCategoryViewController: UIPopoverPresentationControllerDelegate {
+
+ }
