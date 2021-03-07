@@ -24,7 +24,7 @@ class PetProfileHeaderCell: UICollectionViewCell {
     // MARK: - init
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .yellow
+        backgroundColor = .gray
         setupView()
     }
     required init?(coder: NSCoder) {
@@ -40,31 +40,30 @@ class PetProfileHeaderCell: UICollectionViewCell {
     }
 
     private func setupView() {
-        setupSubView()
         setupCollectionView()
+        setupSubView()
 
         let safeArea = self.safeAreaLayoutGuide
-        let inset: CGFloat = 12
 
         NSLayoutConstraint.activate([
 
             collectionView.topAnchor.constraint(equalTo: safeArea.topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: inset)
+            collectionView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor)
 
         ])
     }
 
     private func setupSubView() {
-        self.addSubview(collectionView)
+        addSubview(collectionView)
     }
 
     private func setupCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = 30
-
+        layout.minimumLineSpacing = 40
+        
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .clear
@@ -92,11 +91,11 @@ extension PetProfileHeaderCell: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 200, height: 200)
+        return CGSize(width: (frame.width / 2), height: (frame.width / 2))
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10, left: 8, bottom: 10, right: 8)
     }
-
+    
 }

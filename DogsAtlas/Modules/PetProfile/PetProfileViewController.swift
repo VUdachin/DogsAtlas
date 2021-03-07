@@ -25,11 +25,7 @@ final class PetProfileViewController: UIViewController {
     var router: (PetProfileRoutingLogic & PetProfileDataPassing)?
 
     // MARK: - Private Properties
-    private var fetchedPets: [NSManagedObject]? {
-        didSet {
-            self.collectionView.reloadData()
-        }
-    }
+    private var fetchedPets: [NSManagedObject] = []
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -69,13 +65,11 @@ final class PetProfileViewController: UIViewController {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 30
-        layout.itemSize = CGSize(width: 100, height: 100)
-        
 
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .clear
         collectionView.showsVerticalScrollIndicator = false
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(ScheduleCell.self, forCellWithReuseIdentifier: ScheduleCell.reuseIdentifier)
         collectionView.register(PetProfileHeaderCell.self, forCellWithReuseIdentifier: PetProfileHeaderCell.reuseIdentifier)
 
@@ -92,11 +86,14 @@ extension PetProfileViewController: PetProfileDisplayLogic {
     func displayFetchedPets(_ viewModel: PetProfileModels.FetchPets.ViewModel) {
         DispatchQueue.main.async {
             self.fetchedPets = viewModel.pets
+            self.collectionView.reloadData()
         }
     }
+    
 }
 
 extension PetProfileViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    // MARK: - UICollectionViewDataSource
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
     }
@@ -118,14 +115,15 @@ extension PetProfileViewController: UICollectionViewDataSource, UICollectionView
             return cell
         }
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ScheduleCell.reuseIdentifier, for: indexPath) as? ScheduleCell else {
-            fatalError("Could not init HeaderCell")
+            fatalError("Could not init SheduleCell")
         }
         return cell
     }
-
+    
+    // MARK: - UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0 {
-            return CGSize(width: UIScreen.main.bounds.size.width / 3 - 20, height: 200)
+            return CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height * 0.35)
         }
         return CGSize(width: view.frame.width - 30, height: UIScreen.main.bounds.size.height * 0.2)
     }

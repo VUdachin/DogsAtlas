@@ -37,7 +37,6 @@ final class PetPhotoViewController: UIViewController {
         let image = UIImageView()
         image.contentMode = .scaleAspectFill
         image.image = UIImage(named: "dog")
-        image.layer.cornerRadius = 20
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
@@ -120,7 +119,7 @@ final class PetPhotoViewController: UIViewController {
             createPetButton.topAnchor.constraint(equalTo: addPhotoButton.bottomAnchor, constant: inset),
             createPetButton.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -inset),
             createPetButton.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: inset),
-//
+
             safeArea.bottomAnchor.constraint(equalTo: createPetButton.bottomAnchor, constant: inset)
         ])
 

@@ -24,12 +24,16 @@ class AvatarCell: UICollectionViewCell {
     }
 
     private func setupCell() {
+        layer.cornerRadius = frame.height / 2
+        layer.masksToBounds = true
+        
         setupSubview()
+        let safeArea = contentView.safeAreaLayoutGuide
 
         NSLayoutConstraint.activate([
 
-            avatarImageView.widthAnchor.constraint(equalTo: contentView.widthAnchor),
-            avatarImageView.heightAnchor.constraint(equalTo: contentView.heightAnchor)
+            avatarImageView.widthAnchor.constraint(equalTo: safeArea.widthAnchor),
+            avatarImageView.heightAnchor.constraint(equalTo: safeArea.heightAnchor)
 
         ])
     }
@@ -43,7 +47,6 @@ class AvatarCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupCell()
-        backgroundColor = .blue
     }
 
     required init?(coder: NSCoder) {

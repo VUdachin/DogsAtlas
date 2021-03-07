@@ -46,7 +46,13 @@ class ScheduleCell: UICollectionViewCell {
 
     private func setupCell() {
         setupSubview()
-
+        
+//        layer.masksToBounds = true
+        layer.cornerRadius = 12
+        //layer.borderWidth = 12
+        layer.borderColor = CGColor(red: 85, green: 76, blue: 146, alpha: 1)
+        
+        
         let inset: CGFloat = 12
 
         NSLayoutConstraint.activate([
@@ -79,7 +85,7 @@ class ScheduleCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupCell()
-        backgroundColor = .purple
+        backgroundColor = .brown
     }
 
     required init?(coder: NSCoder) {
