@@ -71,10 +71,21 @@
 		B1BB516525EB9AC2008A23AE /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BB516425EB9AC2008A23AE /* ScheduleCell.swift */; };
 		B1C22A7625693AD000F1C15A /* PetCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C22A7425693AD000F1C15A /* PetCategory+CoreDataClass.swift */; };
 		B1C22A7725693AD000F1C15A /* PetCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C22A7525693AD000F1C15A /* PetCategory+CoreDataProperties.swift */; };
+		B1D4A32225F819BC000119A1 /* DogsAtlasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D4A32125F819BC000119A1 /* DogsAtlasTests.swift */; };
 		B1EAA9092565A7DA00F8BB9B /* Pet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EAA9052565A7DA00F8BB9B /* Pet+CoreDataClass.swift */; };
 		B1EAA90A2565A7DA00F8BB9B /* Pet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EAA9062565A7DA00F8BB9B /* Pet+CoreDataProperties.swift */; };
 		B1F4A33E2545AE9300D897F3 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F4A33D2545AE9300D897F3 /* UIImageViewExtension.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B1D4A32425F819BC000119A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B1291B67252232590007FEE3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B1291B6E252232590007FEE3;
+			remoteInfo = DogsAtlas;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		6A21E8668BF9EA2C2DD3501C /* Pods-DogsAtlas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogsAtlas.debug.xcconfig"; path = "Target Support Files/Pods-DogsAtlas/Pods-DogsAtlas.debug.xcconfig"; sourceTree = "<group>"; };
@@ -144,6 +155,9 @@
 		B1BB516425EB9AC2008A23AE /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
 		B1C22A7425693AD000F1C15A /* PetCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PetCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B1C22A7525693AD000F1C15A /* PetCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PetCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B1D4A31F25F819BC000119A1 /* DogsAtlasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogsAtlasTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1D4A32125F819BC000119A1 /* DogsAtlasTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsAtlasTests.swift; sourceTree = "<group>"; };
+		B1D4A32325F819BC000119A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1EAA9052565A7DA00F8BB9B /* Pet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B1EAA9062565A7DA00F8BB9B /* Pet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B1F4A33D2545AE9300D897F3 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
@@ -156,6 +170,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				813915AC33F22699DCDC700E /* Pods_DogsAtlas.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1D4A31C25F819BC000119A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				B1291B71252232590007FEE3 /* DogsAtlas */,
+				B1D4A32025F819BC000119A1 /* DogsAtlasTests */,
 				B1291B70252232590007FEE3 /* Products */,
 				126EC86569829598EA3ABE2B /* Pods */,
 				9C579C8CAA999070471844C6 /* Frameworks */,
@@ -206,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				B1291B6F252232590007FEE3 /* DogsAtlas.app */,
+				B1D4A31F25F819BC000119A1 /* DogsAtlasTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -399,6 +422,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		B1D4A32025F819BC000119A1 /* DogsAtlasTests */ = {
+			isa = PBXGroup;
+			children = (
+				B1D4A32125F819BC000119A1 /* DogsAtlasTests.swift */,
+				B1D4A32325F819BC000119A1 /* Info.plist */,
+			);
+			path = DogsAtlasTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -421,17 +453,39 @@
 			productReference = B1291B6F252232590007FEE3 /* DogsAtlas.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B1D4A31E25F819BC000119A1 /* DogsAtlasTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B1D4A32825F819BC000119A1 /* Build configuration list for PBXNativeTarget "DogsAtlasTests" */;
+			buildPhases = (
+				B1D4A31B25F819BC000119A1 /* Sources */,
+				B1D4A31C25F819BC000119A1 /* Frameworks */,
+				B1D4A31D25F819BC000119A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B1D4A32525F819BC000119A1 /* PBXTargetDependency */,
+			);
+			name = DogsAtlasTests;
+			productName = DogsAtlasTests;
+			productReference = B1D4A31F25F819BC000119A1 /* DogsAtlasTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		B1291B67252232590007FEE3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1200;
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
 					B1291B6E252232590007FEE3 = {
 						CreatedOnToolsVersion = 12.0.1;
+					};
+					B1D4A31E25F819BC000119A1 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = B1291B6E252232590007FEE3;
 					};
 				};
 			};
@@ -449,6 +503,7 @@
 			projectRoot = "";
 			targets = (
 				B1291B6E252232590007FEE3 /* DogsAtlas */,
+				B1D4A31E25F819BC000119A1 /* DogsAtlasTests */,
 			);
 		};
 /* End PBXProject section */
@@ -461,6 +516,13 @@
 				B1291B7F2522325D0007FEE3 /* LaunchScreen.storyboard in Resources */,
 				B1291B7C2522325D0007FEE3 /* Assets.xcassets in Resources */,
 				B1291B7A252232590007FEE3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1D4A31D25F819BC000119A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,7 +641,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B1D4A31B25F819BC000119A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1D4A32225F819BC000119A1 /* DogsAtlasTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B1D4A32525F819BC000119A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B1291B6E252232590007FEE3 /* DogsAtlas */;
+			targetProxy = B1D4A32425F819BC000119A1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B1291B78252232590007FEE3 /* Main.storyboard */ = {
@@ -757,6 +835,48 @@
 			};
 			name = Release;
 		};
+		B1D4A32625F819BC000119A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5C5R3P6NHR;
+				INFOPLIST_FILE = DogsAtlasTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = VladimirUdachin.DogsAtlasTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DogsAtlas.app/DogsAtlas";
+			};
+			name = Debug;
+		};
+		B1D4A32725F819BC000119A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5C5R3P6NHR;
+				INFOPLIST_FILE = DogsAtlasTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = VladimirUdachin.DogsAtlasTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DogsAtlas.app/DogsAtlas";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -774,6 +894,15 @@
 			buildConfigurations = (
 				B1291B842522325D0007FEE3 /* Debug */,
 				B1291B852522325D0007FEE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B1D4A32825F819BC000119A1 /* Build configuration list for PBXNativeTarget "DogsAtlasTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1D4A32625F819BC000119A1 /* Debug */,
+				B1D4A32725F819BC000119A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
